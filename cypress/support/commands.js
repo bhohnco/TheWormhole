@@ -1,25 +1,21 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
+// Cypress.Commands.add("singleCountriesTopArtistsPath", () => {
+//   cy.intercept('http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json')
+//   cy.visit('http://localhost:3000')
+// })
 //
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
+// Cypress.Commands.add("singleCountriesTopTracksPath", () => {
+//   cy.intercept('"http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json"')
+//   cy.visit('http://localhost:3000')
+// })
 //
+// Cypress.Commands.add("singleArtistInfoPath", () => {
+//   cy.intercept('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=DavidBowie&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json')
+//   cy.visit('http://localhost:3000')
+// })
 //
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// Cypress.Commands.add("singleArtistPhotoPath", () => {
+//   cy.intercept('http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json')
+//   cy.visit('http://localhost:3000')
+// })
+
+

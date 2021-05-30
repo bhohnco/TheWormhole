@@ -1,7 +1,12 @@
 import React from 'react';
 import './TopArtists.css';
 
-const TopArtists = () => {
+
+const TopArtists = ({topArtists}) => {
+  console.log(topArtists)
+  const locateName = topArtists.artist.map(elem => {
+      return elem.name;
+    console.log(topArtists, "AfterMap")
   return (
     <article className='top-artists-box'>
       <h3> Top Artists in *location* </h3>
@@ -21,6 +26,9 @@ const TopArtists = () => {
       </div>
     </article>
   )
+  })
 }
+  
+
 
 export default TopArtists;

@@ -8,11 +8,10 @@ const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
 export const getTopArtists = () => {
-  console.log("topArtist")
   return fetch(topArtistByCountryUrl)
       .then(response => {
         if (response.ok) {
-          return console.log(response.json())
+          return response.json()
         } else {
           throw new Error(`Error, please try again!`)
         }
