@@ -12,7 +12,7 @@ const Form = () => {
           </select>
         </label>
         <button>Search Artist Library
-          <input placeholder='type in names of artists'/>
+          <input type='text' placeholder='type in names of artists'/>
         </button>
       </form>
     </div>
