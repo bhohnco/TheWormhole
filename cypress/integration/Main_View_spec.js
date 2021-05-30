@@ -44,4 +44,9 @@ describe('Show main view of Worm Hole App', () => {
       .get('form').find('button').should('contain', 'Search Artist Library')
   });
 
+  it('Should load the main view with top tracks on display', () => {
+    cy.get('.tracks-list')
+      .find('top-track').should('have.length', 0)
+  });
+
 })
