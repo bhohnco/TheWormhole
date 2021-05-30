@@ -21,4 +21,8 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('.glow').should('contain', 'W o r m h o l e')
   })
 
+  it('Should show a randomization of countries selected button on load', () => {
+    cy.get('.random-location').should('contain', 'Randomize Music Location')
+  })
+
 })
