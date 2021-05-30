@@ -1,3 +1,18 @@
 describe('Show main view of Worm Hole App', () => {
 
+  beforeEach(() => {
+    cy.fixture('cypress/fixtures/mock-topArtist-stubbing-data.json')
+      .then(mockTopArtists => {
+        cy.intercept('GET', 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json', {
+          statusCode: 200,
+          delay: 100,
+          body: mockTopArtists
+        })
+      })
+
+    cy.visit('http://localhost:3000')
+  })
+
+
+
 })
