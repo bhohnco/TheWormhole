@@ -5,9 +5,11 @@ const Form = () => {
 
   return (
     <div>
-      <form>
+      <form className='search-form'>
         <label> Select Country
-          <select>DROP DOWN</select>
+          <select>
+            <option className='drop-down' value='dropDown'>DROP DOWN</option>
+          </select>
         </label>
         <button>Search Artist Library
           <input placeholder='type in names of artists'/>
