@@ -41,6 +41,7 @@ describe('Show main view of Worm Hole App', () => {
       .get('form button')
       .find('input[type=text]').should('have.length', 1)
 
-  })
+      .get('form').find('button').should('contain', 'Search Artist Library')
+  });
 
 })
