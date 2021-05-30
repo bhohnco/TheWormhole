@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import { getTopArtists, getTopTracks } from '../../utilities/apiCalls'
+import React, { Component } from 'react';
+import Header from '../Header/Header';
+import Form from '../Form/Form';
+import TopArtists from '../TopArtists/TopArtists';
+import TopTracks from '../TopTracks/TopTracks';
 import './App.css';
 
 class App extends Component {
@@ -36,33 +41,28 @@ class App extends Component {
         })
     console.log(this.state.topTracks)
   }
-
-  // showSelectedArtist = (id) => {
-  //   getSelectedArtist(id)
-  //       .then(data => {
-  //         this.setState({
-  //           selectedArtist: data,
-  //           selectedArtistImage: data
-  //         })
-  //       })
-  //       .catch(error => {
-  //         this.setState({error: error.message})
-  //       })
-  //   console.log(this.state)
-  // }
-  //
-  // handleClick = event => {
-  //   this.showSelectedArtist(event.target.id)
-  // }
-
+  
   render() {
     return (
-        <div className='api-test'>
-         <h3 className='top-artist'>{this.state.topArtists}</h3>
-         <h3 className='top-tracks'>{this.state.topTracks}</h3>
-        </div>
-    )
+      <div className="App">
+        <Header />
+        <Form />
+        <main className='main-section'>
+          <section className='nation-display'>
+            <TopArtists />
+            <TopTracks />
+          </section>
+          {/*
+          <section className='artist-display'>
+            <ArtistInfo />
+            <ArtistTracks />
+          </section>
+          */}
+        </main>
+      </div>
+    );
   }
+}
 
 }
 export default App;
