@@ -38,8 +38,8 @@ describe('Show main view of Worm Hole App', () => {
   it('Should display a search form that has a countries dropdown, an input line and search button', () => {
     cy.get('select').select('DROP DOWN').should('have.value', 'dropDown')
 
-      .get('.search-form')
-      .find('input[type=text]')
+      .get('form button')
+      .find('input[type=text]').should('have.length', 1)
 
   })
 
