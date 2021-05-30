@@ -3,9 +3,9 @@ import './TopTracks.css';
 
 const TopTracks = () => {
   return (
-    <div className='top-tracks-box'>
+    <article className='top-tracks-box'>
       <h3> Top Tracks in *location* </h3>
-      <article className='tracks-list'>
+      <div className='tracks-list'>
         <ol>
           <li className='top-track'>Track #1</li>
           <li className='top-track'>Track #2</li>
@@ -18,8 +18,8 @@ const TopTracks = () => {
           <li className='top-track'>Track #9</li>
           <li className='top-track'>Track #10</li>
         </ol>
-      </article>
-    </div>
+      </div>
+    </article>
   )
 }
 

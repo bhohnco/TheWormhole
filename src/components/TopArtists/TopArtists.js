@@ -3,9 +3,9 @@ import './TopArtists.css';
 
 const TopArtists = () => {
   return (
-    <div className='top-artists-box'>
+    <article className='top-artists-box'>
       <h3> Top Artists in *location* </h3>
-      <article className='artists-list'>
+      <div className='artists-list'>
         <ol>
           <li className='top-artist'>Artist #1</li>
           <li className='top-artist'>Artist #2</li>
@@ -18,8 +18,8 @@ const TopArtists = () => {
           <li className='top-artist'>Artist #9</li>
           <li className='top-artist'>Artist #10</li>
         </ol>
-      </article>
-    </div>
+      </div>
+    </article>
   )
 }
 

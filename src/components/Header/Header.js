@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Trellis</h1>
+      <h1>~Reverb~</h1>
       <nav>
         <button>Randomize Location</button>
         <button>Return Home</button>
