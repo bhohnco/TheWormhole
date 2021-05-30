@@ -13,9 +13,10 @@ export const getTopArtists = () => {
         if (response.ok) {
           return response.json()
         } else {
-          throw new Error(`Error, please try again!`)
+          throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
         }
       })
+      
 }
 
 export const getTopTracks = () => {
@@ -25,7 +26,7 @@ export const getTopTracks = () => {
         if (response.ok) {
           return console.log(response.json())
         } else {
-          throw new Error(`Error, please try again!`)
+          throw new Error(`Sorry, we are having trouble getting the Top Tracks, please try again later.`)
         }
       })
 }
@@ -36,7 +37,7 @@ export const getTopTracks = () => {
 //         if (response.ok) {
 //           return response.json()
 //         } else {
-//           throw new Error(`Error, please try again!`)
+//           throw new Error(`Whoops, looks like we cannot reach your artist at the moment.  Check back later.`)
 //         }
 //       })
 //
@@ -45,7 +46,7 @@ export const getTopTracks = () => {
 //         if (response.ok) {
 //           return response.json()
 //         } else {
-//           throw new Error(`Error, please try again!`)
+//           throw new Error(`Uhoh, no image of this artist is available right now.`)
 //         }
 //       })
 //
