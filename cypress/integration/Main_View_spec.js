@@ -13,6 +13,8 @@ describe('Show main view of Worm Hole App', () => {
     cy.visit('http://localhost:3000')
   })
 
-
+  it('Should be able to visit the main page', () => {
+    cy.url().should('eq', 'http:localhost:3000/')
+  })
 
 })
