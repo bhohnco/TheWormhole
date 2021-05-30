@@ -9,9 +9,9 @@ const Form = () => {
         <label> Select Country
           <select>DROP DOWN</select>
         </label>
-        <label> Search for artist
-          <input />
-        </label>
+        <button>Search Artist Library
+          <input placeholder='type in names of artists'/>
+        </button>
       </form>
     </div>
   )
