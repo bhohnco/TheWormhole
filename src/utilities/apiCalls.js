@@ -7,56 +7,46 @@ const artistInfoUrl = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&a
 const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json"
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
-export const getTopArtists = () => {
-  return fetch(topArtistByCountryUrl)
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
-        }
-      })
 
-}
+const apiCalls = {
 
-export const getTopTracks = () => {
-  console.log("topTracks")
-  return fetch(topTracksByCountryUrl)
-      .then(response => {
-        if (response.ok) {
-          return console.log(response.json())
-        } else {
-          throw new Error(`Sorry, we are having trouble getting the Top Tracks, please try again later.`)
-        }
-      })
-}
+  async getTopArtists() {
+    const response = await fetch(topArtistByCountryUrl)
+    const data = await response.json();
+    return data;
+  },
+
+  async getTopTracks() {
+    const response = await fetch(topTracksByCountryUrl);
+    const data = await response.json();
+    return data;
+  },
+
+  // async getSelectedArtist(id) {
+  //   const response = await fetch(artistInfoUrl)
+  //   const data = await response.json();
+  //   return data;
+  // },
+
+  // async selectedArtistImage(id) {
+  //   const response = await fetch(artistImageUrl)
+  //   const data = await response.json();
+  //   return data;
+  // },
 
 
-
-// export const getSelectedArtist = (id) => {
-//   const selectedArtistDetails = fetch(artistInfoUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Whoops, looks like we cannot reach your artist at the moment.  Check back later.`)
-//         }
-//       })
-//
-//   const selectedArtistImage = fetch(artistImageUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Uhoh, no image of this artist is available right now.`)
-//         }
-//       })
-//
-//   return Promise.all([artistInfoUrl, artistImageUrl])
-//       .then(data => {
-//         let allData = {};
-//         allData.selectedArtistDetails = data[0];
-//         allData.selectedArtistImage = data[1];
-//         return allData;
-//       })
+//   export const checkForErr = (response) => {
+//   if(response.status >= 500) {
+//     return 'Uhoh! Something is wrong with our system. Please try back later.'
+//   } else if (!response.ok) {
+//     return 'Something went wrong. Please try again later.'
+//   } else {
+//     return response.json()
+//   }
 // }
+
+  //          throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
+//  throw new Error(`Sorry, we are having trouble getting the Top Tracks, please try again later.`)
+  //throw new Error(`Whoops, looks like we cannot reach your artist at the moment.  Check back later.`)
+  //           throw new Error(`Uhoh, no image of this artist is available right now.`)
+}

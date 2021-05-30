@@ -20,26 +20,32 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getTopArtists()
+    this.retrieveTopArtists();
+    this.retrieveTopTracks();
+  }
+
+  retrieveTopArtists = () => {
+    apiCalls.getTopArtists()
       .then(data => {
+        console.log(data);
         this.setState({topArtists: data})
       })
       .catch(error => {
         console.log(error);
         this.setState({error: error.message})
       })
-      console.log(this.state.topArtists);
   }
 
-  showTopTracks = async () => {
-      await getTopTracks()
-        .then(data => {
-          this.setState({topTracks: data.topTracks})
-        })
-        .catch(error => {
-          this.setState({error: error.message})
-        })
-    console.log(this.state.topTracks)
+  retrieveTopTracks = () => {
+    apiCalls.getTopTracks()
+      .then(data => {
+        console.log(data);
+        this.setState({ topTracks: data })
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ error: error.message })
+      })
   }
 
   render() {
@@ -47,7 +53,8 @@ class App extends Component {
       console.log(this.state.error);
       return <h2 className='message'>{this.state.error}</h2>
     }
-    if (this.state.error < 1 && this.state.topArtists < 1) {
+
+    if (this.state.error < 1 && (this.state.topArtists < 1 || this.state.topTracks < 1)) {
       return <h2 className='message'>Page Loading</h2>
     }
     return (
@@ -60,9 +67,26 @@ class App extends Component {
             <TopArtists topArtists={this.state.topArtists}/>
           </section>
 
-        </main>
-      </div>
-    );
+    else {
+      return (
+        <div className="App" style={{ backgroundImage: `url(${Background})`}}>
+          <Header />
+          <Form />
+          <main className='main-section'>
+            <section className='location-display'>
+              <TopArtists topArtists={this.state.topArtists}/>
+              <TopTracks topTracks={this.state.topTracks}/>
+            </section>
+            {/*
+            <section className='artist-display'>
+              <ArtistInfo />
+              <ArtistTracks />
+            </section>
+            */}
+          </main>
+        </div>
+      );
+    }
   }
 }
 

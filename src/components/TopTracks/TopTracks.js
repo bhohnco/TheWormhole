@@ -1,25 +1,27 @@
 import React from 'react';
 
-const TopTracks = () => {
-  // const trackFind = topTracks.tracks.reduce((finalArray, currentArtist) => {
-  //   finalArray.push({name: currentArtist.artist.name, title: currentArtist.name});
-  //   return finalArray
-  // },[])
+const TopTracks = ({topTracks}) => {
+
+  const trackFind = topTracks.tracks.track.reduce((finalArray, currentArtist) => {
+    finalArray.push({artist: currentArtist.artist.name, title: currentArtist.name});
+    return finalArray;
+  },[]);
+
   return (
     <article className='top-tracks-box'>
       <h3> Top Tracks in *location* </h3>
       <div className='tracks-list'>
         <ol className='top-track'>
-          <li >Track #1</li>
-          <li >Track #2</li>
-          <li >Track #3</li>
-          <li >Track #4</li>
-          <li >Track #5</li>
-          <li >Track #6</li>
-          <li >Track #7</li>
-          <li >Track #8</li>
-          <li >Track #9</li>
-          <li >Track #10</li>
+          <li >{trackFind[0].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[1].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[2].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[3].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[4].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[5].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[6].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[7].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[8].artist} - "{trackFind[0].title}"</li>
+          <li >{trackFind[9].artist} - "{trackFind[0].title}"</li>
         </ol>
       </div>
     </article>
