@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TopArtists = ({ topArtists }) => {
-
   const artistNames = topArtists.topartists.artist.map(elem => {
     return elem.name;
   });
