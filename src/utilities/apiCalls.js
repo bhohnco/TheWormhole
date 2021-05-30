@@ -8,7 +8,7 @@ const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
 
-const apiCalls = {
+export const apiCalls = {
 
   async getTopArtists() {
     const response = await fetch(topArtistByCountryUrl)
@@ -50,3 +50,5 @@ const apiCalls = {
   //throw new Error(`Whoops, looks like we cannot reach your artist at the moment.  Check back later.`)
   //           throw new Error(`Uhoh, no image of this artist is available right now.`)
 }
+
+export default apiCalls;

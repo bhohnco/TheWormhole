@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { getTopArtists, getTopTracks } from '../../utilities/apiCalls'
+import React, {Component} from 'react';
+import apiCalls from '../../utilities/apiCalls';
 import Background from '../../assets/images/black-cloth.jpeg';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
@@ -49,6 +49,7 @@ class App extends Component {
   }
 
   render() {
+
     if (this.state.error > 1) {
       console.log(this.state.error);
       return <h2 className='message'>{this.state.error}</h2>
@@ -57,15 +58,6 @@ class App extends Component {
     if (this.state.error < 1 && (this.state.topArtists < 1 || this.state.topTracks < 1)) {
       return <h2 className='message'>Page Loading</h2>
     }
-    return (
-      <div className="App" style={{ backgroundImage: `url(${Background})`}}>
-        <Header />
-        <Form />
-        <main className='main-section'>
-          <section className='nation-display'>
-            <TopTracks />
-            <TopArtists topArtists={this.state.topArtists}/>
-          </section>
 
     else {
       return (
@@ -77,12 +69,7 @@ class App extends Component {
               <TopArtists topArtists={this.state.topArtists}/>
               <TopTracks topTracks={this.state.topTracks}/>
             </section>
-            {/*
-            <section className='artist-display'>
-              <ArtistInfo />
-              <ArtistTracks />
-            </section>
-            */}
+
           </main>
         </div>
       );
