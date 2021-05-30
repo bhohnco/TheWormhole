@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    apiCalls.getTopArtists()
+    getTopArtists()
       .then(data => {
         this.setState({topArtists: data})
       })
@@ -31,8 +31,8 @@ class App extends Component {
       console.log(this.state.topArtists);
   }
 
- showTopTracks = async () => {
-     await getTopTracks()
+  showTopTracks = async () => {
+      await getTopTracks()
         .then(data => {
           this.setState({topTracks: data.topTracks})
         })
