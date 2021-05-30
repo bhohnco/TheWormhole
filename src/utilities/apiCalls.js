@@ -31,7 +31,7 @@ export const getTopTracks = () => {
       })
 }
 
-export default apiCalls;
+
 
 // export const getSelectedArtist = (id) => {
 //   const selectedArtistDetails = fetch(artistInfoUrl)
