@@ -1,0 +1,9 @@
+.top-tracks-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  height: 100%;
+  font-size: 1vw;
+  background-color: cornsilk;
+  border: 1px dotted black;
+}
