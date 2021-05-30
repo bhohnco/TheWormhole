@@ -1,11 +1,11 @@
 import React from 'react';
-import './Header.css';
+import Banner from '../../assets/images/night-sky.jpeg';
 
 const Header = () => {
 
   return (
-    <header>
-      <h1>~Reverb~</h1>
+    <header style={{ backgroundImage: `url(${Banner})`}}>
+      <h1 className='glow'>w o r m h o l e</h1>
       <nav>
         <button>Randomize Location</button>
         <button>Return Home</button>

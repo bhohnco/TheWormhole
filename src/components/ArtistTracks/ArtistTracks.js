@@ -1,5 +1,4 @@
 import React from 'react';
-import './ArtistTracks.css';
 
 const ArtistTracks = () => {
   return (
