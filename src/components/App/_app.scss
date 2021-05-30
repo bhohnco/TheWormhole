@@ -5,15 +5,14 @@
 
 html {
   height: 100%;
+  background-color: $rich-black;
 }
 
 .main-section {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  border: 2px dotted orange;
-  margin: 2px;
+  justify-content: space-evenly;
 }
 
 .nation-display {
@@ -21,5 +20,5 @@ html {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  padding: 5px;
+  margin-top: 1vw;
 }

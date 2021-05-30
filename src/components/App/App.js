@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import Background from '../../assets/images/black-cloth.jpeg';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
-import './App.css';
 
 class App extends Component {
   constructor() {
@@ -17,13 +17,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ backgroundImage: `url(${Background})`}}>
         <Header />
         <Form />
         <main className='main-section'>
           <section className='nation-display'>
-            <TopArtists />
             <TopTracks />
+            <TopArtists />
           </section>
           {/*
           <section className='artist-display'>

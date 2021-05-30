@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 7vw;
+  margin: 1vw;
+  color: whitesmoke;
+  background-color: rgba(19, 99, 142, 0.188);
+  box-shadow: $shadow-heavy;
+  
+  select, input {
+    margin-left: 1vw;
+  }
+}
+
+

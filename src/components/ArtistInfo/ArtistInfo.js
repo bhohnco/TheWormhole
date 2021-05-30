@@ -1,5 +1,4 @@
 import React from 'react';
-import './ArtistInfo.css';
 
 const ArtistInfo = () => {
   return (
