@@ -21,6 +21,10 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('.glow').should('contain', 'W o r m h o l e')
   });
 
+  it('Should have back lighting to our page title', () => {
+    cy.get('.glow').trigger('').should('have.css', 'text-shadow')
+  });
+
   it('Should show go home and randomization of countries selected buttons on load', () => {
     cy.get('.random-location').should('contain', 'Randomize Music Location')
 
@@ -31,8 +35,12 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
   });
 
-  it('Should have back lighting to our page title', () => {
-    cy.get('.glow').trigger('').should('have.css', 'text-shadow')
+  it('Should display a search form that has a countries dropdown, an input line and search button', () => {
+    cy.get('select').select('DROP DOWN').should('have.value', 'dropDown')
+
+      .get('.search-form')
+      .find('input[type=text]')
+
   })
 
 })
