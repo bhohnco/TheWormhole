@@ -1,9 +1,13 @@
 import React from 'react';
+
 const TopArtists = ({ topArtists }) => {
+
   const artistNames = topArtists.topartists.artist.map(elem => {
     return elem.name;
   });
+
   console.log(artistNames);
+
   return (
     <article className='top-artists-box'>
       <h3> Top Artists in *location* </h3>

@@ -12,23 +12,23 @@ class App extends Component {
     this.state = {
       topArtists: [],
       topTracks: [],
-      selectedArtist: null,
-      selectedArtistImage: null,
+      selectedArtist: '',
+      selectedArtistImage: '',
       input: '',
       error: ''
     }
-    console.log(this.state.topArtists)
   }
 
-  componentDidMount = async () => {
-    await getTopArtists()
-        .then(data => {
-          this.setState({topArtists: data})
-        })
-        .catch(error => {
-          this.setState({error: error.message})
-        })
-    console.log(this.state.topArtists)
+  componentDidMount = () => {
+    apiCalls.getTopArtists()
+      .then(data => {
+        this.setState({topArtists: data})
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({error: error.message})
+      })
+      console.log(this.state.topArtists);
   }
 
  showTopTracks = async () => {
@@ -43,6 +43,13 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.error > 1) {
+      console.log(this.state.error);
+      return <h2 className='message'>{this.state.error}</h2>
+    }
+    if (this.state.error < 1 && this.state.topArtists < 1) {
+      return <h2 className='message'>Page Loading</h2>
+    }
     return (
       <div className="App" style={{ backgroundImage: `url(${Background})`}}>
         <Header />

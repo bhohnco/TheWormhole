@@ -16,7 +16,7 @@ export const getTopArtists = () => {
           throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
         }
       })
-      
+
 }
 
 export const getTopTracks = () => {
@@ -30,6 +30,8 @@ export const getTopTracks = () => {
         }
       })
 }
+
+export default apiCalls;
 
 // export const getSelectedArtist = (id) => {
 //   const selectedArtistDetails = fetch(artistInfoUrl)
