@@ -60,5 +60,8 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('ol').should('have.length', 2)
   });
 
+  it('Should display the artists names in a numbered list', () => {
+    cy.get('ol>li').should('contain', '')
+  })
 
 })
