@@ -31,5 +31,8 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
   });
 
+  it('Should have back lighting to our page title', () => {
+    cy.get('.glow').trigger('').should('have.css', 'text-shadow')
+  })
 
 })
