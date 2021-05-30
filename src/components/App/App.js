@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { getTopArtists, getTopTracks } from '../../utilities/apiCalls'
 import Background from '../../assets/images/black-cloth.jpeg';
 import Header from '../Header/Header';
@@ -14,8 +14,8 @@ class App extends Component {
       topTracks: [],
       selectedArtist: null,
       selectedArtistImage: null,
-      input: "",
-      error: ""
+      input: '',
+      error: ''
     }
     console.log(this.state.topArtists)
   }
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
  showTopTracks = async () => {
-     getTopTracks()
+     await getTopTracks()
         .then(data => {
           this.setState({topTracks: data.topTracks})
         })
@@ -50,14 +50,9 @@ class App extends Component {
         <main className='main-section'>
           <section className='nation-display'>
             <TopTracks />
-            <TopArtists />
+            <TopArtists topArtists={this.state.topArtists}/>
           </section>
-          {/*
-          <section className='artist-display'>
-            <ArtistInfo />
-            <ArtistTracks />
-          </section>
-          */}
+
         </main>
       </div>
     );
