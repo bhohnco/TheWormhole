@@ -26,6 +26,7 @@ const apiCalls = {
 
 export default apiCalls;
 
+
 // export const getSelectedArtist = (id) => {
 //   const selectedArtistDetails = fetch(artistInfoUrl)
 //       .then(response => {
