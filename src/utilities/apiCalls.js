@@ -20,36 +20,20 @@ const apiCalls = {
     const response = await fetch(topTracksByCountryUrl);
     const data = await response.json();
     return data;
-  }
+  },
 
+  // async getSelectedArtist(id) {
+  //   const response = await fetch(artistInfoUrl)
+  //   const data = await response.json();
+  //   return data;
+  // },
+
+  // async selectedArtistImage(id) {
+  //   const response = await fetch(artistImageUrl)
+  //   const data = await response.json();
+  //   return data;
+  // },
 }
 
 export default apiCalls;
 
-// export const getSelectedArtist = (id) => {
-//   const selectedArtistDetails = fetch(artistInfoUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Error, please try again!`)
-//         }
-//       })
-//
-//   const selectedArtistImage = fetch(artistImageUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Error, please try again!`)
-//         }
-//       })
-//
-//   return Promise.all([artistInfoUrl, artistImageUrl])
-//       .then(data => {
-//         let allData = {};
-//         allData.selectedArtistDetails = data[0];
-//         allData.selectedArtistImage = data[1];
-//         return allData;
-//       })
-// }

@@ -6,8 +6,6 @@ const TopArtists = ({topArtists}) => {
     return elem.name;
   });
 
-  console.log(artistNames);
-
   return (
     <article className='top-artists-box'>
       <h3> Top Artists in *location* </h3>
@@ -22,7 +20,7 @@ const TopArtists = ({topArtists}) => {
           <li className='top-artist'>{artistNames[6]}</li>
           <li className='top-artist'>{artistNames[7]}</li>
           <li className='top-artist'>{artistNames[8]}</li>
-          <li className='top-artist'>{artistNames[9]}1</li>
+          <li className='top-artist'>{artistNames[9]}</li>
         </ol>
       </div>
     </article>
