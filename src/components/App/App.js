@@ -20,8 +20,8 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.retrieveTopTracks();
     this.retrieveTopArtists();
+    this.retrieveTopTracks();
   }
 
   retrieveTopArtists = () => {
@@ -47,7 +47,6 @@ class App extends Component {
         this.setState({ error: error.message })
       })
   }
-  
 
   render() {
 
@@ -56,11 +55,7 @@ class App extends Component {
       return <h2 className='message'>{this.state.error}</h2>
     }
 
-    if (this.state.error < 1 && this.state.topTracks < 1) {
-      return <h2 className='message'>Page Loading</h2>
-    }
-
-    if (this.state.error < 1 && this.state.topArtists < 1) {
+    if (this.state.error < 1 && (this.state.topArtists < 1 || this.state.topTracks < 1)) {
       return <h2 className='message'>Page Loading</h2>
     }
 
