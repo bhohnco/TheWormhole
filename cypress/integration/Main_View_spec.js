@@ -17,9 +17,9 @@ describe('Show main view of Worm Hole App', () => {
     cy.url().should('eq', 'http://localhost:3000/')
   });
 
-  it('Should display a message for the user while the page is loading', {
-    
-  })
+  it('Should display a message for the user while the page is loading', () => {
+    cy.get('h2').should('contain', 'Page')
+  });
 
   it('Should display title on main page view', () => {
     cy.get('.glow').should('contain', 'W o r m h o l e')
@@ -50,7 +50,7 @@ describe('Show main view of Worm Hole App', () => {
 
   it('Should have a smaller title of the top tracks list', () => {
     cy.get('h3').should('contain', 'Top Tracks')
-  })
+  });
 
   it('Should load the main view with top tracks on display', () => {
     cy.get('ol').should('have.length', 0)
@@ -66,6 +66,22 @@ describe('Show main view of Worm Hole App', () => {
 
   it('Should display the artists names in a numbered list', () => {
     cy.get('ol>li').should('contain', '')
+  });
+
+});
+
+describe('500 error handling message for main page view', () => {
+
+  it('Displays a 500 specific error message for UI when the server is down', () => {
+
+    cy.intercept('GET', 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json', {
+
+      statusCode: 500,
+      delay: 200
+
+    })
+    cy.visit('h2').should('contain', '500: Uhoh, the angry computer gnome just drop kicked one of our servers. This page is temporarily unavailable.')
   })
+});
 
 })
