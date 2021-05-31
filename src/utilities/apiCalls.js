@@ -8,53 +8,32 @@ const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
 
-export const getTopArtists = () => {
-  console.log("topTracks")
-  return fetch(topArtistByCountryUrl)
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
-        }
-      })
+const apiCalls = {
+
+  async getTopArtists(country) {
+    const response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${country}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`);
+    const data = await response.json();
+    return data;
+  },
+
+  async getTopTracks(country) {
+    const response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=${country}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`);
+    const data = await response.json();
+    return data;
+  },
+
+  async getArtistImage(id) {
+    const response = await fetch(`http://musicbrainz.org/ws/2/artist/${id}?inc=url-rels&fmt=json`)
+    const data = await response.json();
+    return data;
+  },
+
+  // async getSelectedArtist(id) {
+  //   const response = await fetch(artistInfoUrl)
+  //   const data = await response.json();
+  //   return data;
+  // },
+
 }
 
-export const getTopTracks = () => {
-  console.log("topTracks")
-  return fetch(topTracksByCountryUrl)
-      .then(response => {
-        if (response.ok) {
-          return console.log(response.json())
-        } else {
-          throw new Error(`Sorry, we are having trouble getting the Top Tracks, please try again later.`)
-        }
-      })
-}
-// export const getSelectedArtist = (id) => {
-//   const selectedArtistDetails = fetch(artistInfoUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Error, please try again!`)
-//         }
-//       })
-//
-//   const selectedArtistImage = fetch(artistImageUrl)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json()
-//         } else {
-//           throw new Error(`Error, please try again!`)
-//         }
-//       })
-//
-//   return Promise.all([artistInfoUrl, artistImageUrl])
-//       .then(data => {
-//         let allData = {};
-//         allData.selectedArtistDetails = data[0];
-//         allData.selectedArtistImage = data[1];
-//         return allData;
-//       })
-// }
+export default apiCalls;

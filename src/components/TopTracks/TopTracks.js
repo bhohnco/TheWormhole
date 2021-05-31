@@ -1,29 +1,30 @@
 import React from 'react';
 
-const TopTracks = ({topTracks}) => {
-  console.log(topTracks)
-  const trackFind = topTracks.tracks.reduce((finalArray, currentArtist) => {
-    finalArray.push({name: currentArtist.artist.name, title: currentArtist.name});
-    return finalArray
-  },[])
+const TopTracks = ({ location, topTracks }) => {
+
+  const trackFind = topTracks.tracks.track.reduce((finalArray, currentArtist) => {
+    finalArray.push({artist: currentArtist.artist.name, title: currentArtist.name});
+    return finalArray;
+  },[]);
+
   return (
-    <article className='top-tracks-box'>
-      <h3> Top Tracks in *location* </h3>
-      <div className='tracks-list'>
-        <ol>
-          <li className='top-track'>{trackFind[0]}</li>
-          <li className='top-track'>{trackFind[1]}</li>
-          <li className='top-track'>{trackFind[2]}</li>
-          <li className='top-track'>{trackFind[3]}</li>
-          <li className='top-track'>{trackFind[4]}</li>
-          <li className='top-track'>{trackFind[5]}</li>
-          <li className='top-track'>{trackFind[6]}</li>
-          <li className='top-track'>{trackFind[7]}</li>
-          <li className='top-track'>{trackFind[8]}</li>
-          <li className='top-track'>{trackFind[9]}</li>
-        </ol>
-      </div>
-    </article>
+      <article className='top-tracks-box'>
+        <h3> Top Tracks in {location} </h3>
+        <div className='tracks-list'>
+          <ol>
+            <li className='top-track'>{trackFind[0].artist} - "{trackFind[0].title}"</li>
+            <li className='top-track'>{trackFind[1].artist} - "{trackFind[1].title}"</li>
+            <li className='top-track'>{trackFind[2].artist} - "{trackFind[2].title}"</li>
+            <li className='top-track'>{trackFind[3].artist} - "{trackFind[3].title}"</li>
+            <li className='top-track'>{trackFind[4].artist} - "{trackFind[4].title}"</li>
+            <li className='top-track'>{trackFind[5].artist} - "{trackFind[5].title}"</li>
+            <li className='top-track'>{trackFind[6].artist} - "{trackFind[6].title}"</li>
+            <li className='top-track'>{trackFind[7].artist} - "{trackFind[7].title}"</li>
+            <li className='top-track'>{trackFind[8].artist} - "{trackFind[8].title}"</li>
+            <li className='top-track'>{trackFind[9].artist} - "{trackFind[9].title}"</li>
+          </ol>
+        </div>
+      </article>
   )
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Form = () => {
 
   return (
@@ -16,6 +15,5 @@ const Form = () => {
     </div>
   )
 }
-
 
 export default Form;
