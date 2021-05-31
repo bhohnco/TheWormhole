@@ -61,7 +61,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should load top artitsts onto the main view of the page on load', () => {
-    cy.get('ol').should('have.length', 2)
+    cy.get('ol').should('have.length', 1)
   });
 
   it('Should display the artists names in a numbered list', () => {
