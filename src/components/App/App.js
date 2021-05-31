@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Provider } from "react-redux";
 import apiCalls from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
 import countries from '../../utilities/countries';
