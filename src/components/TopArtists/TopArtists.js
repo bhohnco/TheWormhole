@@ -6,8 +6,6 @@ const TopArtists = ({topArtists}) => {
     return elem.name;
   });
 
-  console.log(artistNames);
-
   return (
     <article className='top-artists-box'>
       <h3> Top Artists in *location* </h3>

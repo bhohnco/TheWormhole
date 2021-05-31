@@ -8,24 +8,29 @@ const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
 
-const apiCalls = {
-
-  async getTopArtists() {
-    const response = await fetch(topArtistByCountryUrl)
-    const data = await response.json();
-    return data;
-  },
-  
-  async getTopTracks() {
-    const response = await fetch(topTracksByCountryUrl);
-    const data = await response.json();
-    return data;
-  }
-
+export const getTopArtists = () => {
+  console.log("topTracks")
+  return fetch(topArtistByCountryUrl)
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error(`Sorry, we are having trouble getting the Top Artists, please try again later.`)
+        }
+      })
 }
 
-export default apiCalls;
-
+export const getTopTracks = () => {
+  console.log("topTracks")
+  return fetch(topTracksByCountryUrl)
+      .then(response => {
+        if (response.ok) {
+          return console.log(response.json())
+        } else {
+          throw new Error(`Sorry, we are having trouble getting the Top Tracks, please try again later.`)
+        }
+      })
+}
 // export const getSelectedArtist = (id) => {
 //   const selectedArtistDetails = fetch(artistInfoUrl)
 //       .then(response => {
