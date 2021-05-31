@@ -17,6 +17,10 @@ describe('Show main view of Worm Hole App', () => {
     cy.url().should('eq', 'http://localhost:3000/')
   });
 
+  it('Should display a message for the user while the page is loading', {
+    
+  })
+
   it('Should display title on main page view', () => {
     cy.get('.glow').should('contain', 'W o r m h o l e')
   });
