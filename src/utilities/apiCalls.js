@@ -21,6 +21,12 @@ const apiCalls = {
     const data = await response.json();
     return data;
   },
+  
+  async getArtistImage(id) {
+    const response = await fetch(`http://musicbrainz.org/ws/2/artist/${id}?inc=url-rels&fmt=json`)
+    const data = await response.json();
+    return data;
+  },
 
   // async getSelectedArtist(id) {
   //   const response = await fetch(artistInfoUrl)
@@ -28,11 +34,6 @@ const apiCalls = {
   //   return data;
   // },
 
-  // async selectedArtistImage(id) {
-  //   const response = await fetch(artistImageUrl)
-  //   const data = await response.json();
-  //   return data;
-  // },
 }
 
 export default apiCalls;

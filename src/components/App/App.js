@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       topArtists: [],
       topTracks: [],
-      selectedArtist: '',
+      selectedArtistID: '',
       selectedArtistImage: '',
       input: '',
       error: ''
@@ -48,6 +48,19 @@ class App extends Component {
       })
   }
 
+  retrieveArtistImage = (id) => {
+    apiCalls.getArtistImage(id)
+      .then(data => {
+        console.log(data);
+        this.setState({ selectedArtistImage: data })
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ error: error.message })
+      })
+  }
+  
+
   render() {
 
     if (this.state.error > 1) {
@@ -66,7 +79,7 @@ class App extends Component {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists topArtists={this.state.topArtists}/>
+              <TopArtists topArtists={this.state.topArtists} retrieveArtistImage={this.retrieveArtistImage}/>
               <TopTracks topTracks={this.state.topTracks}/>
             </section>
             {/*             
