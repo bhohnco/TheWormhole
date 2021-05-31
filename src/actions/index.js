@@ -1,4 +1,3 @@
-
 export const actionGetTopArtist = data => ({
     type: 'GET_TOP_ARTIST_DATA',
     data
@@ -23,7 +22,6 @@ export const hasError = (message) => ({
     type: 'HAS_ERROR',
     message
 })
-
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>
