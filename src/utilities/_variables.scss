@@ -44,20 +44,20 @@ $shadow-heavy: inset 0 -3em 3em rgba(0, 0, 0, 0),
 
 @font-face {
   font-family: 'AlienEncounters';
-  src: url('./assets/fonts/AlienEncounters/SFAlienEncounters.ttf') format('truetype'),
-    url('./assets/fonts/AlienEncounters/SFAlienEncountersSolid.ttf') format('truetype'),
-    url('./assets/fonts/AlienEncounters/SFAlienEncountersSolid-Ital.ttf') format('truetype'),
-    url('./assets/fonts/AlienEncounters/SFAlienEncounters-Italic.ttf') format('truetype');
+  src: url('../assets/fonts/AlienEncounters/SFAlienEncounters.ttf') format('truetype'),
+    url('../assets/fonts/AlienEncounters/SFAlienEncountersSolid.ttf') format('truetype'),
+    url('../assets/fonts/AlienEncounters/SFAlienEncountersSolid-Ital.ttf') format('truetype'),
+    url('../assets/fonts/AlienEncounters/SFAlienEncounters-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'VCR-Mono';
-  src: url('./assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype'),
+  src: url('../assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype'),
 }
 
 @font-face {
   font-family: 'Lazer84';
-  src: url('./assets/fonts/Lazer84.ttf') format('truetype'),
+  src: url('../assets/fonts/Lazer84.ttf') format('truetype'),
 }
 
 // EFFECTS

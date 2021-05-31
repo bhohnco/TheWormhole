@@ -9,7 +9,6 @@ const artistInfoUrl = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&a
 const artistImageUrl =  "http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json"
 //"http://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json"
 
-
 export const apiCalls = {
 
   async getTopArtists(country) {
@@ -42,7 +41,6 @@ export const apiCalls = {
   //   const data = await response.json();
   //   return data;
   // },
-
 }
 
 export default apiCalls;

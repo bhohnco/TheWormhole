@@ -32,7 +32,6 @@ const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
   )
 }
 /*
-CONSOLE ERROR:
 Access to fetch at 'http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json'
 from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin'
 header is present on the requested resource. If an opaque response serves your needs,

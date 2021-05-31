@@ -74,7 +74,6 @@ class App extends Component {
       })
   }
 
-
   render() {
 
     if (this.state.error > 1) {
