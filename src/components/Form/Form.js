@@ -4,16 +4,19 @@ const Form = () => {
 
   return (
     <div>
-      <form>
+      <form className='search-form'>
         <label> Select Country
-          <select>DROP DOWN</select>
+          <select>
+            <option className='drop-down' value='dropDown'>DROP DOWN</option>
+          </select>
         </label>
-        <label> Search for artist
-          <input />
-        </label>
+        <button>Search Artist Library
+          <input type='text' placeholder='type in names of artists'/>
+        </button>
       </form>
     </div>
   )
 }
+
 
 export default Form;

@@ -47,7 +47,7 @@ class App extends Component {
         this.setState({error: error.message})
       })
   }
-  
+
   retrieveTopTracks = (location) => {
     apiCalls.getTopTracks(location)
       .then(data => {
@@ -73,7 +73,7 @@ class App extends Component {
         this.setState({ error: error.message })
       })
   }
-  
+
 
   render() {
 
@@ -96,12 +96,7 @@ class App extends Component {
               <TopArtists location={this.state.location.name} topArtists={this.state.topArtists} retrieveArtistImage={this.retrieveArtistImage}/>
               <TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>
             </section>
-            {/*             
-            <section className='artist-display'>
-              <ArtistInfo />
-              <ArtistTracks />
-            </section>
-            */}
+
           </main>
         </div>
       );
