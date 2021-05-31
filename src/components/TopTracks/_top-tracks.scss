@@ -10,7 +10,12 @@
   border: 1px solid $blue-jeans;
 
   h3 {
-    margin-bottom: 2vw;
+    margin: 2vw;
+    align-self: center;
+    font-family: AlienEncounters;
+    font-style: italic;
+    font-size: 1.5vw;
+    color: $fashion-fuscia;
   }
 
   li {
