@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopArtists = ({ topArtists, retrieveArtistImage }) => {
+const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
 
   const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
     if (topArtists.topartists.artist.indexOf(elem) < 10) {
@@ -30,7 +30,7 @@ const TopArtists = ({ topArtists, retrieveArtistImage }) => {
 
   return (
     <section className='top-artists-box'>
-      <h3> Top Artists in *location* </h3>
+      <h3> Top Artists in {location} </h3>
       <div className='artists-list'>
         {artistCards}
       </div>

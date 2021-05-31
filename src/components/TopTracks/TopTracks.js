@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopTracks = ({topTracks}) => {
+const TopTracks = ({ location, topTracks }) => {
 
   const trackFind = topTracks.tracks.track.reduce((finalArray, currentArtist) => {
     finalArray.push({artist: currentArtist.artist.name, title: currentArtist.name});
@@ -9,7 +9,7 @@ const TopTracks = ({topTracks}) => {
 
   return (
     <article className='top-tracks-box'>
-      <h3> Top Tracks in *location* </h3>
+      <h3> Top Tracks in {location} </h3>
       <div className='tracks-list'>
         <ol>
           <li className='top-track'>{trackFind[0].artist} - "{trackFind[0].title}"</li>
