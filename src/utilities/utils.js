@@ -3,21 +3,21 @@ const utils = {
     return array[Math.floor(Math.random()*array.length)];
   },
 
- formatLocationStr = (country) => {
+ formatLocationStr(country) {
     const lowercaseName = country.toLowerCase();
     const formattedName = lowercaseName.replaceAll(' ', '+');
 
     return formattedName;
   },
 
-  formatCountryName = (country) => {
+  formatCountryName(country) {
     const lowercaseName = country.toLowerCase();
     const formattedName = lowercaseName.replaceAll(' ', '+');
 
     return formattedName;
   },
 
-  const checkForErr = (response) => {
+  checkForErr(response) {
       if(response.status >= 500) {
         return '500: Uhoh, the angry computer gnome just drop kicked one of our servers. This page is temporarily unavailable.'
       } else if(response.status === 404) {

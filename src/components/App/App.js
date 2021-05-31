@@ -39,7 +39,6 @@ class App extends Component {
   retrieveTopArtists = (location) => {
     apiCalls.getTopArtists(location)
       .then(data => {
-        console.log(data);
         this.setState({topArtists: data})
       })
       .catch(error => {
@@ -51,7 +50,6 @@ class App extends Component {
   retrieveTopTracks = (location) => {
     apiCalls.getTopTracks(location)
       .then(data => {
-        console.log(data);
         this.setState({ topTracks: data })
       })
       .catch(error => {
@@ -64,7 +62,6 @@ class App extends Component {
   retrieveArtistImage = (id) => {
     apiCalls.getArtistImage(id)
       .then(data => {
-        console.log(data);
         // this.setState({ selectedArtistImage: data })
         return data;
       })
