@@ -13,7 +13,7 @@ class App extends Component {
       topArtists: [],
       topTracks: [],
       selectedArtistID: '',
-      selectedArtistImage: '',
+      // selectedArtistImage: '',
       input: '',
       error: ''
     }
@@ -52,7 +52,8 @@ class App extends Component {
     apiCalls.getArtistImage(id)
       .then(data => {
         console.log(data);
-        this.setState({ selectedArtistImage: data })
+        // this.setState({ selectedArtistImage: data })
+        return data;
       })
       .catch(error => {
         console.log(error);
