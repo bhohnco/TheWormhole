@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Provider } from "react-redux";
 import apiCalls from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
 import countries from '../../utilities/countries';
@@ -39,40 +38,40 @@ class App extends Component {
 
   retrieveTopArtists = (location) => {
     apiCalls.getTopArtists(location)
-        .then(data => {
-          console.log(data);
-          this.setState({topArtists: data})
-        })
-        .catch(error => {
-          console.log(error);
-          this.setState({error: error.message})
-        })
+      .then(data => {
+        console.log(data);
+        this.setState({topArtists: data})
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({error: error.message})
+      })
   }
 
   retrieveTopTracks = (location) => {
     apiCalls.getTopTracks(location)
-        .then(data => {
-          console.log(data);
-          this.setState({ topTracks: data })
-        })
-        .catch(error => {
-          console.log(error);
-          console.log(`Sorry, could not retrieve data for ${this.state.location.name}`);
-          this.setState({ error: error.message })
-        })
+      .then(data => {
+        console.log(data);
+        this.setState({ topTracks: data })
+      })
+      .catch(error => {
+        console.log(error);
+        console.log(`Sorry, could not retrieve data for ${this.state.location.name}`);
+        this.setState({ error: error.message })
+      })
   }
 
   retrieveArtistImage = (id) => {
     apiCalls.getArtistImage(id)
-        .then(data => {
-          console.log(data);
-          // this.setState({ selectedArtistImage: data })
-          return data;
-        })
-        .catch(error => {
-          console.log(error);
-          this.setState({ error: error.message })
-        })
+      .then(data => {
+        console.log(data);
+        // this.setState({ selectedArtistImage: data })
+        return data;
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ error: error.message })
+      })
   }
 
 
@@ -89,22 +88,17 @@ class App extends Component {
 
     else {
       return (
-          <div className="App" style={{ backgroundImage: `url(${Background})`}}>
-            <Header />
-            <Form />
-            <main className='main-section'>
-              <section className='location-display'>
-                <TopArtists location={this.state.location.name} topArtists={this.state.topArtists} retrieveArtistImage={this.retrieveArtistImage}/>
-                <TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>
-              </section>
-              {/*
-            <section className='artist-display'>
-              <ArtistInfo />
-              <ArtistTracks />
+        <div className="App" style={{ backgroundImage: `url(${Background})`}}>
+          <Header />
+          <Form />
+          <main className='main-section'>
+            <section className='location-display'>
+              <TopArtists location={this.state.location.name} topArtists={this.state.topArtists} retrieveArtistImage={this.retrieveArtistImage}/>
+              <TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>
             </section>
-            */}
-            </main>
-          </div>
+
+          </main>
+        </div>
       );
     }
   }
