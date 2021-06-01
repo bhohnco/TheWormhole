@@ -19,7 +19,7 @@ export const selectedArtistImage = id => ({
     id
 })
 
-export const hasError = (message) => ({
+export const hasError = message => ({
     type: 'HAS_ERROR',
     message
 })
