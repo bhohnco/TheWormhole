@@ -13,15 +13,15 @@ export const actionGetTopTracks = tracks => ({
     tracks
   })
 
-export const selectedArtistID = id => ({
-    type: 'SELECETED_ARTIST_ID'
-    id
-})
+// export const selectedArtistID = id => ({
+//     type: 'SELECETED_ARTIST_ID'
+//     id
+// })
 
-export const selectedArtistImage = id => ({
-    type: 'SELECETED_ARTIST_IMAGE'
-    id
-})
+// export const selectedArtistImage = id => ({
+//     type: 'SELECETED_ARTIST_IMAGE'
+//     id
+// })
 
 export const hasErrored = (message) => ({
     type: 'HAS_ERRORED',
