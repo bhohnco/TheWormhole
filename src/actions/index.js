@@ -23,10 +23,10 @@
 //     message
 // })
 
-// // export const searchForArtist = dispatch => ({
-// //     onSearchTermChange: (value) =>
-// //         dispatch({
-// //             type: 'SEARCH_TERM_CHANGE',
-// //             value
-// //         })
-// // })
+// export const searchForArtist = dispatch => ({
+//     onSearchTermChange: (value) =>
+//         dispatch({
+//             type: 'SEARCH_TERM_CHANGE',
+//             value
+//         })
+// })
