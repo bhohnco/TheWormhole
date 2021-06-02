@@ -1,12 +1,17 @@
-// export const actionGetTopArtist = data => ({
-//     type: 'GET_TOP_ARTIST_DATA',
-//     data
-// })
+export const isLoading = (bool) => ({
+  type: 'IS_LOADING',
+  bool
+})
 
-// export const actionGetTopTracks = data => ({
-//     type: 'GET_TOP_TRACKS_DATA',
-//     data
-//   })
+export const actionGetTopArtists = artists => ({
+    type: 'GET_TOP_ARTIST_DATA',
+    artists
+})
+
+export const actionGetTopTracks = tracks => ({
+    type: 'GET_TOP_TRACKS_DATA',
+    tracks
+  })
 
 // export const selectedArtistID = id => ({
 //     type: 'SELECETED_ARTIST_ID'
@@ -18,15 +23,15 @@
 //     id
 // })
 
-// export const hasError = (message) => ({
-//     type: 'HAS_ERROR',
-//     message
-// })
+export const hasErrored = (message) => ({
+    type: 'HAS_ERRORED',
+    message
+})
 
-// // export const searchForArtist = dispatch => ({
-// //     onSearchTermChange: (value) =>
-// //         dispatch({
-// //             type: 'SEARCH_TERM_CHANGE',
-// //             value
-// //         })
-// // })
+export const searchForArtist = dispatch => ({
+    onSearchTermChange: (value) =>
+        dispatch({
+            type: 'SEARCH_TERM_CHANGE',
+            value
+        })
+})
