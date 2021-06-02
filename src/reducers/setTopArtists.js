@@ -19,6 +19,7 @@ export const hasErrored = (state = '', action) => {
 const initialState = []
 
 export const setTopArtists = (state = initialState, action) => {
+
   switch (action.type) {
     case 'GET_TOP_ARTIST_DATA':
       return action.artists
