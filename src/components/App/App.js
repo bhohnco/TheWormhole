@@ -14,17 +14,15 @@ class App extends Component {
     this.state = {
       location: this.getRandomLocation(),
       topArtists: [],
+      imageObjects: [],
       topTracks: [],
       selectedArtistID: '',
-      // selectedArtistImage: '',
       input: '',
       error: ''
     }
   }
 
-  componentDidMount = () => {
-    console.log(this.state.location);
-
+  componentDidMount() {
     this.retrieveTopArtists(this.state.location.string);
     this.retrieveTopTracks(this.state.location.string);
   }
@@ -40,12 +38,33 @@ class App extends Component {
     apiCalls.getTopArtists(location)
       .then(data => {
         this.setState({topArtists: data})
+        this.retrieveArtistImages(data);
       })
       .catch(error => {
         console.log(error);
         this.setState({error: error.message})
       })
-  }
+    }
+
+    fetchArtistImage = (id) => {
+      apiCalls.getArtistImage(id)
+        .then(datum => {
+          this.setState( { imageObjects: [ ...this.state.imageObjects, datum ] } );
+        });
+    }
+    
+    retrieveArtistImages = (data) => {
+
+      data.topartists.artist.forEach(artist => {
+        const index = data.topartists.artist.indexOf(artist);
+        const id = artist.mbid;
+        // const id = 'f27ec8db-af05-4f36-916e-3d57f91ecf5e';
+        
+        if (index < 10) {
+          this.fetchArtistImage(id);
+        };
+      });
+    }
 
   retrieveTopTracks = (location) => {
     apiCalls.getTopTracks(location)
@@ -59,26 +78,19 @@ class App extends Component {
       })
   }
 
-  retrieveArtistImage = (id) => {
-    apiCalls.getArtistImage(id)
-      .then(data => {
-        // this.setState({ selectedArtistImage: data })
-        return data;
-      })
-      .catch(error => {
-        console.log(error);
-        this.setState({ error: error.message })
-      })
-  }
-
+  
   render() {
 
-    if (this.state.error > 1) {
+    if (this.state.error) {
       console.log(this.state.error);
       return <h2 className='message'>{this.state.error}</h2>
     }
 
-    if (this.state.error < 1 && (this.state.topArtists < 1 || this.state.topTracks < 1)) {
+    if (!this.state.error < 1 && (this.state.topArtists.length < 1 || this.state.topTracks.length < 1)) {
+      return <h2 className='message'>Page Loading</h2>
+    }
+
+    if (this.state.imageObjects.length < 1) {
       return <h2 className='message'>Page Loading</h2>
     }
 
@@ -89,7 +101,7 @@ class App extends Component {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists location={this.state.location.name} topArtists={this.state.topArtists} retrieveArtistImage={this.retrieveArtistImage}/>
+              <TopArtists location={this.state.location.name} topArtists={this.state.topArtists} imageObjects={this.state.imageObjects}/>
               <TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>
             </section>
 

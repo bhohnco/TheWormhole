@@ -27,7 +27,7 @@ const utils = {
       } else {
         return response.json()
       }
-  }
+  },
 }
 
 export default utils;
