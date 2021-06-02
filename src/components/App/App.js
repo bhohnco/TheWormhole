@@ -58,7 +58,6 @@ class App extends Component {
       data.topartists.artist.forEach(artist => {
         const index = data.topartists.artist.indexOf(artist);
         const id = artist.mbid;
-        // const id = 'f27ec8db-af05-4f36-916e-3d57f91ecf5e';
         
         if (index < 10) {
           this.fetchArtistImage(id);

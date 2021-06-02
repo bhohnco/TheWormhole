@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class TopArtists extends Component {
   constructor(props) {
     super(props);
