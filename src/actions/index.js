@@ -4,6 +4,7 @@ export const isLoading = (bool) => ({
 })
 
 export const actionGetTopArtists = artists => ({
+
     type: 'GET_TOP_ARTIST_DATA',
     artists
 })
@@ -14,12 +15,12 @@ export const actionGetTopTracks = tracks => ({
   })
 
 export const selectedArtistID = id => ({
-    type: 'SELECETED_ARTIST_ID'
+    type: 'SELECETED_ARTIST_ID',
     id
 })
 
 export const selectedArtistImage = id => ({
-    type: 'SELECETED_ARTIST_IMAGE'
+    type: 'SELECETED_ARTIST_IMAGE',
     id
 })
 
