@@ -7,33 +7,39 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
+import { actionGetTopArtists } from '../../actions/index.js'
+import { isLoading, setTopArtists } from '../../reducers/setTopArtists';
 import { fetchTopArtists } from '../../thunks/fetchTopArtists';
 import { connect } from 'react-redux';
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     location: this.getRandomLocation(),
-  //     topArtists: [],
-  //     topTracks: [],
-  //     selectedArtistID: '',
-  //     // selectedArtistImage: '',
-  //     input: '',
-  //     error: ''
-  //   }
-  // }
-  //
-  async componentDidMount() {
-    const { actionGetTopArtists, isLoading, hasErrored } = this.props
+  constructor(props) {
+    super(props);
+    this.state = {
+      // location: this.getRandomLocation(),
+      topArtists: [],
+      topTracks: [],
+      selectedArtistID: '',
+      // selectedArtistImage: '',
+      input: '',
+      error: ''
+    }
+  }
+
+   componentDidMount = async () => {
+    const { isLoading, hasErrored } = this.props
+
     try {
-      isLoading(true);
-      const topArtists = await fetchTopArtists();
-      isLoading(false);
-      actionGetTopArtists(topArtists);
+    //  isLoading(true);
+
+     const topArtists = await fetchTopArtists();
+    //  isLoading(false);
+     console.log(topArtists)
+  //  actionGetTopArtists(topArtists);
     } catch (error) {
-      isLoading(false);
-      hasErrored(error.message);
+
+    //  isLoading( false);
+    //  hasErrored(error.message);
     }
     // this.retrieveTopArtists(this.state.location.string);
     // this.retrieveTopTracks(this.state.location.string);
@@ -82,7 +88,8 @@ class App extends Component {
   // }
 
   render() {
-    const { topArtists, errorMsg } = this.props;
+    const { isLoading } = this.props
+    const { topArtists } = this.state
     // if (this.state.error > 1) {
     //   console.log(this.state.error);
     //   return <h2 className='message'>{this.state.error}</h2>
@@ -99,7 +106,7 @@ class App extends Component {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists topArtists={topArtists} />
+              <TopArtists topArtists={ topArtists } />
             </section>
           </main>
         </div>
@@ -111,8 +118,13 @@ class App extends Component {
     topArtists: setTopArtists,
   })
 
+  export const mapDispatchToProps = dispatch => ({
+    isLoading: id => dispatch(isLoading(id)),
+    actionGetTopArtists: data => dispatch(actionGetTopArtists(data))
+  })
 
-export default connect(mapStateToProps)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 {/*        // location={this.state.location.name}*/}
