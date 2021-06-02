@@ -1,6 +1,6 @@
 import React from 'react';
 
-// const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
+const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
 //
 //   const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
 //     if (topArtists.topartists.artist.indexOf(elem) < 10) {
