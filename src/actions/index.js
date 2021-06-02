@@ -1,11 +1,16 @@
-export const actionGetTopArtist = data => ({
-    type: 'GET_TOP_ARTIST_DATA',
-    data
+export const isLoading = (bool) => ({
+  type: 'IS_LOADING',
+  bool
 })
 
-export const actionGetTopTracks = data => ({
+export const actionGetTopArtists = artists => ({
+    type: 'GET_TOP_ARTIST_DATA',
+    artists
+})
+
+export const actionGetTopTracks = tracks => ({
     type: 'GET_TOP_TRACKS_DATA',
-    data
+    tracks
   })
 
 export const selectedArtistID = id => ({
@@ -18,8 +23,8 @@ export const selectedArtistImage = id => ({
     id
 })
 
-export const hasError = (message) => ({
-    type: 'HAS_ERROR',
+export const hasErrored = (message) => ({
+    type: 'HAS_ERRORED',
     message
 })
 

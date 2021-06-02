@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import counterReducer from './Counter/counter.reducer';
+import { setTopArtists } from './setTopArtists';
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  setTopArtists
 });
 export default rootReducer;
