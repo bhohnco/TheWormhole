@@ -34,8 +34,8 @@ class App extends Component {
 
      const topArtists = await fetchTopArtists();
     //  isLoading(false);
-     console.log(topArtists)
-  //  actionGetTopArtists(topArtists);
+  //   console.log(topArtists)
+     actionGetTopArtists(topArtists);
     } catch (error) {
 
     //  isLoading( false);
