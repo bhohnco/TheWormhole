@@ -7,16 +7,17 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
-import { actionGetTopArtists } from '../../actions/index.js'
-import { isLoading, setTopArtists } from '../../reducers/setTopArtists';
+import { isLoading, hasErrored, actionGetTopArtists } from '../../actions/index.js'
+//import { isLoading, setTopArtists } from '../../reducers/setTopArtists';
 import { fetchTopArtists } from '../../thunks/fetchTopArtists';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // location: this.getRandomLocation(),
+      //location: this.getRandomLocation(),
       topArtists: [],
       topTracks: [],
       selectedArtistID: '',
@@ -27,23 +28,26 @@ class App extends Component {
   }
 
    componentDidMount = async () => {
-    const { isLoading, hasErrored } = this.props
+    const { isLoading, hasErrored, topArtists } = this.props
+      const url = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`
 
     try {
-    //  isLoading(true);
+      hasErrored('')
 
-     const topArtists = await fetchTopArtists();
-    //  isLoading(false);
-  //   console.log(topArtists)
-     actionGetTopArtists(topArtists);
+      const response = await fetch(url)
+      isLoading(false)
+      const data = await response.json()
+      actionGetTopArtists(data)
+      console.log('data', data)
     } catch (error) {
-
-    //  isLoading( false);
-    //  hasErrored(error.message);
+      isLoading(false)
+      console.log(error.message)
+     hasErrored(error.message)
     }
+  }
     // this.retrieveTopArtists(this.state.location.string);
     // this.retrieveTopTracks(this.state.location.string);
-  }
+
   //
   // getRandomLocation = () => {
   //   const randomCountry= utils.getRandomElement(countries)
@@ -118,15 +122,16 @@ class App extends Component {
     topArtists: setTopArtists,
   })
 
-  export const mapDispatchToProps = dispatch => ({
-    isLoading: id => dispatch(isLoading(id)),
-    actionGetTopArtists: data => dispatch(actionGetTopArtists(data))
-  })
+  export const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+      hasErrored,
+      isLoading,
+      actionGetTopArtists
+    },
+    dispatch)
+  )
+
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-{/*        // location={this.state.location.name}*/}
-{/*// retrieveArtistImage={this.retrieveArtistImage}/>*/}
-{/*<TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>*/}
