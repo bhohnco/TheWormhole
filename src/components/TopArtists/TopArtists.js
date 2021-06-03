@@ -6,7 +6,6 @@ import apiCalls from '../../utilities/apiCalls';
 
 const TopArtists = ({ location }) => {
   const dispatch = useDispatch();
-  // const data = artistsData.topartists.artist;
   
   const filterArtists = async (data) => {
     const topArtists = await data.reduce((topTen, artistObj) => {
@@ -63,7 +62,6 @@ const TopArtists = ({ location }) => {
         </section>
     )
   }
-
 }
 
 // retrieveArtistImage = (id) => {
