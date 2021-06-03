@@ -7,37 +7,47 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
+import { isLoading, hasErrored, actionGetTopArtists } from '../../actions/index.js'
+//import { isLoading, setTopArtists } from '../../reducers/setTopArtists';
 import { fetchTopArtists } from '../../thunks/fetchTopArtists';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     location: this.getRandomLocation(),
-  //     topArtists: [],
-  //     topTracks: [],
-  //     selectedArtistID: '',
-  //     // selectedArtistImage: '',
-  //     input: '',
-  //     error: ''
-  //   }
-  // }
-  //
-  async componentDidMount() {
-    const { actionGetTopArtists, isLoading, hasErrored } = this.props
-    try {
-      isLoading(true);
-      const topArtists = await fetchTopArtists();
-      isLoading(false);
-      actionGetTopArtists(topArtists);
-    } catch (error) {
-      isLoading(false);
-      hasErrored(error.message);
+  constructor(props) {
+    super(props);
+    this.state = {
+      //location: this.getRandomLocation(),
+      topArtists: [],
+      topTracks: [],
+      selectedArtistID: '',
+      // selectedArtistImage: '',
+      input: '',
+      error: ''
     }
+  }
+
+   componentDidMount = async () => {
+    const { isLoading, hasErrored, topArtists } = this.props
+      const url = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`
+
+    try {
+      hasErrored('')
+
+      const response = await fetch(url)
+      isLoading(false)
+      const data = await response.json()
+      actionGetTopArtists(data)
+      console.log('data', data)
+    } catch (error) {
+      isLoading(false)
+      console.log(error.message)
+     hasErrored(error.message)
+    }
+  }
     // this.retrieveTopArtists(this.state.location.string);
     // this.retrieveTopTracks(this.state.location.string);
-  }
+
   //
   // getRandomLocation = () => {
   //   const randomCountry= utils.getRandomElement(countries)
@@ -82,7 +92,8 @@ class App extends Component {
   // }
 
   render() {
-    const { topArtists, errorMsg } = this.props;
+    const { isLoading } = this.props
+    const { topArtists } = this.state
     // if (this.state.error > 1) {
     //   console.log(this.state.error);
     //   return <h2 className='message'>{this.state.error}</h2>
@@ -99,7 +110,7 @@ class App extends Component {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists topArtists={topArtists} />
+              <TopArtists topArtists={ topArtists } />
             </section>
           </main>
         </div>
@@ -111,10 +122,16 @@ class App extends Component {
     topArtists: setTopArtists,
   })
 
+  export const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+      hasErrored,
+      isLoading,
+      actionGetTopArtists
+    },
+    dispatch)
+  )
 
-export default connect(mapStateToProps)(App);
 
 
-{/*        // location={this.state.location.name}*/}
-{/*// retrieveArtistImage={this.retrieveArtistImage}/>*/}
-{/*<TopTracks location={this.state.location.name} topTracks={this.state.topTracks}/>*/}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -26,17 +26,26 @@ const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
         )
       });
 
-  console.log(artistCards);
+     return (
+          <section className='top-artists-box'>
+          <h3> Top Artists in {location} </h3>
+          <div className='artists-list'>
+            {artistCards}
+          </div>
+          </section>
+      )
 
-  return (
-      <section className='top-artists-box'>
-        <h3> Top Artists in {location} </h3>
-        <div className='artists-list'>
-          {artistCards}
-        </div>
-      </section>
-  )
 }
+
+//original return syntax
+  // return (
+  //     <section className='top-artists-box'>
+  //       <h3> Top Artists in {location} </h3>
+  //       <div className='artists-list'>
+  //         {artistCards}
+  //       </div>
+  //     </section>
+  // )
 
 /*
 CONSOLE ERROR:
