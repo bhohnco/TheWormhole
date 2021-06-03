@@ -1,13 +1,13 @@
 import React from 'react';
 
 const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
-//
-//   const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
-//     if (topArtists.topartists.artist.indexOf(elem) < 10) {
-//       topTen.push(elem);
-//     }
-//     return topTen;
-//   }, []);
+
+  const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
+    if (topArtists.topartists.artist.indexOf(elem) < 10) {
+      topTen.push(elem);
+    }
+    return topTen;
+  }, []);
 
   /****** DON'T RUN BLOCK UNTIL WE'VE FIGURED OUT 'CORS' ISSUE ******/
       // filteredArtists.forEach(artist => {
@@ -17,21 +17,24 @@ const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
       // });
       // console.log(filteredArtists);
 
-  // const artistCards = filteredArtists.map(artist => {
-  //       return (
-  //           <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-  //             <p>{artist.name}</p>
-  //             <img alt='artist-portrait'></img>
-  //           </article>
-  //       )
-  //     });
+  const artistCards = filteredArtists.map(artist => {
+        return (
+            <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+              <p>{artist.name}</p>
+              <img alt='artist-portrait'></img>
+            </article>
+        )
+      });
 
+     return (
+          <section className='top-artists-box'>
+          <h3> Top Artists in {location} </h3>
+          <div className='artists-list'>
+            {artistCards}
+          </div>
+          </section>
+      )
 
-  return (
-      <section className='top-artists-box'>
-      <h1>Testing Syntax</h1>
-      </section>
-  )
 }
 
 //original return syntax
