@@ -1,3 +1,5 @@
+import countries from './countries';
+
 const utils = {
   getRandomElement(array) {
     return array[Math.floor(Math.random()*array.length)];
@@ -15,6 +17,13 @@ const utils = {
     const formattedName = lowercaseName.replaceAll(' ', '+');
 
     return formattedName;
+  },
+
+  getRandomLocation() {
+    const randomCountry= utils.getRandomElement(countries)
+    const formattedStr = utils.formatLocationStr(randomCountry);
+  
+    return { name: randomCountry, string: formattedStr };
   },
 
   checkForErr(response) {
