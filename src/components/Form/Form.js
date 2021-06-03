@@ -1,13 +1,16 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import Dropdown from '../Dropdown/Dropdown';
+import countries from '../../utilities/countries';
 
-const Form = () => {
-
+const Form = (props) => {
+  const { handleSubmit } = props;
   return (
     <div>
-      <form className='search-form'>
+      <form className='search-form'onSubmit={handleSubmit}>
         <label> Select Country
           <select>
-            <option className='drop-down' value='dropDown'>DROP DOWN</option>
+            <Field name='country-select' component={Dropdown} options={userOptions} />
           </select>
         </label>
         <button>Search Artist Library
