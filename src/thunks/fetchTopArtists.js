@@ -1,4 +1,3 @@
-
 // import { isLoading, hasErrored, actionGetTopArtists } from '../actions/index'
 //
 // export const fetchTopArtists = () => {
@@ -26,4 +25,3 @@
     // }
 //   }
 // }
-

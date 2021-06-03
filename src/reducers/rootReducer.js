@@ -1,7 +1,14 @@
+import topArtistsReducer from './artistsReducer';
+import topTracksReducer from './tracksReducer';
+import locationReducer from './locationReducer';
+import loadingReducer from './isLoading';
 import { combineReducers } from 'redux';
-import { setTopArtists } from './setTopArtists';
 
-const rootReducer = combineReducers({
-  setTopArtists
+const allReducers = combineReducers({
+  topArtists: topArtistsReducer,
+  topTracks: topTracksReducer,
+  location: locationReducer,
+  isLoading: loadingReducer,
 });
-export default rootReducer;
+
+export default allReducers;

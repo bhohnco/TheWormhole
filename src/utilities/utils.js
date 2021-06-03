@@ -1,3 +1,5 @@
+import countries from './countries';
+
 const utils = {
   getRandomElement(array) {
     return array[Math.floor(Math.random()*array.length)];
@@ -17,6 +19,13 @@ const utils = {
     return formattedName;
   },
 
+  getRandomLocation() {
+    const randomCountry= utils.getRandomElement(countries)
+    const formattedStr = utils.formatLocationStr(randomCountry);
+  
+    return { name: randomCountry, string: formattedStr };
+  },
+
   checkForErr(response) {
       if(response.status >= 500) {
         return '500: Uhoh, the angry computer gnome just drop kicked one of our servers. This page is temporarily unavailable.'
@@ -27,7 +36,7 @@ const utils = {
       } else {
         return response.json()
       }
-  }
+  },
 }
 
 export default utils;

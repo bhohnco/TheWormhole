@@ -1,58 +1,80 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { artists } from '../../actions';
+import artistsData from './top-artists-data.json';
+import apiCalls from '../../utilities/apiCalls';
 
-const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
+const TopArtists = ({ location }) => {
+  const dispatch = useDispatch();
+  // const data = artistsData.topartists.artist;
+  
+  const filterArtists = async (data) => {
+    const topArtists = await data.reduce((topTen, artistObj) => {
+      if (data.indexOf(artistObj) < 10) {
+        topTen.push(artistObj);
+      }
+      return topTen;
+    }, []);
+    return topArtists;
+  }
 
-  const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
-    if (topArtists.topartists.artist.indexOf(elem) < 10) {
-      topTen.push(elem);
-    }
-    return topTen;
-  }, []);
+  const fetchArtistsData = async () => {
+    const apiData = await apiCalls.getTopArtists(location.string);
+    const allArtists = await apiData.topartists.artist;
+    const filtered = await filterArtists(allArtists);
+    await dispatch(artists(filtered));
+  }
 
-  /****** DON'T RUN BLOCK UNTIL WE'VE FIGURED OUT 'CORS' ISSUE ******/
-      // filteredArtists.forEach(artist => {
-      //   const imageObj = retrieveArtistImage(artist.mbid);
-      //   /* artist.image = imageObj.PATH */
-      //   artist.image = imageObj;
-      // });
-      // console.log(filteredArtists);
+  let topArtists = {};
+  let artistCards = {};
+  
+  const buildCards = (topArtists) => topArtists.map(artist => {
+    return (
+        <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+          <p>{artist.name}</p>
+          <img alt='artist-portrait'></img>
+        </article>
+    )
+  });
 
-  const artistCards = filteredArtists.map(artist => {
-        return (
-            <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-              <p>{artist.name}</p>
-              <img alt='artist-portrait'></img>
-            </article>
-        )
-      });
+  fetchArtistsData()
+    .then ( 
+      topArtists = useSelector(state => state.topArtists),
+    )
+    .then(
+      artistCards = buildCards(topArtists),
+    );
 
-     return (
-          <section className='top-artists-box'>
-          <h3> Top Artists in {location} </h3>
+  if (!artistCards) {
+    return (
+      <section className='top-artists-box'>
+        <p className='message'>Page Loading</p>
+      </section>
+    )
+  } else {
+
+    return (
+        <section className='top-artists-box'>
+          <h3> Top Artists in {location.name} </h3>
           <div className='artists-list'>
             {artistCards}
           </div>
-          </section>
-      )
+        </section>
+    )
+  }
 
 }
 
-//original return syntax
-  // return (
-  //     <section className='top-artists-box'>
-  //       <h3> Top Artists in {location} </h3>
-  //       <div className='artists-list'>
-  //         {artistCards}
-  //       </div>
-  //     </section>
-  // )
-
-/*
-CONSOLE ERROR:
-Access to fetch at 'http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json'
-from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin'
-header is present on the requested resource. If an opaque response serves your needs,
-set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-*/
+// retrieveArtistImage = (id) => {
+//   apiCalls.getArtistImage(id)
+//     .then(data => {
+//       // this.setState({ selectedArtistImage: data })
+//       return data;
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       this.setState({ error: error.message })
+//     })
+// }
 
 export default TopArtists;
