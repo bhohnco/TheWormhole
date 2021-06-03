@@ -36,7 +36,7 @@ const App = () => {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists topArtists={ topArtists } />
+              {/*<TopArtists topArtists={ topArtists } />*/}
               <TopArtists location={locationObj}/>
               <TopTracks location={locationObj}/>
             </section>

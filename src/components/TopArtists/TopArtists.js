@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { artists } from '../../actions';
-import artistsData from './top-artists-data.json';
+// import artistsData from './top-artists-data.json';
 import apiCalls from '../../utilities/apiCalls';
 
 const TopArtists = ({ location }) => {
@@ -15,6 +15,7 @@ const TopArtists = ({ location }) => {
       }
       return topTen;
     }, []);
+    // console.log(topArtists)
     return topArtists;
   }
 
