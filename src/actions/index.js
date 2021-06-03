@@ -1,5 +1,5 @@
 export const artists = (artistsData) => {
-    return {
+return {
         type: 'GET_TOP_ARTIST_DATA',
         payload: artistsData,
     }
@@ -19,10 +19,15 @@ export const location = (locationChoice) => {
     }
 }
 
-// export const isLoading = (bool) => ({
-//     type: 'IS_LOADING',
-//     bool
-// })
+export const isLoading = (bool) => ({
+    type: 'IS_LOADING',
+    bool
+})
+
+export const hasErrored = (message) => ({
+    type: 'HAS_ERRORED',
+    message
+})
 
 // export const selectedArtistID = id => ({
 //     type: 'SELECTED_ARTIST_ID'
@@ -34,10 +39,6 @@ export const location = (locationChoice) => {
 //     id
 // })
 
-// export const hasErrored = (message) => ({
-//     type: 'HAS_ERRORED',
-//     message
-// })
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>
