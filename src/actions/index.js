@@ -29,7 +29,10 @@ export const hasErrored = (message) => ({
     message
 })
 
-
+export const dropdownValues = (e, data) => ({
+    type: 'DROPDOWN_VALUES', 
+    payload: data.value
+})
 // export const selectedArtistID = id => ({
 //     type: 'SELECETED_ARTIST_ID',
 //     id
