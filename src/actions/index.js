@@ -1,27 +1,51 @@
-// export const actionGetTopArtist = data => ({
-//     type: 'GET_TOP_ARTIST_DATA',
-//     data
-// })
+export const artists = (artistsData) => {
+    return {
+        type: 'GET_TOP_ARTIST_DATA',
+        payload: artistsData,
+    }
+}
 
-// export const actionGetTopTracks = data => ({
-//     type: 'GET_TOP_TRACKS_DATA',
-//     data
-//   })
+export const tracks = (tracksData) => {
+    return {
+        type: 'GET_TOP_TRACKS_DATA',
+        payload: tracksData,
+    }
+}
+
+export const location = (locationChoice) => {
+    return {
+        type: 'GET_LOCATION',
+        payload: locationChoice,
+    }
+}
+
+export const image = (artistImage) => {
+    return {
+        type: 'GET_ARTIST_IMAGE_URL',
+        payload: artistImage,
+    }
+}
+
+export const isLoading = (bool) => ({
+    type: 'IS_LOADING',
+    bool
+})
+
+export const hasErrored = (message) => ({
+    type: 'HAS_ERRORED',
+    message
+})
 
 // export const selectedArtistID = id => ({
-//     type: 'SELECETED_ARTIST_ID'
+//     type: 'SELECTED_ARTIST_ID'
 //     id
 // })
 
 // export const selectedArtistImage = id => ({
-//     type: 'SELECETED_ARTIST_IMAGE'
+//     type: 'SELECTED_ARTIST_IMAGE'
 //     id
 // })
 
-// export const hasError = (message) => ({
-//     type: 'HAS_ERROR',
-//     message
-// })
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>

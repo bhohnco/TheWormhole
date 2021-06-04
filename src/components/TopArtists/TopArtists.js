@@ -1,49 +1,91 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { artists, image } from '../../actions';
+import apiCalls from '../../utilities/apiCalls';
 
-const TopArtists = ({ location, topArtists, retrieveArtistImage }) => {
+const TopArtists = ({ location }) => {
 
-  const filteredArtists = topArtists.topartists.artist.reduce((topTen, elem) => {
-    if (topArtists.topartists.artist.indexOf(elem) < 10) {
-      topTen.push(elem);
-    }
-    return topTen;
+  const dispatch = useDispatch();
+
+  const [artistCards, setArtistCards] = useState([]);
+  const topArtists = useSelector(state => state.topArtists);
+  const images = useSelector(state => state.images);
+
+  useEffect(() => {
+    fetchArtistsData()
   }, []);
+  
+  useEffect(() => {
+    if (topArtists.length > 1) {
+      setArtistCards(buildCards(topArtists))
+    }
+  }, [topArtists]);
 
-  /****** DON'T RUN BLOCK UNTIL WE'VE FIGURED OUT 'CORS' ISSUE ******/
-      // filteredArtists.forEach(artist => {
-      //   const imageObj = retrieveArtistImage(artist.mbid);
-      //   /* artist.image = imageObj.PATH */
-      //   artist.image = imageObj;
-      // });
-      // console.log(filteredArtists);
+  const fetchArtistsData = async () => {
+    const apiData = await apiCalls.getTopArtists(location.string);
+    const allArtists = apiData.topartists.artist;
+    const filtered = filterArtists(allArtists);
 
-  const artistCards = filteredArtists.map(artist => {
-        return (
-            <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-              <p>{artist.name}</p>
-              <img alt='artist-portrait'></img>
-            </article>
-        )
+    dispatch(artists(filtered));
+  }
+
+  const fetchArtistImageObject = (id) => {
+    apiCalls.getArtistImage(id)
+      .then(imageObj => {
+        dispatch(image(locateImageURL(imageObj)))
       });
+  }
 
-  console.log(artistCards);
+  const locateImageURL = (imageObj) => {
+    const imageKeys = Object.keys(imageObj.relations);
+    let imageURL = '';
+
+    imageKeys.forEach(key => {
+      if (imageObj.relations[key].type === 'image') {
+        imageURL = imageObj.relations[key].url.resource;
+      }
+    });
+
+    return imageURL;
+  }
+
+  const filterArtists = (data) => {
+    const topArtists = data.reduce((topTen, artistObj) => {
+      if (data.indexOf(artistObj) < 10) {
+        fetchArtistImageObject(artistObj.mbid);
+        topTen.push(artistObj);
+      }
+      return topTen;
+    }, []);
+    return topArtists;
+  }
+
+  const buildCards = (topArtists) => topArtists.map(artist => {
+
+    // console.log(images[topArtists.indexOf(artist)])
+    // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg' 
+
+    return (
+        <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+          <p>{artist.name}</p>
+          <img alt='artist-portrait'></img>
+        </article>
+    )
+  });
 
   return (
+    topArtists.length < 1 ? 
       <section className='top-artists-box'>
-        <h3> Top Artists in {location} </h3>
+        <p className='message'>Page Loading</p>
+      </section>
+      :
+      <section className='top-artists-box'>
+        <h3> Top Artists in {location.name} </h3>
         <div className='artists-list'>
           {artistCards}
         </div>
       </section>
   )
 }
-
-/*
-CONSOLE ERROR:
-Access to fetch at 'http://musicbrainz.org/ws/2/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50?inc=url-rels&fmt=json'
-from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin'
-header is present on the requested resource. If an opaque response serves your needs,
-set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-*/
 
 export default TopArtists;
