@@ -32,9 +32,9 @@ const ArtistInfo = () => {
           *artist image here*
         </div>
         <div className='artist-text-box'>
-          <h3>{currentArtist.name}</h3>
-          <p>{currentArtist.bio.summary}</p>
-          <p>{currentArtist.bio.content}</p>
+          <h3 className='artist-name'>{currentArtist.name}</h3>
+          <p className='artist-summary'>{currentArtist.bio.summary}</p>
+          <p className='artist-bio'>{currentArtist.bio.content}</p>
         </div>
       </section>
   )
