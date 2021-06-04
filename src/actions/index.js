@@ -26,6 +26,13 @@ export const image = (artistImage) => {
     }
 }
 
+export const image = (currentArtist) => {
+    return {
+        type: 'GET_ARTIST_INFO',
+        payload: currentArtist,
+    }
+}
+
 export const isLoading = (bool) => ({
     type: 'IS_LOADING',
     bool

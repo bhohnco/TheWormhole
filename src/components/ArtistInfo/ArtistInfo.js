@@ -4,6 +4,11 @@ import { currentArtist } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
 const ArtistInfo = () => {
+
+  const dispatch = useDispatch();
+
+  const currentArtist = useSelector(state => state.currentArtist);
+
   return (
     <article className='artist-info'>
       <div className='artist-img-box'>
@@ -15,7 +20,6 @@ const ArtistInfo = () => {
         <p>artist bio</p>
       </div>
     </article>
-
   )
 }
 

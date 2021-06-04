@@ -11,6 +11,7 @@ const allReducers = combineReducers({
   topArtists: topArtistsReducer,
   topTracks: topTracksReducer,
   images: imageReducer,
+  currentArtist: currentArtistReducer,
   isLoading: loadingReducer,
   hasErrored: errorReducer,
 });
