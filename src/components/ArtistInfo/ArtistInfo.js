@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { currentArtist } from '../../actions';
+import { singleArtistInfo } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
 const ArtistInfo = () => {
@@ -8,18 +8,35 @@ const ArtistInfo = () => {
   const dispatch = useDispatch();
 
   const currentArtist = useSelector(state => state.currentArtist);
+  
+  let artistName = 'David+Bowie';
+
+  useEffect(() => {
+    fetchArtistData(artistName);
+  }, [artistName]);
+
+  const fetchArtistData = async (artistName) => {
+    const artistInfo = await apiCalls.getArtistInfo(artistName);
+    dispatch(singleArtistInfo(artistInfo.artist));
+  }
 
   return (
-    <article className='artist-info'>
-      <div className='artist-img-box'>
-        *artist image here*
-      </div>
-      <div className='artist-text-box'>
-        <h3>artist name</h3>
-        <p>artist summary</p>
-        <p>artist bio</p>
-      </div>
-    </article>
+
+    !currentArtist.name ? 
+      <section className='top-artists-box'>
+        <p className='message'>Page Loading</p>
+      </section>
+      :
+      <section className='artist-info'>
+        <div className='artist-img-box'>
+          *artist image here*
+        </div>
+        <div className='artist-text-box'>
+          <h3>{currentArtist.name}</h3>
+          <p>{currentArtist.bio.summary}</p>
+          <p>{currentArtist.bio.content}</p>
+        </div>
+      </section>
   )
 }
 

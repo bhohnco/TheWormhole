@@ -2,6 +2,7 @@ import locationReducer from './locationReducer';
 import topArtistsReducer from './artistsReducer';
 import topTracksReducer from './tracksReducer';
 import imageReducer from './imageReducer';
+import artistInfoReducer from './artistInfoReducer';
 import loadingReducer from './isLoading';
 import errorReducer from './hasErrored';
 import { combineReducers } from 'redux';
@@ -11,7 +12,7 @@ const allReducers = combineReducers({
   topArtists: topArtistsReducer,
   topTracks: topTracksReducer,
   images: imageReducer,
-  currentArtist: currentArtistReducer,
+  currentArtist: artistInfoReducer,
   isLoading: loadingReducer,
   hasErrored: errorReducer,
 });

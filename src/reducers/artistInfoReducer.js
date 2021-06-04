@@ -1,4 +1,4 @@
-const currentArtistReducer = (state = {}, action) => {
+const artistInfoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'GET_ARTIST_INFO':
       state = action.payload;
@@ -8,4 +8,4 @@ const currentArtistReducer = (state = {}, action) => {
   }
 }
 
-export default currentArtistReducer;
+export default artistInfoReducer;
