@@ -10,8 +10,6 @@ import TopTracks from '../TopTracks/TopTracks';
 // import { fetchTopArtists } from '../../thunks/fetchTopArtists';
 // import { connect } from 'react-redux';
 
-// import apiCalls from '../../utilities/apiCalls';
-
 const App = () => {
 
   const dispatch = useDispatch();
@@ -19,7 +17,6 @@ const App = () => {
   const newLocation = utils.getRandomLocation();
 
   dispatch(location(newLocation));
-
 
 // const isLoading = useSelector(state => state.isLoading);
   const locationObj = useSelector(state => state.location);
@@ -31,7 +28,6 @@ const App = () => {
       </main>
     )
   } else {
-    console.log("LOCATION LOADED: ", locationObj);
       return (
         <div className="App" style={{ backgroundImage: `url(${Background})`}}>
           <Header />
@@ -39,13 +35,12 @@ const App = () => {
           <main className='main-section'>
             <section className='location-display'>
               <TopArtists location={locationObj}/>
-              {/* <TopTracks location={locationObj}/> */}
+              <TopTracks location={locationObj}/>
             </section>
           </main>
         </div>
       );
   }
-
 }
 
 export default App;
