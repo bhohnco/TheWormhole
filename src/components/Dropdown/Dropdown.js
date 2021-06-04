@@ -1,71 +1,42 @@
-import React, { useState } from 'react';
-import onClickOutside from 'react-onclickoutside';
-import countries from '../../utilities/countries'
+import React, { useState, useRef, useEffect } from 'react';
 
-function Dropdown({ title, items, multiSelect = false }) {
+export default function Dropdown({ options, prompt, value, key, onChange, }) {
+
   const [open, setOpen] = useState(false);
-  const [selection, setSelection] = useState([]);
-  const toggle = () => setOpen(!open);
-  Dropdown.handleClickOutside = () => setOpen(false);
+  const ref = useRef(null);
 
-  function handleOnClick(item) {
-    if (!selection.some(current => current.id === item.id)) {
-      if (!multiSelect) {
-        setSelection([item]);
-      } else if (multiSelect) {
-        setSelection([...selection, item]);
-      }
-    } else {
-      let selectionAfterRemoval = selection;
-      selectionAfterRemoval = selectionAfterRemoval.filter(
-          current => current.id !== item.id
-      );
-      setSelection([...selectionAfterRemoval]);
-    }
-  }
+  useEffect (() => {
+  document.addEventListener("click", close)
+  return () => document.removeEventListener("click", close);
+  }, []);
 
-  function isItemInSelection(item) {
-    if (selection.some(current => current.id === item.id)) {
-      return true;
-    }
-    return false;
+  function close(e) {
+    setOpen(e && e.target === ref.current)
   }
-  const countrylist = countries
   
   return (
-      <div className="dd-wrapper">
-        <div
-            tabIndex={0}
-            className="dd-header"
-            role="button"
-            onKeyPress={() => toggle(!open)}
-            onClick={() => toggle(!open)}
+      <div className='dropdown'>
+        <div className='control'
+             onClick={() => setOpen((prev) => !prev)}
         >
-          <div className="dd-header__title">
-            <p className="dd-header__title--bold">{title}</p>
+          <div className='selected-value' ref={ref}>
+          {value ? value : prompt}
           </div>
-          <div className="dd-header__action">
-            <p>{open ? 'Close' : 'Open'}</p>
-          </div>
+          <div className={`arrow ${open ? "open" : null}`} />
         </div>
-        {open && (
-            <ul className="dd-list">
-              {countrylist.map(country => (
-                  <li className="dd-list-item" key={country}>
-                    <button type="button" onClick={() => handleOnClick(country)}>
-                      <span>{country.value}</span>
-                      <span>{isItemInSelection(country)}</span>
-                    </button>
-                  </li>
-              ))}
-            </ul>
-        )}
+        <div className={`options ${open ? "open" : null}`}>
+          {options.map((option, index) => (
+                <div
+                    className={`option ${key = index} + ${value === option ? "selected" : null}`}
+                  onClick={() => {
+                  onChange(option);
+                  setOpen(false);
+                }}>
+                  {option}</div>
+            ))}
+        </div>
       </div>
-  );
+  )
 }
 
-const clickOutsideConfig = {
-  handleClickOutside: () => Dropdown.handleClickOutside,
-};
-
-export default onClickOutside(Dropdown, clickOutsideConfig);
+      
