@@ -1,5 +1,5 @@
 export const artists = (artistsData) => {
-return {
+    return {
         type: 'GET_TOP_ARTIST_DATA',
         payload: artistsData,
     }
