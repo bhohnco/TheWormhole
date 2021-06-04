@@ -39,7 +39,7 @@ const App = () => {
           <main className='main-section'>
             <section className='location-display'>
               <TopArtists location={locationObj}/>
-              <TopTracks location={locationObj}/>
+              {/* <TopTracks location={locationObj}/> */}
             </section>
           </main>
         </div>

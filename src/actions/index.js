@@ -19,6 +19,13 @@ export const location = (locationChoice) => {
     }
 }
 
+export const image = (artistImage) => {
+    return {
+        type: 'GET_ARTIST_IMAGE_URL',
+        payload: artistImage,
+    }
+}
+
 export const isLoading = (bool) => ({
     type: 'IS_LOADING',
     bool

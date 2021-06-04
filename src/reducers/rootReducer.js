@@ -1,14 +1,16 @@
+import locationReducer from './locationReducer';
 import topArtistsReducer from './artistsReducer';
 import topTracksReducer from './tracksReducer';
-import locationReducer from './locationReducer';
+import imageReducer from './imageReducer';
 import loadingReducer from './isLoading';
 import errorReducer from './hasErrored';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
+  location: locationReducer,
   topArtists: topArtistsReducer,
   topTracks: topTracksReducer,
-  location: locationReducer,
+  images: imageReducer,
   isLoading: loadingReducer,
   hasErrored: errorReducer,
 });

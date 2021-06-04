@@ -10,7 +10,7 @@ const TopTracks = ({ location }) => {
   const filterTracks = async (data) => {
     const topTracks = await data.reduce((topTen, trackObj) => {
       if (data.indexOf(trackObj) < 10) {
-        topTen.push({artist: trackObj.artist.name, title: trackObj.name});
+        topTen.push({artist: trackObj.artist.name, title: trackObj.name, key: trackObj.mbid});
       }
       return topTen;
     },[])
@@ -29,17 +29,17 @@ const TopTracks = ({ location }) => {
 
   const buildTrackList = (topTracks) => topTracks.map(track => {
     return (
-      <li>{track.artist} - "{track.title}"</li>
+      <li key={track.mbid}>{track.artist} - "{track.title}"</li>
     )
   });
 
-  fetchTracksData()
-    .then (
-      topTracks = useSelector(state => state.topTracks),
-    )
-    .then(
-      trackList = buildTrackList(topTracks),
-    );
+  // fetchTracksData()
+  //   .then (
+  //     topTracks = useSelector(state => state.topTracks),
+  //   )
+  //   .then(
+  //     trackList = buildTrackList(topTracks),
+  //   );
 
   if (!trackList) {
     return (
