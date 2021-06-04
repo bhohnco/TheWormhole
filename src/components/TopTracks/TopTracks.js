@@ -8,7 +8,6 @@ const TopTracks = ({ location }) => {
   const dispatch = useDispatch();
 
   const [trackList, setTrackList] = useState([]);
-
   const topTracks = useSelector(state => state.topTracks);
   
   useEffect(() => {
