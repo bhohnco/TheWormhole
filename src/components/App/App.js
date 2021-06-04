@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
+import ArtistInfo from '../ArtistInfo/ArtistInfo';
 // import { fetchTopArtists } from '../../thunks/fetchTopArtists';
 // import { connect } from 'react-redux';
 
@@ -34,8 +35,9 @@ const App = () => {
           <Form />
           <main className='main-section'>
             <section className='location-display'>
-              <TopArtists location={locationObj}/>
-              <TopTracks location={locationObj}/>
+              {/* <TopArtists location={locationObj}/>
+              <TopTracks location={locationObj}/> */}
+              <ArtistInfo />
             </section>
           </main>
         </div>
