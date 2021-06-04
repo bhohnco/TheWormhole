@@ -10,14 +10,16 @@ const TopTracks = ({ location }) => {
   const [trackList, setTrackList] = useState([]);
 
   const topTracks = useSelector(state => state.topTracks);
-
+  
   useEffect(() => {
     fetchTracksData()
   }, []);
-
+  
   useEffect(() => {
-    setTrackList(buildTrackList(topTracks))
-  }, [trackList]);
+    if (topTracks.length > 1) {
+      setTrackList(buildTrackList(topTracks))
+    }
+  }, [topTracks]);
 
   const fetchTracksData = async () => {
     const apiData = await apiCalls.getTopTracks(location.string);
@@ -30,7 +32,7 @@ const TopTracks = ({ location }) => {
   const filterTracks = (data) => {
     const topTracks = data.reduce((topTen, trackObj) => {
       if (data.indexOf(trackObj) < 10) {
-        topTen.push({artist: trackObj.artist.name, title: trackObj.name, key: trackObj.mbid});
+        topTen.push({artist: trackObj.artist.name, title: trackObj.name});
       }
       return topTen;
     }, []);
@@ -39,14 +41,11 @@ const TopTracks = ({ location }) => {
 
   const buildTrackList = (topTracks) => topTracks.map(track => {
     return (
-      <li key='{track.mbid}'>{track.artist} - "{track.title}"</li>
+      <li key={topTracks.indexOf(track)}>{track.artist} - "{track.title}"</li>
     )
   });
 
-  console.log(trackList);
-
   return (
-
     topTracks.length < 1 ? 
       <section className='top-tracks-box'>
         <p className='message'>Page Loading</p>
