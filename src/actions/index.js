@@ -1,5 +1,5 @@
 export const artists = (artistsData) => {
-return {
+    return {
         type: 'GET_TOP_ARTIST_DATA',
         payload: artistsData,
     }
@@ -16,6 +16,13 @@ export const location = (locationChoice) => {
     return {
         type: 'GET_LOCATION',
         payload: locationChoice,
+    }
+}
+
+export const image = (artistImage) => {
+    return {
+        type: 'GET_ARTIST_IMAGE_URL',
+        payload: artistImage,
     }
 }
 

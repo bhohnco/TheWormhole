@@ -1,11 +1,11 @@
+// import { useSelector, useDispatch } from 'react-redux';
+
 const apiCalls = {
 
   async getTopArtists(country) {
+    // const dispatch = useDispatch();
     const response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${country}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`)
     const data = await response.json();
-
-
-
     return data;
   },
 
