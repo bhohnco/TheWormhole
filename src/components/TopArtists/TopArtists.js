@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { artists, image } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const TopArtists = ({ location }) => {
+const TopArtists = () => {
 
   const dispatch = useDispatch();
 
   const [artistCards, setArtistCards] = useState([]);
+
+  const location = useSelector(state => state.location);
   const topArtists = useSelector(state => state.topArtists);
-  const images = useSelector(state => state.images);
+  // const images = useSelector(state => state.images);
 
   useEffect(() => {
     fetchArtistsData()
@@ -65,11 +68,15 @@ const TopArtists = ({ location }) => {
     // console.log(images[topArtists.indexOf(artist)])
     // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg' 
 
+    let nameString = artist.name.replaceAll(' ', '+');
+
     return (
-        <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-          <p>{artist.name}</p>
+      <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+        <p>{artist.name}</p>
+        <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
           <img alt='artist-portrait'></img>
-        </article>
+        </Link>
+      </article>
     )
   });
 

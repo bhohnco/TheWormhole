@@ -1,15 +1,16 @@
 import React from 'react';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
+// import { fetchTopArtists } from '../../thunks/fetchTopArtists';
+// import { connect } from 'react-redux';
+import background from '../../assets/images/night-sky.jpeg';
 import utils from '../../utilities/utils';
-import Background from '../../assets/images/night-sky.jpeg';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
 import ArtistInfo from '../ArtistInfo/ArtistInfo';
-// import { fetchTopArtists } from '../../thunks/fetchTopArtists';
-// import { connect } from 'react-redux';
 
 const App = () => {
 
@@ -30,16 +31,26 @@ const App = () => {
     )
   } else {
       return (
-        <div className="App" style={{ backgroundImage: `url(${Background})`}}>
-          <Header />
-          <Form />
-          <main className='main-section'>
-            <section className='location-display'>
-              {/* <TopArtists location={locationObj}/>
-              <TopTracks location={locationObj}/> */}
-              <ArtistInfo />
-            </section>
-          </main>
+        <div className="App" style={{ backgroundImage: `url(${background})`}}>
+          <Router>
+            <Header />
+            <Form />
+            <main className='main-section'>
+                <Switch>
+                  <Route exact path='/artist/:id'
+                    render={({ match }) => 
+                      <ArtistInfo id={ match.params.id }/>
+                    }
+                  />
+                  <Route exact path="/" >
+                    <section className='location-display'>
+                      <TopArtists />
+                      <TopTracks />
+                    </section>
+                  </Route>
+                </Switch>
+            </main>
+          </Router>
         </div>
       );
   }

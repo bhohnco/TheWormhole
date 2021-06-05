@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { singleArtistInfo } from '../../actions';
+import { artistInfo } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const ArtistInfo = () => {
+const ArtistInfo = ({ id }) => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    console.log("HELLO ", id);
+  }, []);
+
   const currentArtist = useSelector(state => state.currentArtist);
   
-  let artistName = 'David+Bowie';
 
   useEffect(() => {
-    fetchArtistData(artistName);
-  }, [artistName]);
+    fetchArtistData(currentArtist.id);
+  }, []);
 
   const fetchArtistData = async (artistName) => {
-    const artistInfo = await apiCalls.getArtistInfo(artistName);
-    dispatch(singleArtistInfo(artistInfo.artist));
+    const newInfo = await apiCalls.getArtistInfo(artistName);
+    dispatch(artistInfo(newInfo.artist));
   }
 
   return (
@@ -27,7 +30,7 @@ const ArtistInfo = () => {
         <p className='message'>Page Loading</p>
       </section>
       :
-      <section className='artist-info fade-in'>
+      <section id={currentArtist.mbid} className='artist-info fade-in'>
         <div className='artist-img-box'>
           *artist image here*
         </div>

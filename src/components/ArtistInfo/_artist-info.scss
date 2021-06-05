@@ -12,7 +12,7 @@
 
 .artist-img-box {
   width: 40%;
-  height: 30%;
+  height: 40%;
   text-align: center;
   border: 1px solid $french-lime;
   padding: 3%;
@@ -26,13 +26,15 @@
   text-align: center;
   width: 85%;
   margin-top: 2vw;
-  padding: 2vw;
+  padding: 1vw 3vw 1vw 3vw;
   overflow: scroll;
+  overscroll-behavior: contain;
   display: block;
   border: 1px solid $red-munsell;
+  background-color: rgba(6, 11, 38, 0.845);
 
   p {
-    color: rgba(255, 255, 255, 80%);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 1.5vw;
     margin: 3vw 2vw 4vw 2vw;
     font-family: $inconsolata;
@@ -41,7 +43,7 @@
 }
 
 .artist-name {
-  margin: 3vw auto 2vw auto;
+  margin: 4vw auto 2vw auto;
   justify-self: center;
   font-size: 3vw;
   font-family: AlienEncounters;
@@ -49,8 +51,8 @@
   color: $fashion-fuscia;
 }
 
-.artist-summary {
-}
+// .artist-summary {
+// }
 
-.artist-bio {
-}
+// .artist-bio {
+// }
