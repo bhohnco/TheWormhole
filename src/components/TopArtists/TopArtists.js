@@ -61,6 +61,7 @@ const TopArtists = () => {
       }
       return topTen;
     }, []);
+    // console.log(topArtists)
     return topArtists;
   }
 

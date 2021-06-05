@@ -15,7 +15,7 @@ import ArtistInfo from '../ArtistInfo/ArtistInfo';
 const App = () => {
 
   const dispatch = useDispatch();
-  
+
   const newLocation = utils.getRandomLocation();
 
   dispatch(location(newLocation));
@@ -25,48 +25,48 @@ const App = () => {
 
   if (!locationObj) {
     return (
-      <main className='App'>
-        <p className='message'>Page Loading</p>
-      </main>
+        <main className='App'>
+          <p className='message'>Page Loading</p>
+        </main>
     )
   } else {
-      return (
+    return (
         <div className="App" style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
             <Form />
             <main className='main-section'>
-                <Switch>
-                  <Route exact path='/:id'
-                    render={({ match }) => 
-                      <ArtistInfo id={ match.params.id }/>
-                    }
-                  />
-                  <Route exact path="/" >
-                    <section className='location-display'>
-                      <TopArtists />
-                      <TopTracks />
-                    </section>
-                  </Route>
-                </Switch>
+              <Switch>
+                <Route exact path='/:id'
+                       render={({ match }) =>
+                           <ArtistInfo id={ match.params.id }/>
+                       }
+                />
+                <Route exact path="/" >
+                  <section className='location-display'>
+                    <TopArtists />
+                    <TopTracks />
+                  </section>
+                </Route>
+              </Switch>
             </main>
           </Router>
         </div>
-      );
+    );
   }
 }
 
 export default App;
 
-  
-  // const mapStateToProps = ( state ) => ({
-  //   topArtists: state.artists,
-  //   isLoading: state.isLoading,
-  //   // error: state.error,
-  // })
 
-  // const mapDispatchToProps = (dispatch) => ({
-  //   topArtists: () => dispatch(fetchTopArtists())
-  // });
-  
-  // export default connect(mapStateToProps, mapDispatchToProps)(App);
+// const mapStateToProps = ( state ) => ({
+//   topArtists: state.artists,
+//   isLoading: state.isLoading,
+//   // error: state.error,
+// })
+
+// const mapDispatchToProps = (dispatch) => ({
+//   topArtists: () => dispatch(fetchTopArtists())
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);

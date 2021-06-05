@@ -62,5 +62,32 @@ const TopTracks = () => {
   )
 }
 
-export default TopTracks;
 
+// retrieveTopTracks = (location) => {
+//   apiCalls.getTopTracks(location)
+//     .then(data => {
+//       this.setState({ topTracks: data })
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       console.log(`Sorry, could not retrieve data for ${this.state.location.name}`);
+//       this.setState({ error: error.message })
+//     })
+// }
+//
+
+
+// const mapStateToProps = ({ tracks }) => ({
+//   topTracks: tracks,
+// })
+//
+// export const mapDispatchToProps = dispatch => (
+//   bindActionCreators({
+//     // hasErrored,
+//     // isLoading,
+//         tracks
+//   },
+//   dispatch)
+// )
+
+export default TopTracks;
