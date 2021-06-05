@@ -7,8 +7,7 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
-// import { fetchTopArtists } from '../../thunks/fetchTopArtists';
-// import { connect } from 'react-redux';
+
 
 const App = () => {
 
@@ -28,12 +27,14 @@ const App = () => {
       </main>
     )
   } else {
+    console.log("LOCATION LOADED: ", locationObj);
       return (
         <div className="App" style={{ backgroundImage: `url(${Background})`}}>
           <Header />
           <Form />
           <main className='main-section'>
             <section className='location-display'>
+              {/*<TopArtists topArtists={ topArtists } />*/}
               <TopArtists location={locationObj}/>
               <TopTracks location={locationObj}/>
             </section>
@@ -43,17 +44,6 @@ const App = () => {
   }
 }
 
+
 export default App;
 
-  
-  // const mapStateToProps = ( state ) => ({
-  //   topArtists: state.artists,
-  //   isLoading: state.isLoading,
-  //   // error: state.error,
-  // })
-
-  // const mapDispatchToProps = (dispatch) => ({
-  //   topArtists: () => dispatch(fetchTopArtists())
-  // });
-  
-  // export default connect(mapStateToProps, mapDispatchToProps)(App);

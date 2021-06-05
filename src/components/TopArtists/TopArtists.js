@@ -57,6 +57,7 @@ const TopArtists = ({ location }) => {
       }
       return topTen;
     }, []);
+    // console.log(topArtists)
     return topArtists;
   }
 
