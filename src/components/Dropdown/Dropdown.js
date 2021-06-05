@@ -22,7 +22,14 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
           />
           </div>
         <div className={`options ${open ? "open" : null}`}>{options.map((option, index) => (
-              
+              <article
+                className={`option ${key = index} + ${value === option ? "selected" : null}`}
+                onClick={() => {
+                onChange(option);
+                setOpen(false);
+                }}
+              > {option}
+              </article>
             ))}
         </div>
       </section>
