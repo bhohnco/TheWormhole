@@ -43,6 +43,9 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('.drop-render').should('contain', 'Select country...')
   });
 
+  it('Should render search bar from its component', () => {
+    cy.get('.search-input').should('be.visible')
+  });
 
 
 
