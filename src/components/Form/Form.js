@@ -10,7 +10,7 @@ const Form = () => {
             <option className='drop-down' value='dropDown'>DROP DOWN</option>
           </select>
         </label>
-        <button>Search Artist Library
+        <button> Search Artist Library
           <input type='text' placeholder='type in names of artists'/>
         </button>
       </form>

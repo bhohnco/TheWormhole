@@ -33,7 +33,7 @@ export const current = (artistName) => {
     }
 }
 
-export const artistInfo = (artistInfo) => {
+export const info = (artistInfo) => {
     return {
         type: 'GET_ARTIST_INFO',
         payload: artistInfo,

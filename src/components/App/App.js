@@ -37,7 +37,7 @@ const App = () => {
             <Form />
             <main className='main-section'>
                 <Switch>
-                  <Route exact path='/artist/:id'
+                  <Route exact path='/:id'
                     render={({ match }) => 
                       <ArtistInfo id={ match.params.id }/>
                     }

@@ -26,17 +26,18 @@ const TopArtists = () => {
 
   const fetchArtistsData = async () => {
     const apiData = await apiCalls.getTopArtists(location.string);
-    const allArtists = apiData.topartists.artist;
-    const filtered = filterArtists(allArtists);
-
-    dispatch(artists(filtered));
+    if (apiData) {
+      const allArtists = apiData.topartists.artist;
+      const filtered = filterArtists(allArtists);
+      dispatch(artists(filtered));
+    }
   }
 
-  const fetchArtistImageObject = (id) => {
-    apiCalls.getArtistImage(id)
-      .then(imageObj => {
-        dispatch(image(locateImageURL(imageObj)))
-      });
+  const fetchArtistImageObject = async (id) => {
+    // const imageObj = await apiCalls.getArtistImage(id);
+    // if (imageObj) {
+    //   dispatch(image(locateImageURL(imageObj)))
+    // }
   }
 
   const locateImageURL = (imageObj) => {

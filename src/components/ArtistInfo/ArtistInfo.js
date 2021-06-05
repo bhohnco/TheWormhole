@@ -1,43 +1,56 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { artistInfo } from '../../actions';
+import { current, info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const ArtistInfo = ({ id }) => {
+const ArtistInfo = ({ }) => {
+
+  // how do we retrieve artist name from "card click" 
+  // and assign to 'currentCard' in the store?
+  // once we do, we can delete the 1st useEffect() function 
+  // and run the 2nd on page load
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log("HELLO ", id);
-  }, []);
-
-  const currentArtist = useSelector(state => state.currentArtist);
   
+  const currentArtist = useSelector(state => state.currentArtist);
+  const artistInfo = useSelector(state => state.artistInfo);
 
+  ////// TEMP FUNCTION
   useEffect(() => {
-    fetchArtistData(currentArtist.id);
+    const artistName = "David Bowie";
+    dispatch(current(artistName));
   }, []);
+  //////
+  
+  useEffect(() => {
+    if (currentArtist.length > 0) {
+      let nameString = currentArtist.replaceAll(' ', '+');
+      fetchArtistData(nameString);
+    }
+  }, [currentArtist]);
 
   const fetchArtistData = async (artistName) => {
     const newInfo = await apiCalls.getArtistInfo(artistName);
-    dispatch(artistInfo(newInfo.artist));
+    if (newInfo) {
+      dispatch(info(newInfo.artist));
+    }
   }
 
   return (
 
-    !currentArtist.name ? 
+    !artistInfo.name ? 
       <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>
       :
-      <section id={currentArtist.mbid} className='artist-info fade-in'>
+      <section id={artistInfo.mbid} className='artist-info fade-in'>
         <div className='artist-img-box'>
           *artist image here*
         </div>
-        <h3 className='artist-name'>{currentArtist.name}</h3>
+        <h3 className='artist-name'>{artistInfo.name}</h3>
         <div className='artist-text-box'>
-          <p className='artist-summary'>{currentArtist.bio.summary}</p>
-          <p className='artist-bio'>{currentArtist.bio.content}</p>
+          <p className='artist-summary'>{artistInfo.bio.summary}</p>
+          <p className='artist-bio'>{artistInfo.bio.content}</p>
         </div>
       </section>
   )
