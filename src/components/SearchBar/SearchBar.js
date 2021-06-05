@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { searchData } from '../../actions/index';
 import { connect } from 'react-redux';
-import './form.css';
+
 
 class SearchBar extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-        <form>
+        <div>
           <input
               className='search-input'
               type='text'
@@ -38,10 +38,9 @@ class SearchBar extends Component {
               onChange={this.handleChange}
           />
           <button className='search-btn' onClick={this.handleSubmit}>Search</button>
-        </form>
-
+        </div>
     )
   }
 }
 
-export default connect(null, {searchData})(SearchForm)
+export default connect(null, {searchData})(SearchBar)
