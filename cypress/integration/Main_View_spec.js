@@ -56,7 +56,10 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('h3').should('contain', 'Top Tracks')
   });
 
-
+  it('Should open with display of message for UX while top tracks load', () => {
+    cy.get('.top-tracks-box').should('be.visible')
+      .get('p').should('contain', 'Page')
+  });
 
 
 
