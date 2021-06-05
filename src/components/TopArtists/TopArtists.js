@@ -75,7 +75,7 @@ const TopArtists = ({ location }) => {
 
   return (
     topArtists.length < 1 ? 
-      <section className='top-artists-box'>
+      <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>
       :

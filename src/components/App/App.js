@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
 import utils from '../../utilities/utils';
-import Background from '../../assets/images/black-cloth.jpeg';
+import Background from '../../assets/images/night-sky.jpeg';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';

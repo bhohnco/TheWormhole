@@ -23,16 +23,16 @@ const ArtistInfo = () => {
   return (
 
     !currentArtist.name ? 
-      <section className='top-artists-box'>
+      <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>
       :
-      <section className='artist-info'>
+      <section className='artist-info fade-in'>
         <div className='artist-img-box'>
           *artist image here*
         </div>
+        <h3 className='artist-name'>{currentArtist.name}</h3>
         <div className='artist-text-box'>
-          <h3 className='artist-name'>{currentArtist.name}</h3>
           <p className='artist-summary'>{currentArtist.bio.summary}</p>
           <p className='artist-bio'>{currentArtist.bio.content}</p>
         </div>

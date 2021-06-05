@@ -33,26 +33,19 @@ export const singleArtistInfo = (artistInfo) => {
     }
 }
 
-export const isLoading = (bool) => ({
-    type: 'IS_LOADING',
-    bool
-})
+export const isLoading = (bool) => {
+    return {
+        type: 'IS_LOADING',
+        payload: bool,
+    }
+}
 
-export const hasErrored = (message) => ({
-    type: 'HAS_ERRORED',
-    message
-})
-
-// export const selectedArtistID = id => ({
-//     type: 'SELECTED_ARTIST_ID'
-//     id
-// })
-
-// export const selectedArtistImage = id => ({
-//     type: 'SELECTED_ARTIST_IMAGE'
-//     id
-// })
-
+export const hasErrored = (message) => {
+    return {
+        type: 'HAS_ERRORED',
+        payload: message,
+    }
+}
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>

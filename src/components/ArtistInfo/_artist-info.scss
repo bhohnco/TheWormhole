@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2vw 2vw 2vw 4vw;
-  width: 80%;
+  width: 85%;
   height: 100%;
   color: whitesmoke;
   background-color: rgba(3, 5, 16, 0.784);
@@ -12,37 +12,41 @@
 
 .artist-img-box {
   width: 40%;
-  height: 20%;
+  height: 30%;
   text-align: center;
   border: 1px solid $french-lime;
   padding: 3%;
   margin-top: 2vw;
+  color: $green-blue-crayola;
   font-size: 1vw;
 }
 
 .artist-text-box {
   justify-content: center;
   text-align: center;
-  width: 80%;
-  // height: 80%;
-  margin-top: 4vw;
-  padding: 3vw;
+  width: 85%;
+  margin-top: 2vw;
+  padding: 2vw;
   overflow: scroll;
+  display: block;
   border: 1px solid $red-munsell;
 
-  h3 {
-    margin: 2.5vw auto 4vw auto;
-    justify-self: center;
-    font-size: 2.5vw;
-    font-family: AlienEncounters;
-    font-style: italic;
-    color: $fashion-fuscia;
-  }
-
   p {
+    color: rgba(255, 255, 255, 80%);
     font-size: 1.5vw;
     margin: 3vw 2vw 4vw 2vw;
+    font-family: $inconsolata;
+    line-height: 2;
   }
+}
+
+.artist-name {
+  margin: 3vw auto 2vw auto;
+  justify-self: center;
+  font-size: 3vw;
+  font-family: AlienEncounters;
+  font-style: italic;
+  color: $fashion-fuscia;
 }
 
 .artist-summary {

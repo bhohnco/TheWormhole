@@ -23,10 +23,20 @@ html {
   margin-top: 1vw;
 }
 
+.message-box {
+  width: 85%;
+  height: 100%;
+  border: 1px solid $blue-jeans;
+  background-color: $red-munsell;
+}
+
 .message {
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
-  margin-top: 25%;
+  margin-top: 15%;
+  font-family: AlienEncounters;
+  font-size: 3vw;
+  color: $eerie-black;
 }
