@@ -54,6 +54,13 @@ export const hasErrored = (message) => {
     }
 }
 
+export const dropdownValues = (e, data) => {
+    return {
+        type: 'DROPDOWN_VALUES',
+        payload: data.value
+    }
+}
+
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>
 //         dispatch({
