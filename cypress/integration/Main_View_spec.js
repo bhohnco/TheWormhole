@@ -18,7 +18,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should display a message for the user while the page is loading', () => {
-    cy.get('h2').should('contain', 'Page')
+    cy.get('.message').should('contain', 'Page')
   });
 
   it('Should display title on main page view', () => {
@@ -39,8 +39,8 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
   });
 
-  it('Should display a search form that has a countries dropdown, an input line and search button', () => {
-    cy.get('select').select('DROP DOWN').should('have.value', 'dropDown')
+  it('Should render the drop down component in the form component', () => {
+    cy.get('.drop-render').should('contain', 'Select country...')
 
       .get('form button')
       .find('input[type=text]').should('have.length', 1)
@@ -48,12 +48,20 @@ describe('Show main view of Worm Hole App', () => {
       .get('form').find('button').should('contain', 'Search Artist Library')
   });
 
+  it('Should have a dropdown menu on click', () => {
+    cy.get('.control').click()
+  });
+
   it('Should have a smaller title of the top tracks list', () => {
     cy.get('h3').should('contain', 'Top Tracks')
   });
 
-  it('Should load the main view with top tracks on display', () => {
-    cy.get('ol').should('have.length', 0)
+
+
+
+
+  it('Should display single block of tracks onto the main view on load', () => {
+    cy.get('ol').should('have.length', 1)
   });
 
   it('Should have a subtitle of the top artists listing', () => {
@@ -69,7 +77,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
 });
-// 
+//
 // describe('400 error handling message for main page view', () => {
 //
 //   it('Displays a 404 for UI when the server is down', () => {
