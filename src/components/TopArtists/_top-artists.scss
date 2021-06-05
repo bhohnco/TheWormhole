@@ -1,0 +1,38 @@
+.top-artists-box {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  padding: 2vw 2vw 2vw 4vw;
+  width: 45%;
+  height: auto;
+  font-size: 1.5vw;
+  color: whitesmoke;
+  background-color: rgba(3, 5, 16, 0.784);
+  border: 1px solid $blue-jeans;
+
+  h3 {
+    margin: 2.5vw auto 2vw auto;
+    justify-self: center;
+    font-family: AlienEncounters;
+    font-style: italic;
+    font-size: 2vw;
+    color: $fashion-fuscia;
+  }
+
+  li {
+    margin: 1vw;
+  }
+}
+
+.artists-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.top-artist-card {
+  width: 29%;
+  border: 1px solid $beau-blue;
+  margin: 1% 1% 1% 1.5%;
+  font-size: 1.5vw;
+  text-align: center;
+}
