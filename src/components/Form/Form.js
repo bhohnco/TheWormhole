@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import SearchBar from '../SearchBar/SearchBar'
 import Dropdown from '../Dropdown/Dropdown'
 import countries from '../../utilities/countries'
 
@@ -13,12 +14,9 @@ const Form = () => {
           <Dropdown prompt='Select country...'
                     options={countries}
                     value={value}
-                    onChange={val => setValue(val) }
-          />
+                    onChange={val => setValue(val) }/>
         </div>
-        <button>Search Artist Library
-          <input type='text' placeholder='type in names of artists'/>
-        </button>
+        <SearchBar />
       </form>
     </div>
   )

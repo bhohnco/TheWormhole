@@ -15,23 +15,28 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   }
 
   return (
-      <section className='dropdown'>
-        <div className='control'  onClick={() => setOpen((prev) => !prev)}>
-          <div className='selected-value' ref={ref}>{value ? value : prompt}</div>
-          <div className={`arrow ${open ? "open" : null}`}
-          />
+      <div className='dropdown'>
+        <div className='control'
+             onClick={() => setOpen((prev) => !prev)}
+        >
+          <div className='selected-value' ref={ref}>
+          {value ? value : prompt}
           </div>
-        <div className={`options ${open ? "open" : null}`}>{options.map((option, index) => (
-              <article
-                className={`option ${key = index} + ${value === option ? "selected" : null}`}
-                onClick={() => {
-                onChange(option);
-                setOpen(false);
-                }}
-              > {option}
-              </article>
+          <div className={`arrow ${open ? "open" : null}`} />
+        </div>
+        <div className={`options ${open ? "open" : null}`}>
+          {options.map((option) => (
+                <div
+                    className={`option ${value === option ? "selected" : null}`}
+                    key = {option}
+                  onClick={() => {
+                  onChange(option);
+                  setOpen(false);
+                  key = "{option}"
+                }}>
+                  {option}</div>
             ))}
         </div>
-      </section>
+      </div>
   )
 }

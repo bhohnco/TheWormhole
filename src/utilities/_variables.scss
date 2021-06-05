@@ -42,6 +42,8 @@ $shadow-heavy: inset 0 -3em 3em rgba(0, 0, 0, 0),
 
 // FONTS
 
+$inconsolata: 'Inconsolata', monospace;
+
 @font-face {
   font-family: 'AlienEncounters';
   src: url('../assets/fonts/AlienEncounters/SFAlienEncounters.ttf') format('truetype'),
@@ -89,5 +91,15 @@ $shadow-heavy: inset 0 -3em 3em rgba(0, 0, 0, 0),
         0 0 50px $rajah,
         0 0 75px $rajah;
     }
+  }
+}
+
+.fade-in {
+  
+  animation: fadebackground 1.5s;
+
+  @keyframes fadebackground {
+    from {background-color: $red-munsell;}
+    to {background-color: $rich-black;}
   }
 }

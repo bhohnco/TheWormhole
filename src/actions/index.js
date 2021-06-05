@@ -26,39 +26,72 @@ export const image = (artistImage) => {
     }
 }
 
-export const isLoading = (bool) => ({
-    type: 'IS_LOADING',
-    bool
-})
+export const current = (artistName) => {
+    return {
+        type: 'SET_CURRENT_ARTIST_NAME',
+        payload: artistName,
+    }
+}
 
-export const hasErrored = (message) => ({
+export const info = (artistInfo) => {
+    return {
+        type: 'GET_ARTIST_INFO',
+        payload: artistInfo,
+    }
+}
+
+export const isLoading = (bool) => {
+    return {
+        type: 'IS_LOADING',
+        payload: bool,
+    }
+}
+
+export const hasErrored = (message) => {
+  return {
     type: 'HAS_ERRORED',
-    message
-})
+    payload: message,
+  }
+}
 
-export const dropdownValues = (e, data) => ({
+export const dropdownValues = (e, data) => {
+  return {
     type: 'DROPDOWN_VALUES',
     payload: data.value
-})
-// export const selectedArtistID = id => ({
-//     type: 'SELECETED_ARTIST_ID',
-//     id
-// })
-//
-// export const selectedArtistImage = id => ({
-//     type: 'SELECETED_ARTIST_IMAGE',
-//     id
-// })
+  }
+}
 
-// export const selectedArtistID = id => ({
-//     type: 'SELECTED_ARTIST_ID'
-//     id
-// })
+// export const dropdownValues = (selectedArtist) => {
+//         return (dispatch) => {
+//         fetch(`//http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${Artist+selectedArtist}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`,
+//             { headers: { "Accept": "application/json" }
+//         })
+//             .then(checkForError)
+//             .then(data => dispatch({ type: 'DROPDOWN_SELECT', payload: data }))
+//             .catch(error => alert(error))
+//     }
+// }
 
-// export const selectedArtistImage = id => ({
-//     type: 'SELECTED_ARTIST_IMAGE'
-//     id
-// })
+
+export const searchData = (searchTerm) => {
+    return (dispatch) => {
+        fetch(`//http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Artist+${searchTerm}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json"`,
+            { headers: { "Accept": "application/json" }
+        })
+            .then(checkForError)
+            .then(data => dispatch({ type: 'DATA_SEARCHED', payload: data }))
+            .catch(error => alert(error))
+    }
+}
+
+const checkForError = (response) => {
+    if (!response.ok) {
+        throw new Error(response.message);
+    } else {
+        return response.json();
+    }
+}
+
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>

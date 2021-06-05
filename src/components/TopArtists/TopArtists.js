@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { artists, image } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const TopArtists = ({ location }) => {
+const TopArtists = () => {
 
   const dispatch = useDispatch();
 
   const [artistCards, setArtistCards] = useState([]);
+
+  const location = useSelector(state => state.location);
   const topArtists = useSelector(state => state.topArtists);
-  const images = useSelector(state => state.images);
+  // const images = useSelector(state => state.images);
 
   useEffect(() => {
     fetchArtistsData()
@@ -23,17 +26,18 @@ const TopArtists = ({ location }) => {
 
   const fetchArtistsData = async () => {
     const apiData = await apiCalls.getTopArtists(location.string);
-    const allArtists = apiData.topartists.artist;
-    const filtered = filterArtists(allArtists);
-
-    dispatch(artists(filtered));
+    if (apiData) {
+      const allArtists = apiData.topartists.artist;
+      const filtered = filterArtists(allArtists);
+      dispatch(artists(filtered));
+    }
   }
 
-  const fetchArtistImageObject = (id) => {
-    apiCalls.getArtistImage(id)
-      .then(imageObj => {
-        dispatch(image(locateImageURL(imageObj)))
-      });
+  const fetchArtistImageObject = async (id) => {
+    // const imageObj = await apiCalls.getArtistImage(id);
+    // if (imageObj) {
+    //   dispatch(image(locateImageURL(imageObj)))
+    // }
   }
 
   const locateImageURL = (imageObj) => {
@@ -66,17 +70,21 @@ const TopArtists = ({ location }) => {
     // console.log(images[topArtists.indexOf(artist)])
     // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg'
 
+    let nameString = artist.name.replaceAll(' ', '+');
+
     return (
-        <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-          <p>{artist.name}</p>
+      <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+        <p>{artist.name}</p>
+        <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
           <img alt='artist-portrait'></img>
-        </article>
+        </Link>
+      </article>
     )
   });
 
   return (
     topArtists.length < 1 ?
-      <section className='top-artists-box'>
+      <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>
       :
