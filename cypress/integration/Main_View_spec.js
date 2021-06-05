@@ -57,7 +57,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should open with display of message for UX while top tracks load', () => {
-    cy.get('.top-tracks-box').should('be.visible')
+    cy.get('.message-box').should('be.visible')
       .get('p').should('contain', 'Page')
   });
 
