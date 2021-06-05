@@ -1,7 +1,6 @@
 .top-tracks-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   padding: 2vw 2vw 2vw 4vw;
   width: 35%;
   height: auto;
@@ -11,18 +10,18 @@
   border: 1px solid $blue-jeans;
 
   h3 {
-    margin-top: 1vw;
+    margin-top: 2vw;
     align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 2;
     color: $fashion-fuscia;
   }
 }
 
 .tracks-list {
-  margin: 2vw 2vw 4vw 2vw;
+  margin: 4vw 2vw 4vw 2vw;
   color: $mid-emphasis-text;
   font-size: 1.5vw;
   font-family: $inconsolata;
@@ -31,7 +30,6 @@
 
 .top-track {
   margin-bottom: 2vw;
-
 }
 
 .top-track a {
