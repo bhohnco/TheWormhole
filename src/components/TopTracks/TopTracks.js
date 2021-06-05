@@ -7,21 +7,17 @@ const TopTracks = ({ location }) => {
 
   const dispatch = useDispatch();
 
-  // declare 'trackList' property in component state
-  // w/ empty array value and 'setTrackList' method to reassign
   const [trackList, setTrackList] = useState([]);
-
-  // retrieve 'topTracks' from global store and assign to variable
   const topTracks = useSelector(state => state.topTracks);
-
-  // useEffect will run functions inside only when 
-  // 'state variable' ([topTracks] in this case) is modified
+  
   useEffect(() => {
-    // first we fetch our data (and assign it to store)
     fetchTracksData()
-    // then we take that data from store and assign to topTracks 
-    // var in local state, for temporary use in conditional rend
-    setTrackList(buildTrackList(topTracks))
+  }, []);
+  
+  useEffect(() => {
+    if (topTracks.length > 1) {
+      setTrackList(buildTrackList(topTracks))
+    }
   }, [topTracks]);
 
   const fetchTracksData = async () => {
@@ -35,7 +31,7 @@ const TopTracks = ({ location }) => {
   const filterTracks = (data) => {
     const topTracks = data.reduce((topTen, trackObj) => {
       if (data.indexOf(trackObj) < 10) {
-        topTen.push({artist: trackObj.artist.name, title: trackObj.name, key: trackObj.mbid});
+        topTen.push({artist: trackObj.artist.name, title: trackObj.name});
       }
       return topTen;
     }, []);
@@ -44,17 +40,11 @@ const TopTracks = ({ location }) => {
 
   const buildTrackList = (topTracks) => topTracks.map(track => {
     return (
-      <li key={track.mbid}>{track.artist} - "{track.title}"</li>
+      <li key={topTracks.indexOf(track)}>{track.artist} - "{track.title}"</li>
     )
   });
 
   return (
-
-    // if local topTracks var length is less than 1 
-    // (meaning both local state and global store haven't received that data yet) 
-    // we render loading page. otherwise, we do have the data in state/store needed to
-    //  have built our trackList HTML, so we're safe to render that instead.
-
     topTracks.length < 1 ? 
       <section className='top-tracks-box'>
         <p className='message'>Page Loading</p>
@@ -71,5 +61,32 @@ const TopTracks = ({ location }) => {
   )
 }
 
-export default TopTracks;
 
+// retrieveTopTracks = (location) => {
+//   apiCalls.getTopTracks(location)
+//     .then(data => {
+//       this.setState({ topTracks: data })
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       console.log(`Sorry, could not retrieve data for ${this.state.location.name}`);
+//       this.setState({ error: error.message })
+//     })
+// }
+//
+
+
+// const mapStateToProps = ({ tracks }) => ({
+//   topTracks: tracks,
+// })
+//
+// export const mapDispatchToProps = dispatch => (
+//   bindActionCreators({
+//     // hasErrored,
+//     // isLoading,
+//         tracks
+//   },
+//   dispatch)
+// )
+
+export default TopTracks;

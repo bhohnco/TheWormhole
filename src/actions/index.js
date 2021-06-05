@@ -1,5 +1,5 @@
 export const artists = (artistsData) => {
-return {
+    return {
         type: 'GET_TOP_ARTIST_DATA',
         payload: artistsData,
     }
@@ -36,6 +36,20 @@ export const hasErrored = (message) => ({
     message
 })
 
+export const dropdownValues = (e, data) => ({
+    type: 'DROPDOWN_VALUES',
+    payload: data.value
+})
+// export const selectedArtistID = id => ({
+//     type: 'SELECETED_ARTIST_ID',
+//     id
+// })
+//
+// export const selectedArtistImage = id => ({
+//     type: 'SELECETED_ARTIST_IMAGE',
+//     id
+// })
+
 // export const selectedArtistID = id => ({
 //     type: 'SELECTED_ARTIST_ID'
 //     id
@@ -45,7 +59,6 @@ export const hasErrored = (message) => ({
 //     type: 'SELECTED_ARTIST_IMAGE'
 //     id
 // })
-
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>
