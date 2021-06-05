@@ -37,7 +37,6 @@ const ArtistInfo = ({ }) => {
   }
 
   return (
-
     !artistInfo.name ? 
       <section className='message-box'>
         <p className='message'>Page Loading</p>

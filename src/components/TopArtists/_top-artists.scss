@@ -1,6 +1,6 @@
 .top-artists-box {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 15% 85%;
   padding: 2vw 2vw 2vw 4vw;
   width: 45%;
   height: auto;
@@ -10,11 +10,12 @@
   border: 1px solid $blue-jeans;
 
   h3 {
-    margin: 2.5vw auto 2vw auto;
-    justify-self: center;
+    margin-top: 1vw;
+    align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
     font-size: 2vw;
+    line-height: 2;
     color: $fashion-fuscia;
   }
 
@@ -27,6 +28,10 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  margin-top: 2vw;
+  color: $mid-emphasis-text;
+  font-size: 1.5vw;
+  font-family: $inconsolata;
 }
 
 .top-artist-card {
