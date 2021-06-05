@@ -61,7 +61,10 @@ describe('Show main view of Worm Hole App', () => {
       .get('p').should('contain', 'Page')
   });
 
-
+  it('Should load the main view with top tracks country', () => {
+    cy.get('.tracks-list').should('be.visible')
+      .get('h3').should('have.length', 2)
+  });
 
   it('Should display single block of tracks onto the main view on load', () => {
     cy.get('ol').should('have.length', 1)
