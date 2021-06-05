@@ -52,8 +52,6 @@ describe('Show main view of Worm Hole App', () => {
       .get('.search-btn').click()
   });
 
-
-
   it('Should have a dropdown menu on click', () => {
     cy.get('.control').click()
   });
