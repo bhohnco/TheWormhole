@@ -89,7 +89,7 @@ const TopArtists = () => {
       </section>
       :
       <section className='top-artists-box'>
-        <h3> Top Artists in {location.name} </h3>
+        <h3> Top Artists: <br></br> {location.name} </h3>
         <div className='artists-list'>
           {artistCards}
         </div>

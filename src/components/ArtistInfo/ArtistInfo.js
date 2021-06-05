@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { current, info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const ArtistInfo = ({ }) => {
+const ArtistInfo = ({ id }) => {
+
+  const [ directory, path ]  = id.split(':');
 
   // how do we retrieve artist name from "card click" 
   // and assign to 'currentCard' in the store?
@@ -17,8 +19,7 @@ const ArtistInfo = ({ }) => {
 
   ////// TEMP FUNCTION
   useEffect(() => {
-    const artistName = "David Bowie";
-    dispatch(current(artistName));
+    dispatch(current(path));
   }, []);
   //////
   
@@ -37,7 +38,6 @@ const ArtistInfo = ({ }) => {
   }
 
   return (
-
     !artistInfo.name ? 
       <section className='message-box'>
         <p className='message'>Page Loading</p>
@@ -47,9 +47,8 @@ const ArtistInfo = ({ }) => {
         <div className='artist-img-box'>
           *artist image here*
         </div>
-        <h3 className='artist-name'>{artistInfo.name}</h3>
+        <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         <div className='artist-text-box'>
-          <p className='artist-summary'>{artistInfo.bio.summary}</p>
           <p className='artist-bio'>{artistInfo.bio.content}</p>
         </div>
       </section>

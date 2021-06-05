@@ -10,15 +10,35 @@
   border: 1px solid $blue-jeans;
 
   h3 {
-    margin: 3vw auto 2vw auto;
-    align-self: center;
+    margin-top: 2vw;
+    align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
-    font-size: 2vw;
+    font-size: 2.5vw;
+    line-height: 2;
     color: $fashion-fuscia;
   }
+}
 
-  li {
-    margin: 1vw;
-  }
+.tracks-list {
+  margin: 4vw 2vw 4vw 2vw;
+  color: $mid-emphasis-text;
+  font-size: 1.5vw;
+  font-family: $inconsolata;
+  line-height: 2;
+}
+
+.top-track {
+  margin-bottom: 2vw;
+}
+
+.top-track a {
+    list-style-type: none;
+    display: inline;
+    text-decoration: none;
+    color: $mid-emphasis-text;
+
+    &:hover {
+      color: $blue-jeans;
+    }
 }
