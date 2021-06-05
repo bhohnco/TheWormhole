@@ -1,7 +1,9 @@
-const searchReducer (state = [], action) => {
+
+const searchReducer = (state = [], action) => {
   switch(action.type) {
     case 'DATA_SEARCHED':
-      return {: action.payload}
+      state = action.payload;
+      return state;
 default:
   return state
 }

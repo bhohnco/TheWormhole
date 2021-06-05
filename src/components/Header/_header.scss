@@ -5,12 +5,13 @@ header {
   background-color: $rich-black;
   height: 16vw;
   border-bottom: 6px solid $blue-jeans;
+  margin-bottom: 5%;
 }
 
 h1 {
   justify-self: center;
   align-self: flex-end;
-  font-size: 5vw;
+  font-size: 7vw;
   font-family: AlienEncounters;
   font-style: italic;
   color: hsla(350, 89%, 53%, 0.797);
@@ -25,7 +26,8 @@ nav {
   width: 99%;
 }
 
-.nav-btn {
+.go-home,
+.random-location {
     width: 15vw;
     height: 3vw;
     margin: 2vw 3vw 0 3vw;

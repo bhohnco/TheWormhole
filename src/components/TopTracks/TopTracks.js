@@ -10,11 +10,11 @@ const TopTracks = () => {
   const location = useSelector(state => state.location);
   const [trackList, setTrackList] = useState([]);
   const topTracks = useSelector(state => state.topTracks);
-  
+
   useEffect(() => {
     fetchTracksData()
   }, []);
-  
+
   useEffect(() => {
     if (topTracks.length > 1) {
       setTrackList(buildTrackList(topTracks))
@@ -25,7 +25,7 @@ const TopTracks = () => {
     const apiData = await apiCalls.getTopTracks(location.string);
     const allTracks = apiData.tracks.track;
     const filtered = filterTracks(allTracks);
-    
+
     dispatch(tracks(filtered));
   }
 
@@ -37,7 +37,7 @@ const TopTracks = () => {
       return topTen;
     }, []);
     return topTracks;
-  } 
+  }
 
   const buildTrackList = (topTracks) => topTracks.map(track => {
 
@@ -49,10 +49,10 @@ const TopTracks = () => {
   });
 
   return (
-    topTracks.length < 1 ? 
+    topTracks.length < 1 ?
       <section className='message-box'>
         <p className='message'>Page Loading</p>
-      </section> 
+      </section>
       :
       <section className='top-tracks-box'>
         <h3> Top Tracks: <br></br> {location.name} </h3>

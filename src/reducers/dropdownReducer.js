@@ -8,5 +8,5 @@ const dropdownReducer = (state = false, action) => {
     default:
       return state
   }
-
-  export default dropdownReducer;
+}
+export default dropdownReducer;

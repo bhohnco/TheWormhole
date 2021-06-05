@@ -17,7 +17,7 @@ const TopArtists = () => {
   useEffect(() => {
     fetchArtistsData()
   }, []);
-  
+
   useEffect(() => {
     if (topArtists.length > 1) {
       setArtistCards(buildCards(topArtists))
@@ -68,7 +68,7 @@ const TopArtists = () => {
   const buildCards = (topArtists) => topArtists.map(artist => {
 
     // console.log(images[topArtists.indexOf(artist)])
-    // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg' 
+    // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg'
 
     let nameString = artist.name.replaceAll(' ', '+');
 
@@ -83,7 +83,7 @@ const TopArtists = () => {
   });
 
   return (
-    topArtists.length < 1 ? 
+    topArtists.length < 1 ?
       <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>

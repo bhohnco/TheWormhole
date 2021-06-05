@@ -71,7 +71,7 @@ export const dropdownValues = (e, data) => {
 //             .catch(error => alert(error))
 //     }
 // }
- 
+
 
 export const searchData = (searchTerm) => {
     return (dispatch) => {

@@ -18,7 +18,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should display a message for the user while the page is loading', () => {
-    cy.get('h2').should('contain', 'Page')
+    cy.get('.message').should('contain', 'Page')
   });
 
   it('Should display title on main page view', () => {
@@ -30,7 +30,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should show go home and randomization of countries selected buttons on load', () => {
-    cy.get('.random-location').should('contain', 'Randomize Music Location')
+    cy.get('.random-location').should('contain', 'Randomize Location')
 
       .get('.go-home').should('contain', 'Return Home')
   });
@@ -39,37 +39,60 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
   });
 
-  it('Should display a search form that has a countries dropdown, an input line and search button', () => {
-    cy.get('select').select('DROP DOWN').should('have.value', 'dropDown')
+  it('Should render the drop down component in the form component', () => {
+    cy.get('.drop-render').should('contain', 'Select country...')
+  });
 
-      .get('form button')
-      .find('input[type=text]').should('have.length', 1)
+  it('Should render search bar from its component', () => {
+    cy.get('.search-input').should('be.visible')
+  });
 
-      .get('form').find('button').should('contain', 'Search Artist Library')
+  it('Should give the user the chance to click after searching', () => {
+    cy.get('.search-btn').should('contain', 'Search')
+      .get('.search-btn').click()
+  });
+
+  it('Should have a dropdown menu on click', () => {
+    cy.get('.control').click()
   });
 
   it('Should have a smaller title of the top tracks list', () => {
     cy.get('h3').should('contain', 'Top Tracks')
   });
 
-  it('Should load the main view with top tracks on display', () => {
-    cy.get('ol').should('have.length', 0)
+  it('Should open with display of message for UX while top tracks load', () => {
+    cy.get('.message-box').should('be.visible')
+      .get('p').should('contain', 'Page')
+  });
+
+  it('Should load the main view with top tracks country', () => {
+    cy.get('.tracks-list').should('be.visible')
+      .get('h3').should('have.length', 2)
+  });
+
+  it('Should display single block of tracks onto the main view on load', () => {
+    cy.get('ol').should('have.length', 1)
   });
 
   it('Should have a subtitle of the top artists listing', () => {
-    cy.get('h3').should('contain', 'Top Artists')
+    cy.get('h3').should('contain', 'Top ')
   });
 
   it('Should load top artitsts onto the main view of the page on load', () => {
     cy.get('ol').should('have.length', 1)
   });
 
+  it('Should offer an abrasively comforting message to our visitors as our artists load', () => {
+    cy.get('.message-box').should('be.visible')
+      .get('.message').should('contain', 'Page')
+  })
+
   it('Should display the artists names in a numbered list', () => {
     cy.get('ol>li').should('contain', '')
   });
 
 });
-// 
+//
 // describe('400 error handling message for main page view', () => {
 //
 //   it('Displays a 404 for UI when the server is down', () => {

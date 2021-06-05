@@ -8,7 +8,7 @@ console.log("HELLO")
 export const fetchTopArtists = (location) => {
 
   const url = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${location}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`
-  
+
   return async (dispatch) => {
 
     try {
@@ -25,6 +25,5 @@ export const fetchTopArtists = (location) => {
       }
 
     }
-    
-}
 
+}
