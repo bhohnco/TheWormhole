@@ -47,6 +47,10 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('.search-input').should('be.visible')
   });
 
+  it('Should give the user the chance to click after searching', () => {
+    cy.get('.search-btn').should('contain', 'Search')
+      .get('.search-btn').click()
+  });
 
 
 
