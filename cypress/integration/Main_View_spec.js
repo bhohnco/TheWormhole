@@ -30,7 +30,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should show go home and randomization of countries selected buttons on load', () => {
-    cy.get('.random-location').should('contain', 'Randomize Music Location')
+    cy.get('.random-location').should('contain', 'Randomize Location')
 
       .get('.go-home').should('contain', 'Return Home')
   });
@@ -41,12 +41,11 @@ describe('Show main view of Worm Hole App', () => {
 
   it('Should render the drop down component in the form component', () => {
     cy.get('.drop-render').should('contain', 'Select country...')
-
-      .get('form button')
-      .find('input[type=text]').should('have.length', 1)
-
-      .get('form').find('button').should('contain', 'Search Artist Library')
   });
+
+
+
+
 
   it('Should have a dropdown menu on click', () => {
     cy.get('.control').click()
@@ -71,12 +70,17 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should have a subtitle of the top artists listing', () => {
-    cy.get('h3').should('contain', 'Top Artists')
+    cy.get('h3').should('contain', 'Top ')
   });
 
   it('Should load top artitsts onto the main view of the page on load', () => {
     cy.get('ol').should('have.length', 1)
   });
+
+  it('Should offer an abrasively comforting message to our visitors as our artists load', () => {
+    cy.get('.message-box').should('be.visible')
+      .get('.message').should('contain', 'Page')
+  })
 
   it('Should display the artists names in a numbered list', () => {
     cy.get('ol>li').should('contain', '')
