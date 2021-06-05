@@ -1,10 +1,12 @@
-const dropdown = (state = false, action) => {
+const dropdownReducer = (state = false, action) => {
   switch(action.type) {
-    case 'IS_LOADING':
-      return !state;
+    case 'GET_TOP_ARTIST_DATA':
+      state = action.payload;
+    case 'GET_TOP_TRACKS_DATA':
+      state = action.payload;
+      return state
     default:
-      return state;
+      return state
   }
-}
 
-export default dropdown;
+  export default dropdownReducer;
