@@ -26,15 +26,40 @@ export const image = (artistImage) => {
     }
 }
 
-export const isLoading = (bool) => ({
-    type: 'IS_LOADING',
-    bool
-})
+export const current = (artistName) => {
+    return {
+        type: 'SET_CURRENT_ARTIST_NAME',
+        payload: artistName,
+    }
+}
 
-export const hasErrored = (message) => ({
+export const info = (artistInfo) => {
+    return {
+        type: 'GET_ARTIST_INFO',
+        payload: artistInfo,
+    }
+}
+
+export const isLoading = (bool) => {
+    return {
+        type: 'IS_LOADING',
+        payload: bool,
+    }
+}
+
+export const hasErrored = (message) => {
+  return {
     type: 'HAS_ERRORED',
-    message
-})
+    payload: message,
+  }
+}
+
+export const dropdownValues = (e, data) => {
+  return {
+    type: 'DROPDOWN_VALUES',
+    payload: data.value
+  }
+}
 
 // export const dropdownValues = (selectedArtist) => {
 //         return (dispatch) => {
@@ -67,25 +92,6 @@ const checkForError = (response) => {
     }
 }
 
-// export const selectedArtistID = id => ({
-//     type: 'SELECETED_ARTIST_ID',
-//     id
-// })
-//
-// export const selectedArtistImage = id => ({
-//     type: 'SELECETED_ARTIST_IMAGE',
-//     id
-// })
-
-// export const selectedArtistID = id => ({
-//     type: 'SELECTED_ARTIST_ID'
-//     id
-// })
-
-// export const selectedArtistImage = id => ({
-//     type: 'SELECTED_ARTIST_IMAGE'
-//     id
-// })
 
 // export const searchForArtist = dispatch => ({
 //     onSearchTermChange: (value) =>

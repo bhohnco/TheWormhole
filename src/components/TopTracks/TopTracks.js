@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { tracks } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
-const TopTracks = ({ location }) => {
+const TopTracks = () => {
 
   const dispatch = useDispatch();
 
+  const location = useSelector(state => state.location);
   const [trackList, setTrackList] = useState([]);
   const topTracks = useSelector(state => state.topTracks);
   
@@ -46,7 +47,7 @@ const TopTracks = ({ location }) => {
 
   return (
     topTracks.length < 1 ? 
-      <section className='top-tracks-box'>
+      <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section> 
       :
