@@ -5,7 +5,7 @@ form {
   height: 7vw;
   margin: 1vw;
   color: whitesmoke;
-  background-color: rgba(19, 99, 142, 0.188);
+  background-color: $opaque-blue;
   box-shadow: $shadow-heavy;
 
   select, input {

@@ -32,7 +32,7 @@ const TopTracks = () => {
   const filterTracks = (data) => {
     const topTracks = data.reduce((topTen, trackObj) => {
       if (data.indexOf(trackObj) < 10) {
-        topTen.push({artist: trackObj.artist.name, title: trackObj.name});
+        topTen.push({ url: trackObj.url, artist: trackObj.artist.name, title: trackObj.name});
       }
       return topTen;
     }, []);
@@ -40,8 +40,11 @@ const TopTracks = () => {
   }
 
   const buildTrackList = (topTracks) => topTracks.map(track => {
+
     return (
-      <li key={topTracks.indexOf(track)}>{track.artist} - "{track.title}"</li>
+      <li className='top-track' key={topTracks.indexOf(track)}>
+        <a href={track.url}>{track.artist} - "{track.title}"</a>
+      </li>
     )
   });
 
@@ -52,7 +55,7 @@ const TopTracks = () => {
       </section>
       :
       <section className='top-tracks-box'>
-        <h3> Top Tracks in {location.name} </h3>
+        <h3> Top Tracks: <br></br> {location.name} </h3>
         <div className='tracks-list'>
           <ol>
             {trackList}
