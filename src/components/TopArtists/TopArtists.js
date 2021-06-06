@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { artists } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
+import utils from '../../utilities/utils'
 
 const TopArtists = () => {
 
@@ -32,6 +33,10 @@ const TopArtists = () => {
       dispatch(artists(filtered));
     }
   }
+  
+  // const ErrorComponent() {
+  //   return <h1>Division by 0 Error</h1>
+  // }
 
   // const fetchArtistImage = async (id) => {
   //   const imageObj = await apiCalls.getArtistImagePage(id);
