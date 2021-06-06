@@ -1,18 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import AsyncSelect from 'react-select/async'
+import { Link } from 'react-router-dom';
+// import { }
+import apiCalls from '../../utilities/apiCalls'
+// import {}
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  
+  const [open, setOpen, showSelectedCountry ] = useState(false);
   const ref = useRef(null);
 
   useEffect (() => {
   document.addEventListener("click", close)
+    // document.addEventListener('click', handleClick(value))
   return () => document.removeEventListener("click", close);
   }, []);
 
   function close(e) {
     setOpen(e && e.target === ref.current)
   }
+  
+  // const showSelectedCountry(country){
+  //   apiCalls.getSelectedCountry(country)
+  // }
+
+  
+   
 
   return (
       <section className='dropdown'>
@@ -30,9 +46,8 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
                   className={`option ${value === option ? "selected" : null}`}
                   key = {option}
                   onClick={() => {
-                    onChange(option);
+                    onChange=(option);
                     setOpen(false);
-                    key = "{option}"
                     }}
                 >
                     {option}
