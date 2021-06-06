@@ -14,7 +14,7 @@
     align-self: center;
     font-family: AlienEncounters;
     font-style: italic;
-    font-size: 2.5vw;
+    //font-size: 2.5vw;
     line-height: 2;
     color: $fashion-fuscia;
   }
@@ -30,7 +30,7 @@
   justify-content: flex-start;
   margin-top: 2vw;
   color: $mid-emphasis-text;
-  font-size: 1.5vw;
+  //font-size: 1.5vw;
   font-family: $inconsolata;
 }
 
@@ -40,4 +40,24 @@
   margin: 1% 1% 1% 1.5%;
   font-size: 1.5vw;
   text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+
+  h3 {
+    font-size: 3.8vw;
+  }
+
+  .top-artists-box,
+  {
+    display: flex;
+    margin-top: 18%;
+    width: fit-content;
+  }
+
+  .artists-list {
+    display: flex;
+    height: 100vw;
+  }
+
 }

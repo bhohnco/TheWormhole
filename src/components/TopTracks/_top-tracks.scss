@@ -14,7 +14,7 @@
     align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
-    font-size: 2.5vw;
+
     line-height: 2;
     color: $fashion-fuscia;
   }
@@ -41,4 +41,31 @@
     &:hover {
       color: $blue-jeans;
     }
+}
+
+@media screen and (max-width: 320px) {
+
+  h3 {
+    font-size: 3.8vw;
+    align-self: center;
+    justify-content: center;
+  }
+
+  a {
+    font-size: 3vw;
+  }
+
+  .top-tracks-box,
+  {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 50vw;
+  }
+
+  .tracks-list {
+    display: flex;
+    height: 100vw;
+  }
+
 }
