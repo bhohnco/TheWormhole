@@ -3,14 +3,42 @@ form {
   justify-content: space-evenly;
   align-items: center;
   height: 7vw;
-  margin: 1vw;
+  margin-bottom: 3vw;
   color: whitesmoke;
-  background-color: $opaque-blue;
+  background-color: $opaque-blue-light;
   box-shadow: $shadow-heavy;
+  font-family: $inconsolata;
 
   select, input {
+    font-family: $inconsolata;
     margin-left: 1vw;
   }
+}
+
+.welcome-message {
+  flex-direction: row;
+  justify-content: center;
+  font-family: AlienEncounters;
+}
+
+.welcome-text {
+  margin-bottom: 2vw;
+  text-align: center;
+  font-family: $staatliches;
+  font-style: italic;
+  font-size: 2.5vw;
+  font-weight: 300;
+  color: $max-blue-green;
+}
+
+.location-name {
+  margin-bottom: 2vw;
+  text-align: center;
+  font-family: AlienEncounters;
+  font-style: italic;
+  font-size: 4vw;
+  font-weight: 500;
+  color: $max-blue-green;
 }
 
 

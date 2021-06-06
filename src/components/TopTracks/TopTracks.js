@@ -55,7 +55,7 @@ const TopTracks = () => {
       </section>
       :
       <section className='top-tracks-box'>
-        <h3> Top Tracks: <br></br> {location.name} </h3>
+        <h3>Top Tracks</h3>
         <div className='tracks-list'>
           <ol>
             {trackList}
