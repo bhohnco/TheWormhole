@@ -23,7 +23,7 @@ class SearchBar extends Component {
   clearInputs = () => {
     this.setState({ searchWord: '' })
   }
-
+//   to trigger pete's styles of the second search bar styles folder <div className='search-container'>
   render() {
     return (
         <section className='search-bar-box' >
