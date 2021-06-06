@@ -57,3 +57,15 @@ nav {
     }
 
   }
+
+  @media screen and (max-width: 1011px) {
+    .header {
+      grid-gap: 15px;
+    }
+
+    .random-location,
+    .go-home {
+      font-size: 2.2vw;
+    }
+
+  }
