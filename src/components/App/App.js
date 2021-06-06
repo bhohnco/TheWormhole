@@ -29,7 +29,7 @@ const App = () => {
     )
   } else {
     return (
-        <div className="App" style={{ backgroundImage: `url(${background})`}}>
+        <div className='app-wrapper' style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
               <Switch>
@@ -44,8 +44,8 @@ const App = () => {
                   <Form />
                   <main className='main-section'>
                     <section className='location-display'>
-                      <TopArtists />
-                      <TopTracks />
+                    <TopArtists className='main-artist-box'/>
+                    <TopTracks className='main-track-box'/>
                     </section>
                   </main>
                 </Route>

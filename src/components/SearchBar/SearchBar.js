@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { searchData } from '../../actions/index';
 import { connect } from 'react-redux';
 
-
 class SearchBar extends Component {
   constructor() {
     super();
@@ -24,10 +23,10 @@ class SearchBar extends Component {
   clearInputs = () => {
     this.setState({ searchWord: '' })
   }
-
+//   to trigger pete's styles of the second search bar styles folder <div className='search-container'>
   render() {
     return (
-        <div className='search-container'>
+        <section className='search-bar-box' >
           <input
               className='search-input'
               type='text'
@@ -38,7 +37,7 @@ class SearchBar extends Component {
               onChange={this.handleChange}
           />
           <button className='search-btn' onClick={this.handleSubmit}>Search</button>
-        </div>
+        </section>
     )
   }
 }

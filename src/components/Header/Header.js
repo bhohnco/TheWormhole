@@ -5,11 +5,11 @@ import Banner from '../../assets/images/night-sky.jpeg';
 const Header = () => {
 
   return (
-    <header style={{ backgroundImage: `url(${Banner})`}}>
+    <header className='header-wrapper' style={{ backgroundImage: `url(${Banner})`}}>
       <h1 className='glow'>wormhole</h1>
       <nav>
         <Link to='/'>
-          <button className='random-location'>Randomize Location</button>
+          <button className='random-location'>Randomize Me</button>
         </Link>
         <Link to='/'>
           <button className='go-home'>Return Home</button>

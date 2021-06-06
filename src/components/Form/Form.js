@@ -10,7 +10,7 @@ const Form = () => {
   const location = useSelector(state => state.location);
 
   return (
-      <section>
+      <section className='form-box'>
         <form className='search-form'>
           <div className='drop-render' style ={{ width: 220}}>
             <Dropdown prompt='Select country...'
