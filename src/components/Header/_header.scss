@@ -85,3 +85,22 @@ nav {
     }
 
   }
+
+  @media screen and (max-width: 319px) {
+    header {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0;
+      grid-gap: 10px;
+    }
+
+    .random-location,
+    .go-home {
+      font-size: 3vw;
+      font-weight: bold;
+      margin: 1vw 4vw 6vw 4vw;
+      padding: 1%;
+      width: 20vw;
+      height: 5vw;
+      border: 1px solid $inconsolata;
+    }
+  }
