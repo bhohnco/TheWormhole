@@ -27,7 +27,7 @@
 .dropdown .selected-value {
   line-height: 1.5;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: $mid-emphasis-text;
   border: 1px solid #ccc;
   border-radius: 2px;
   box-sizing: border-box;
@@ -36,11 +36,15 @@
   padding: 8px 52px 8px 10px;
   transition: all 200ms ease;
   width: 100%;
+
+  &:hover {
+    background-color: whitesmoke;
+  }
 }
 
 .dropdown .options {
   display: none;
-  background-color: #fff;
+  background-color: $mid-emphasis-text;
   border: 1px solid #ccc;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -52,6 +56,10 @@
   width: 100%;
   z-index: 1000;
   -webkit-overflow-scrolling: touch;
+
+  &:focus {
+    background-color: whitesmoke;
+  }
 }
 
 .dropdown .options.open {

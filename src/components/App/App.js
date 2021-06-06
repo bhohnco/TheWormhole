@@ -2,8 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
-// import { fetchTopArtists } from '../../thunks/fetchTopArtists';
-// import { connect } from 'react-redux';
 import background from '../../assets/images/night-sky.jpeg';
 import utils from '../../utilities/utils';
 import Header from '../Header/Header';
@@ -34,22 +32,24 @@ const App = () => {
         <div className="App" style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
-            <Form />
-            <main className='main-section'>
               <Switch>
                 <Route exact path='/:id'
-                       render={({ match }) =>
-                           <ArtistInfo id={ match.params.id }/>
-                       }
+                  render={({ match }) =>
+                    <main className='main-section'>
+                          <ArtistInfo id={ match.params.id }/>
+                    </main>
+                  }
                 />
                 <Route exact path="/" >
-                  <section className='location-display'>
-                    <TopArtists />
-                    <TopTracks />
-                  </section>
+                  <Form />
+                  <main className='main-section'>
+                    <section className='location-display'>
+                      <TopArtists />
+                      <TopTracks />
+                    </section>
+                  </main>
                 </Route>
               </Switch>
-            </main>
           </Router>
         </div>
     );
