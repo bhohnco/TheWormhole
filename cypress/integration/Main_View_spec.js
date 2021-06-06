@@ -22,7 +22,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should display title on main page view', () => {
-    cy.get('.glow').should('contain', 'W o r m h o l e')
+    cy.get('.glow').should('contain', 'wormhole')
   });
 
   it('Should have back lighting to our page title', () => {
