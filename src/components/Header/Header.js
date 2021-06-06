@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <header style={{ backgroundImage: `url(${Banner})`}}>
-      <h1 className='glow'>W o r m h o l e</h1>
+      <h1 className='glow'>wormhole</h1>
       <nav>
         <Link exact to='/'>
           <button className='random-location'>Randomize Location</button>

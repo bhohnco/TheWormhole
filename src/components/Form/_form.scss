@@ -5,7 +5,7 @@ form {
   height: 7vw;
   margin-bottom: 3vw;
   color: whitesmoke;
-  background-color: $opaque-blue;
+  background-color: $opaque-blue-light;
   box-shadow: $shadow-heavy;
   font-family: $inconsolata;
 
@@ -16,10 +16,9 @@ form {
 }
 
 .welcome-message {
-  display: flex;
+  flex-direction: row;
   justify-content: center;
   font-family: AlienEncounters;
-  margin: 4vw auto 2vw auto;
 }
 
 .welcome-text {
@@ -29,7 +28,7 @@ form {
   font-style: italic;
   font-size: 2.5vw;
   font-weight: 300;
-  color: $blue-jeans;
+  color: $max-blue-green;
 }
 
 .location-name {
@@ -37,9 +36,9 @@ form {
   text-align: center;
   font-family: AlienEncounters;
   font-style: italic;
-  font-size: 4.5vw;
+  font-size: 4vw;
   font-weight: 500;
-  color: $blue-jeans;
+  color: $max-blue-green;
 }
 
 
