@@ -46,6 +46,16 @@
   opacity: 1;
 }
 
+.search-btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+}
 
 @keyframes glowing {
     0% { background-position: 0 0; }
