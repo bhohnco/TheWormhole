@@ -30,7 +30,7 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should show go home and randomization of countries selected buttons on load', () => {
-    cy.get('.random-location').should('contain', 'Randomize Location')
+    cy.get('.random-location').should('contain', 'Randomize Me')
 
       .get('.go-home').should('contain', 'Return Home')
   });
