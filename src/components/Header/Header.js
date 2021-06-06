@@ -5,7 +5,7 @@ import Banner from '../../assets/images/night-sky.jpeg';
 const Header = () => {
 
   return (
-    <header style={{ backgroundImage: `url(${Banner})`}}>
+    <header className='header-wrapper' style={{ backgroundImage: `url(${Banner})`}}>
       <h1 className='glow'>W o r m h o l e</h1>
       <nav>
         <Link exact to='/'>

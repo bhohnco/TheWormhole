@@ -44,8 +44,8 @@ const App = () => {
                 />
                 <Route exact path="/" >
                   <section className='location-display'>
-                    <TopArtists />
-                    <TopTracks />
+                    <TopArtists className='main-artist-box'/>
+                    <TopTracks className='main-track-box'/>
                   </section>
                 </Route>
               </Switch>

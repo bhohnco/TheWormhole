@@ -8,7 +8,7 @@ const Form = () => {
   const [value, setValue] = useState(null)
 
   return (
-    <div>
+    <div className='form-box'>
       <form className='search-form'>
         <div className='drop-render' style ={{ width: 220}}>
           <Dropdown prompt='Select country...'
