@@ -43,3 +43,17 @@ nav {
       background-color: $opaque-blue;
     }
   }
+
+  /*~~~~~~ Responsive ~~~~~~ */
+
+  @media screen and (max-width: 1443px) {
+    .header {
+      grid-gap: 20px;
+    }
+
+    .random-location,
+    .go-home {
+      font-size: 2.4vw;
+    }
+
+  }
