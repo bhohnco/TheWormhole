@@ -5,14 +5,15 @@ header {
   background-color: $rich-black;
   height: 16vw;
   border-bottom: 6px solid $blue-jeans;
-  margin-bottom: 5%;
+  margin-bottom: 3vw;
 }
 
 h1 {
   justify-self: center;
   align-self: flex-end;
-  font-size: 7vw;
+  font-size: 6vw;
   font-family: AlienEncounters;
+  font-weight: 400;
   font-style: italic;
   color: hsla(350, 89%, 53%, 0.797);
 }
@@ -29,16 +30,17 @@ nav {
 .go-home,
 .random-location {
     width: 15vw;
-    height: 3vw;
+    height: 4vw;
     margin: 2vw 3vw 0 3vw;
-    font-family: $inconsolata;
-    font-size: 1.2vw;
+    font-family: $staatliches;
+    font-size: 1.1vw;
+    letter-spacing: 0.5vw;
     border: 1px solid #ed33b86c;
-    color: $green-lizzard;
+    color: $max-blue-green;
     background-color: rgba(12, 22, 48, 0.51);
 
     &:hover {
-      border: 1px solid $icerine;
+      border: 1px solid $kelly-green;
       color: $mid-emphasis-text;
       background-color: $opaque-blue;
     }

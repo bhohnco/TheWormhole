@@ -34,22 +34,24 @@ const App = () => {
         <div className="App" style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
-            <Form />
-            <main className='main-section'>
               <Switch>
                 <Route exact path='/:id'
-                       render={({ match }) =>
-                           <ArtistInfo id={ match.params.id }/>
-                       }
+                  render={({ match }) =>
+                    <main className='main-section'>
+                          <ArtistInfo id={ match.params.id }/>
+                    </main>
+                  }
                 />
                 <Route exact path="/" >
-                  <section className='location-display'>
-                    <TopArtists />
-                    <TopTracks />
-                  </section>
+                  <Form />
+                  <main className='main-section'>
+                    <section className='location-display'>
+                      <TopArtists />
+                      <TopTracks />
+                    </section>
+                  </main>
                 </Route>
               </Switch>
-            </main>
           </Router>
         </div>
     );
