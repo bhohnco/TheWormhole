@@ -4,13 +4,11 @@ form {
   align-items: center;
   height: 7vw;
   margin: 1vw;
-  color: whitesmoke;
-  background-color: $opaque-blue;
-  box-shadow: $shadow-heavy;
-
-  select, input {
-    margin-left: 1vw;
-  }
 }
 
+.drop-render {
+  text-align: center;
 
+
+
+  font-size: 20px;
