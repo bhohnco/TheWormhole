@@ -14,13 +14,13 @@
     align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
-<<<<<<< HEAD
+
 
     line-height: 2;
-=======
+
     font-size: 3.1vw;
     font-weight: 300;
->>>>>>> 3d48b7885c97e409452dce4dd92321742439548f
+
     color: $fashion-fuscia;
   }
 }
@@ -48,6 +48,23 @@
     }
 }
 
+@media screen and (max-width: 651px) {
+
+  h3 {
+    font-size: 3.5vw;
+    align-self: center;
+    justify-content: center;
+  }
+
+  a {
+    font-size: 2.8vw;
+  }
+
+  li {
+    font-size: 2.5vw;
+  }
+}
+
 @media screen and (max-width: 320px) {
 
   h3 {
@@ -57,7 +74,11 @@
   }
 
   a {
-    font-size: 3vw;
+    font-size: 3.6vw;
+  }
+
+  li {
+    font-size: 3.2vw;
   }
 
   .top-tracks-box,
@@ -65,12 +86,12 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    width: 50vw;
+    width: fit-content;
   }
 
   .tracks-list {
     display: flex;
-    height: 100vw;
+
   }
 
 }

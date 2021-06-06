@@ -15,13 +15,9 @@
     margin-bottom: 1em;
     font-family: AlienEncounters;
     font-style: italic;
-<<<<<<< HEAD
-    //font-size: 2.5vw;
     line-height: 2;
-=======
     font-size: 3.1vw;
     font-weight: 200;
->>>>>>> 3d48b7885c97e409452dce4dd92321742439548f
     color: $fashion-fuscia;
   }
 
@@ -36,10 +32,6 @@
   justify-content: flex-start;
   margin-top: 2vw;
   color: $mid-emphasis-text;
-<<<<<<< HEAD
-  //font-size: 1.5vw;
-=======
->>>>>>> 3d48b7885c97e409452dce4dd92321742439548f
   font-family: $inconsolata;
   font-size: 1.5vw;
 }
@@ -48,16 +40,25 @@
   width: 29%;
   border: 1px solid $beau-blue;
   margin: 1% 1% 1% 1.5%;
-  font-size: 1.5vw;
+  font-size: 2vw;
   text-align: center;
 }
+
+/*~~~~~~ RESPONSIVE ~~~~~~ */
 
 @media screen and (max-width: 320px) {
 
   h3 {
-    font-size: 3.8vw;
+    font-size: 5vw;
   }
 
+  .top-artist-card {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
   .top-artists-box,
   {
     display: flex;
