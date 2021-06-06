@@ -69,3 +69,19 @@ nav {
     }
 
   }
+
+  @media screen and (max-width: 765px) {
+
+    .random-location,
+    .go-home {
+      font-size: 3vw;
+      margin: 1vw 4vw 1vw 4vw;
+      width: 23vw;
+      height: 5.5vw;
+    }
+
+    .glow {
+      margin-bottom: 1vw;
+    }
+
+  }
