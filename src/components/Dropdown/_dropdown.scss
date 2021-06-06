@@ -63,7 +63,7 @@
 }
 
 .dropdown .options.open {
-  display: block;
+ display: block;
 }
 
 .dropdown .option {
@@ -78,4 +78,18 @@
 .dropdown .option:hover {
   background-color: #f2f9fc;
   color: #333;
+}
+
+@media screen and (max-width: 651px) {
+  .dropdown .selected-value {
+    margin-top: 8vw;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .dropdown .selected-value {
+    margin-top: 20vw;
+  }
 }

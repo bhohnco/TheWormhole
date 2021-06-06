@@ -1,14 +1,120 @@
-
 .search-input {
-  height: 40px;
-  width: 60%;
-  font-family: AlienEncounters;
+  height: 2.8rem;
+  width: 15rem;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .search-btn {
-  height: 43px;
-  width: 80px;
-  margin: 0 0 0 20px;
-  background-color: #2CB0F5;
-  font-weight: 600;
+  font-size: 1.3rem;
+  width: 8rem;
+  height: 3rem;
+  position: relative;
+  z-index: 0;
+  font-family: Lazer84;
+  color: $yale-blue;
 }
+
+.search-bar-box {
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 700;
+  font-family: $inconsolata;
+  padding-left: 1vw;
+  background-color: $mid-emphasis-text;
+
+  &:focus {
+    background-color: whitesmoke;
+  }
+}
+
+.search-btn {
+  height: 45px;
+  width: 10vw;
+  margin: 0 0 0 20px;
+  background-color: $blue-jeans;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 600;
+  font-family: $inconsolata;
+
+}
+
+/*~~~~~~ SEARCH BUTTON EFFECTS ~~~~~~ */
+
+.search-btn:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+
+}
+
+.search-btn:active {
+  color: #890A1A;
+}
+
+.search-btn:active:after {
+  background: transparent;
+}
+
+.search-btn:hover:before {
+  opacity: 1;
+}
+
+.search-btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@media screen and (max-width: 651px) {
+  .search-btn {
+      margin-top: 4vw;
+      height: 10vw;
+      width: 40vw;
+    }
+
+    .search-input {
+      margin-top: 4vw;
+      height: 9vw;
+      width: 50vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+  .search-btn {
+      margin-top: 7vw;
+      height: 10vw;
+      width: 30vw;
+    }
+
+    .search-input {
+      margin-top: 7vw;
+      height: 8vw;
+      width: 40vw;
+    }
+}
+
