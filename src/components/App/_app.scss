@@ -41,12 +41,9 @@ html {
   color: $eerie-black;
 }
 
+/*~~~~~~ RESPONSIVE ~~~~~~ */
 
-
-
-@media screen and (max-width: 320px) {
-
-
+@media screen and (max-width: 651px) {
 
   .app-wrapper,
   .search-bar-box,
@@ -56,13 +53,36 @@ html {
   .top-artists-box,
   .top-tracks-box,
   .search-form,
-
    {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 5%;
+
+  }
+
+  .glow {
+    font-size: 9vw;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .app-wrapper,
+  .search-bar-box,
+  .header-wrapper,
+  .form-box,
+  .location-display,
+  .top-artists-box,
+  .top-tracks-box,
+  .search-form,
+   {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5vw 3vw 2vw 3vw;
   }
 
 
@@ -72,30 +92,21 @@ html {
 
   .random-location,
   .go-home {
-    font-size: 3.2vw;
-    width: 20vw;
-    height: 4vw;
     margin: 3vw 4vw 6vw 4vw;
-
+    height: 9vw;
 }
 
   .search-bar-box {
     margin: 12vw 5vw 0 6vw;
   }
 
-  .drop-down,
-  .control,
-  .selected-value,
-  .option,
-  .null,
-  .drop-render {
-  display: none;
-  }
-
   .main-artist-box,
   .main-track-box {
     display: flex;
+  }
 
+  .search-bar-box {
+    position: relative;
   }
 
 }
