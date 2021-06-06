@@ -15,7 +15,7 @@
   color: $yale-blue;
 }
 
-.search-container {
+.search-bar-box {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -45,12 +45,9 @@
   font-weight: 600;
   font-family: $inconsolata;
 
-  &:hover {
-    background-color: $bright-blue;
-  }
 }
 
-/*~~~~~~ Effects ~~~~~~ */
+/*~~~~~~ SEARCH BUTTON EFFECTS ~~~~~~ */
 
 .search-btn:before {
   content: '';
@@ -98,7 +95,30 @@
     100% { background-position: 0 0; }
 }
 
-  .search-btn,
-  .search-input {
-    margin-bottom: 1%;
-  }
+@media screen and (max-width: 651px) {
+  .search-btn {
+      margin-top: 4vw;
+      height: 10vw;
+      width: 40vw;
+    }
+
+    .search-input {
+      margin-top: 4vw;
+      height: 9vw;
+      width: 50vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+  .search-btn {
+      margin-top: 7vw;
+      height: 10vw;
+      width: 30vw;
+    }
+
+    .search-input {
+      margin-top: 7vw;
+      height: 8vw;
+      width: 40vw;
+    }
+}

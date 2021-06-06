@@ -3,7 +3,7 @@ form {
   justify-content: space-evenly;
   align-items: center;
   height: 7vw;
-  margin-bottom: 3vw;
+  //margin-bottom: 3vw;
   color: whitesmoke;
   background-color: $opaque-blue-light;
   box-shadow: $shadow-heavy;
@@ -13,6 +13,10 @@ form {
     font-family: $inconsolata;
     margin-left: 1vw;
   }
+}
+
+.form-box {
+  justify-content: space-between;
 }
 
 .welcome-message {
@@ -39,4 +43,31 @@ form {
   font-size: 4vw;
   font-weight: 500;
   color: $max-blue-green;
+}
+
+@media screen and (max-width: 688px) {
+
+  .welcome-text {
+    margin-top: 5vw;
+  }
+}
+
+@media screen and (max-width: 651px) {
+
+  .welcome-text {
+    margin-top: 12vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+.welcome-text,
+.location-name {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+  }
+  .welcome-text {
+    margin-top: 5vw;
+  }
 }
