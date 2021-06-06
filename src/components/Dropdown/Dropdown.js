@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AsyncSelect from 'react-select/async'
 import { Link } from 'react-router-dom';
-// import { }
 import apiCalls from '../../utilities/apiCalls'
 // import {}
 
@@ -11,6 +10,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   const dispatch = useDispatch();
   
   const [open, setOpen, showSelectedCountry ] = useState(false);
+  
   const ref = useRef(null);
 
   useEffect (() => {
