@@ -9,7 +9,7 @@ const Header = () => {
       <h1 className='glow'>W o r m h o l e</h1>
       <nav>
         <Link exact to='/'>
-          <button className='random-location'>Randomize Location</button>
+          <button className='random-location'>Randomize Me</button>
         </Link>
         <Link exact to='/'>
           <button className='go-home'>Return Home</button>
