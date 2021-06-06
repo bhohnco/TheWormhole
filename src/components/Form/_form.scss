@@ -10,7 +10,9 @@ form {
   text-align: center;
   left: 0.8%;
   top: 10%;
-
+  position: relative;
+  height: 42px;
+  width: 320px;
   border: 1.5px solid $yale-blue;
   font-size: 20px;
   font-family: Lazer84;
