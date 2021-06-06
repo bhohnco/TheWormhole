@@ -31,7 +31,7 @@ const App = () => {
     )
   } else {
     return (
-        <div className="App" style={{ backgroundImage: `url(${background})`}}>
+        <div className='app-wrapper' style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
             <Form />

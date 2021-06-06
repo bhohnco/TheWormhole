@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { searchData } from '../../actions/index';
 import { connect } from 'react-redux';
 
-
 class SearchBar extends Component {
   constructor() {
     super();
@@ -27,7 +26,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-        <div>
+        <section className='search-bar-box' >
           <input
               className='search-input'
               type='text'
@@ -38,7 +37,7 @@ class SearchBar extends Component {
               onChange={this.handleChange}
           />
           <button className='search-btn' onClick={this.handleSubmit}>Search</button>
-        </div>
+        </section>
     )
   }
 }
