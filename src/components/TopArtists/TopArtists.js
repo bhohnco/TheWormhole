@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { artists, image } from '../../actions';
+import { artists } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
 const TopArtists = () => {
@@ -9,10 +9,10 @@ const TopArtists = () => {
   const dispatch = useDispatch();
 
   const [artistCards, setArtistCards] = useState([]);
+  // const [artistImages, setArtistImages] = useState([]);
 
   const location = useSelector(state => state.location);
   const topArtists = useSelector(state => state.topArtists);
-  // const images = useSelector(state => state.images);
 
   useEffect(() => {
     fetchArtistsData()
@@ -33,44 +33,40 @@ const TopArtists = () => {
     }
   }
 
-  const fetchArtistImageObject = async (id) => {
-    // const imageObj = await apiCalls.getArtistImage(id);
-    // if (imageObj) {
-    //   dispatch(image(locateImageURL(imageObj)))
-    // }
-  }
+  // const fetchArtistImage = async (id) => {
+  //   const imageObj = await apiCalls.getArtistImagePage(id);
+  //   const pageURL = await locateImagePageURL(imageObj);
+  //   artistImages.push(pageURL || undefined);
+  // }
 
-  const locateImageURL = (imageObj) => {
-    const imageKeys = Object.keys(imageObj.relations);
-    let imageURL = '';
+  // const locateImagePageURL = (imageObj) => {
+  //   const imageKeys = Object.keys(imageObj.relations);
+  //   let imageURL = '';
 
-    imageKeys.forEach(key => {
-      if (imageObj.relations[key].type === 'image') {
-        imageURL = imageObj.relations[key].url.resource;
-      }
-    });
+  //   imageKeys.forEach(key => {
+  //     if (imageObj.relations[key].type === 'image') {
+  //       imageURL = imageObj.relations[key].url.resource;
+  //     }
+  //   });
 
-    return imageURL;
-  }
+  //   return imageURL;
+  // }
 
   const filterArtists = (data) => {
     const topArtists = data.reduce((topTen, artistObj) => {
       if (data.indexOf(artistObj) < 10) {
-        fetchArtistImageObject(artistObj.mbid);
+        // fetchArtistImage(artistObj.mbid);
         topTen.push(artistObj);
       }
       return topTen;
     }, []);
-    // console.log(topArtists)
     return topArtists;
   }
 
   const buildCards = (topArtists) => topArtists.map(artist => {
 
-    // console.log(images[topArtists.indexOf(artist)])
-    // src='https://commons.wikimedia.org/wiki/File:The_Weeknd_2015.jpg'
-
     let nameString = artist.name.replaceAll(' ', '+');
+    // let imgURL = artistImages[topArtists.indexOf(artist)];
 
     return (
       <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>

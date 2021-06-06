@@ -1,34 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { current, info } from '../../actions';
+import { info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 
 const ArtistInfo = ({ id }) => {
 
-  const [ directory, path ]  = id.split(':');
-
-  // how do we retrieve artist name from "card click" 
-  // and assign to 'currentCard' in the store?
-  // once we do, we can delete the 1st useEffect() function 
-  // and run the 2nd on page load
-
   const dispatch = useDispatch();
-  
-  const currentArtist = useSelector(state => state.currentArtist);
   const artistInfo = useSelector(state => state.artistInfo);
 
-  ////// TEMP FUNCTION
+  const [ , path ]  = id.split(':');
+
   useEffect(() => {
-    dispatch(current(path));
+    fetchArtistData(path);
   }, []);
-  //////
-  
-  useEffect(() => {
-    if (currentArtist.length > 0) {
-      let nameString = currentArtist.replaceAll(' ', '+');
-      fetchArtistData(nameString);
-    }
-  }, [currentArtist]);
 
   const fetchArtistData = async (artistName) => {
     const newInfo = await apiCalls.getArtistInfo(artistName);

@@ -2,8 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
-// import { fetchTopArtists } from '../../thunks/fetchTopArtists';
-// import { connect } from 'react-redux';
 import background from '../../assets/images/night-sky.jpeg';
 import utils from '../../utilities/utils';
 import Header from '../Header/Header';

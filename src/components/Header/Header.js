@@ -8,10 +8,10 @@ const Header = () => {
     <header style={{ backgroundImage: `url(${Banner})`}}>
       <h1 className='glow'>wormhole</h1>
       <nav>
-        <Link exact to='/'>
+        <Link to='/'>
           <button className='random-location'>Randomize Location</button>
         </Link>
-        <Link exact to='/'>
+        <Link to='/'>
           <button className='go-home'>Return Home</button>
         </Link>
       </nav>

@@ -26,17 +26,10 @@ export const image = (artistImage) => {
     }
 }
 
-export const current = (artistName) => {
-    return {
-        type: 'SET_CURRENT_ARTIST_NAME',
-        payload: artistName,
-    }
-}
-
-export const info = (artistInfo) => {
+export const info = (artistObj) => {
     return {
         type: 'GET_ARTIST_INFO',
-        payload: artistInfo,
+        payload: artistObj,
     }
 }
 
