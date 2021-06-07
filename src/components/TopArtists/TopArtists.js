@@ -20,6 +20,10 @@ const TopArtists = () => {
   }, []);
 
   useEffect(() => {
+    fetchArtistsData()
+  }, [location]);
+
+  useEffect(() => {
     if (topArtists.length > 1) {
       setArtistCards(buildCards(topArtists))
     }
@@ -59,7 +63,7 @@ const TopArtists = () => {
 
   const filterArtists = (data) => {
     const topArtists = data.reduce((topTen, artistObj) => {
-      if (data.indexOf(artistObj) < 10) {
+      if (data.indexOf(artistObj) < 12) {
         // fetchArtistImage(artistObj.mbid);
         topTen.push(artistObj);
       }
@@ -86,7 +90,7 @@ const TopArtists = () => {
   return (
     topArtists.length < 1 ?
       <section className='message-box'>
-        <p className='message'>Page Loading</p>
+        {/* <p className='message'>Page Loading</p> */}
       </section>
       :
       <section className='top-artists-box'>

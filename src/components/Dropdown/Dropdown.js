@@ -1,35 +1,27 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import AsyncSelect from 'react-select/async'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import apiCalls from '../../utilities/apiCalls'
-// import {}
+import { location } from '../../actions';
+import utils from '../../utilities/utils';
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
-  const dispatch = useDispatch();
-  
-  const [open, setOpen, showSelectedCountry ] = useState(false);
-  
+  const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect (() => {
-  document.addEventListener("click", close)
-    // document.addEventListener('click', handleClick(value))
-  return () => document.removeEventListener("click", close);
+    document.addEventListener("click", close)
+    return () => document.removeEventListener("click", close);
   }, []);
 
-  function close(e) {
-    console.log(e.target)
+  const selectLocation = (choice) => {
+    dispatch(location(choice));
+  }
+
+  const close = (e) => {
     setOpen(e && e.target === ref.current)
   }
-  
-  // const showSelectedCountry(country){
-  //   apiCalls.getSelectedCountry(country)
-  // }
-
-  
-   
 
   return (
       <section className='dropdown'>
@@ -37,23 +29,25 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
              onClick={() => setOpen((prev) => !prev)}
         >
           <div className='selected-value' ref={ref}>
-          {value ? value : prompt}
+            {value ? value : prompt}
           </div>
-          <div className={`arrow ${open ? "open" : null}`} />
-        </div>
+          <div className={`arrow ${open ? "open" : null}`} /></div>
         <div className={`options ${open ? "open" : null}`}>
           {options.map((option) => (
+              <Link to='/' key={option}>
                 <div
-                  className={`option ${value === option ? "selected" : null}`}
-                  key = {option}
-                  onClick={() => {
-                    onChange=(option);
-                    setOpen(false);
+                    className={`option ${value === option ? "selected" : null}`}
+                    key={option}
+                    onClick={() => {
+                      onChange(option);
+                      setOpen(false);
+                      selectLocation(option);
                     }}
                 >
-                    {option}
+                  {option}
                 </div>
-            ))}
+              </Link>
+          ))}
         </div>
       </section>
   )

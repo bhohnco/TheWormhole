@@ -24,10 +24,14 @@ html {
 }
 
 .message-box {
-  width: 85%;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto 4.4vw auto 4.4vw;
+  padding: 2vw 2vw 2vw 4vw;
+  width: 85vw;
+  height: 100vh;
+  background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
-  background-color: $red-munsell;
 }
 
 .message {
@@ -35,10 +39,14 @@ html {
   justify-content: center;
   height: 100%;
   width: 100%;
-  margin-top: 15%;
+  margin-top: 10vw;
   font-family: AlienEncounters;
   font-size: 3vw;
-  color: $eerie-black;
+  color: $opaque-red;
+}
+
+.lock-scroll {
+  overflow: hidden;
 }
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
@@ -52,7 +60,7 @@ html {
   .location-display,
   .top-artists-box,
   .top-tracks-box,
-  .search-form,
+  .search-form
    {
     display: flex;
     flex-direction: column;
@@ -67,7 +75,7 @@ html {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 376px) {
 
   .app-wrapper,
   .search-bar-box,
@@ -76,15 +84,13 @@ html {
   .location-display,
   .top-artists-box,
   .top-tracks-box,
-  .search-form,
+  .search-form
    {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 5vw 3vw 2vw 3vw;
   }
-
 
   .glow {
     font-size: 8vw;

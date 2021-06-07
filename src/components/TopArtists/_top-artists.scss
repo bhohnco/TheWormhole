@@ -1,23 +1,24 @@
 .top-artists-box {
   display: grid;
   grid-template-rows: 10% 85%;
-  padding: 2vw 2vw 1vw 4vw;
+  padding: 1vw 2vw 1vw 4vw;
   width: 45%;
   height: auto;
   font-size: 1.5vw;
   color: $mid-emphasis-text;
   background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
+  margin-bottom: 5vw;
 
   h3 {
     align-self: center;
-    margin-top: 1.5em;
+    margin-top: 1vw;
     margin-bottom: 1em;
     font-family: AlienEncounters;
     font-style: italic;
     line-height: 2;
     font-size: 3.1vw;
-    font-weight: 200;
+    font-weight: 500;
     color: $fashion-fuscia;
   }
 
@@ -30,27 +31,22 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  margin-top: 2vw;
   color: $mid-emphasis-text;
   font-family: $inconsolata;
   font-size: 1.5vw;
 }
 
 .top-artist-card {
-  width: 29%;
+  width: 28%;
   border: 1px solid $beau-blue;
-  margin: 1% 1% 1% 1.5%;
+  margin: 1% 1.75% 2.2% 2%;
   font-size: 2vw;
   text-align: center;
 }
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
-@media screen and (max-width: 320px) {
-
-  h3 {
-    font-size: 5vw;
-  }
+@media screen and (max-width: 651px) {
 
   .top-artist-card {
     font-size: 4vw;
@@ -59,11 +55,46 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .top-artists-box,
-  {
+
+  .top-artists-box {
     display: flex;
-    margin-top: 18%;
-    width: fit-content;
+    width: 85%;
+    margin: 4vw 0 0 0;
+    padding-bottom: 4vw;
+  }
+
+  .top-artists-box h3 {
+    font-size: 5vw;
+    margin: 0;
+  }
+
+  .artists-list {
+    display: flex;
+    height: 100vw;
+  }
+
+}
+
+@media screen and (max-width: 376px) {
+
+  .top-artist-card {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .top-artists-box {
+    display: flex;
+    width: 85%;
+    margin: 3vw 0 0 0;
+    padding-bottom: 4vw;
+  }
+
+  .top-artists-box h3 {
+    font-size: 5vw;
+    margin: 0;
   }
 
   .artists-list {
