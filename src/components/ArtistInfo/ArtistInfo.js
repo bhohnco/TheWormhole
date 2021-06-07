@@ -33,7 +33,7 @@ const ArtistInfo = ({ id }) => {
         </div>
         <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         <div className='artist-text-box'>
-          <p className='artist-bio'>{artistInfo.bio.content}</p>
+          <p style={{whiteSpace: "pre-line"}} className='artist-bio'>{artistInfo.bio.content}</p>
         </div>
       </section>
   )
