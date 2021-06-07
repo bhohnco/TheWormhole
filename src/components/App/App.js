@@ -14,8 +14,6 @@ const App = () => {
   const dispatch = useDispatch();
   const locationObj = useSelector(state => state.location);
 
-  const [locationState, setLocationState] = useState([]);
-  
   useEffect(() => {
     dispatch(location(locationObj));
   }, []);
