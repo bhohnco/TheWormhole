@@ -30,10 +30,9 @@ const ArtistInfo = ({ id }) => {
       </section>
       :
       <section id={artistInfo.mbid} className='artist-info fade-in'>
-        <div className='artist-img-box'>
-          <img className='artist-image' src={concert} alt='selected artist'/>
+        <div className='artist-img-box' style={{ backgroundImage: `url(${concert})`}}>
+          <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         </div>
-        <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         <div className='artist-text-box'>
           <h3 className='artist-bio-title'>Artist Biography</h3>
           <p style={{whiteSpace: "pre-line"}} className='artist-bio'>

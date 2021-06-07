@@ -11,6 +11,7 @@ const Header = () => {
 
   const assignRandomLocation = async () => {
     const locationName = await utils.getRandomLocation();
+    console.log(locationName);
     dispatch(location(locationName));
   }
 
