@@ -34,7 +34,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
       <div className={`arrow ${open ? "open" : null}`} /></div>
         <div className={`options ${open ? "open" : null}`}>
           {options.map((option) => (
-            <Link to='/'>
+            <Link to='/' key={option}>
               <div
                 className={`option ${value === option ? "selected" : null}`}
                 key={option}
