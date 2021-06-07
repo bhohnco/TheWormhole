@@ -2,7 +2,7 @@ header {
   display: grid;
   grid-template-rows: 60% 30%;
   align-items: center;
-  background-color: $rich-black;
+  background-color: $opaque-blue-dark;
   height: 16vw;
   border-bottom: 10px solid #2daff585;
   margin-bottom: 3vw;
@@ -13,10 +13,11 @@ header {
     margin-top: 4vw;
     font-size: 6vw;
     font-family: AlienEncounters;
-    font-weight: 400;
+    font-weight: 500;
     font-style: italic;
     letter-spacing: 1.8vw;
     color: $opaque-red;
+    text-shadow: 1.8vw 1.5vw rgba(138, 62, 72, 0.099);
   }
 }
 

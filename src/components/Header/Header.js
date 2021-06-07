@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { location } from '../../actions';
 import utils from '../../utilities/utils';
-import Banner from '../../assets/images/night-sky.jpeg';
 
 const Header = () => {
 
@@ -16,7 +15,7 @@ const Header = () => {
   }
 
   return (
-    <header className='header-wrapper' style={{ backgroundImage: `url(${Banner})`}}>
+    <header className='header-wrapper'>
       <h1 className='glow'>wormhole</h1>
       <nav>
         <Link to='/' className='button-parent'>
