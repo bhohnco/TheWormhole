@@ -22,16 +22,16 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   const close = (e) => {
     setOpen(e && e.target === ref.current)
   }
-
+  
   return (
-      <section className='dropdown'>
-        <div className='control'
-             onClick={() => setOpen((prev) => !prev)}
-        >
-          <div className='selected-value' ref={ref}>
-            {value ? value : prompt}
-          </div>
-          <div className={`arrow ${open ? "open" : null}`} /></div>
+    <section className='dropdown'>
+      <div className='control'
+            onClick={() => setOpen((prev) => !prev)}
+      >
+      <div className='selected-value' ref={ref}>
+        {value ? value : prompt}
+      </div>
+      <div className={`arrow ${open ? "open" : null}`} /></div>
         <div className={`options ${open ? "open" : null}`}>
           {options.map((option) => (
               <Link to='/' key={option}>

@@ -1,9 +1,20 @@
-.search-form {
+
+.form-box {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20vw;
+  margin: 2vw 0 3vw 0;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 45% 45%;
   justify-content: space-evenly;
   align-items: center;
-  height: 7vw;
-  margin-bottom: 3vw;
+  text-justify: center;
+  height: 10vw;
+  width: 100%;
   color: whitesmoke;
   background-color: $opaque-blue-light;
   box-shadow: $shadow-heavy;
@@ -11,7 +22,6 @@
 
   select, input {
     font-family: $inconsolata;
-    margin-left: 1vw;
   }
 
   .drop-render {
@@ -19,44 +29,52 @@
   }
 }
 
-.form-box {
-  justify-content: space-between;
-}
-
-.welcome-message {
-  flex-direction: row;
-  justify-content: center;
-  font-family: AlienEncounters;
+.location-message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .welcome-text {
-  margin-bottom: 2vw;
-  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 3vw;
+  justify-content: center;
   font-family: $staatliches;
   font-style: italic;
   font-size: 2.5vw;
   font-weight: 300;
   color: $max-blue-green;
+  text-shadow: 0.2vw 0.3vw rgba(150, 145, 167, 0.425);
 }
 
 .location-name {
-  margin-bottom: 2vw;
   text-align: center;
+  margin-top: 1vw;
   font-family: AlienEncounters;
   font-style: italic;
   font-size: 4vw;
   font-weight: 500;
+  line-height: 1;
   color: $max-blue-green;
+  text-shadow: 0.4vw 0.3vw rgba(150, 145, 167, 0.425);
 }
 
-@media screen and (max-width: 688px) {
-
-  .welcome-text {
-    margin-top: 4vw;
-  }
-}
+/*~~~~~~ Responsive ~~~~~~ */
 
 @media screen and (max-width: 651px) {
+
+  .form-box {
+    height: 25vw;
+    margin: 2vw 0 5vw 0;
+  }
+
+  .search-form {
+    height: 12vw;
+    width: 100%;
+  }
 
   .welcome-text {
     margin-top: 5vw;
@@ -67,33 +85,5 @@
     font-size: 6vw;
   }
 
-  form {
-    height: 15vw;
-    margin-bottom: 1vw;
-
-    select,
-    input {
-      max-height: 5vw;
-      margin-left: 1vw;
-    }
-  }
-}
-
-@media screen and (max-width: 320px) {
-
-.welcome-text,
-.location-name {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-  .welcome-text {
-    margin-top: 5vw;
-    font-size: 6vw;
-  }
-
-  .location-name {
-    font-size: 8vw;
-  }
 }
 

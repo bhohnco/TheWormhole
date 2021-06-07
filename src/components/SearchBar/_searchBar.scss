@@ -1,30 +1,35 @@
+.search-bar-box {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 60%;
+}
+
 .search-input {
-  height: 2.8rem;
-  width: 15rem;
-  font-size: 20px;
+  height: 2vw;
+  width: 4vw;
+  font-size: 1vw;
   font-weight: 700;
 }
 
 .search-btn {
-  font-size: 1.3rem;
-  width: 8rem;
-  height: 3rem;
+  // font-size: 1.3rem;
+
   position: relative;
+  max-width: 50%;
+  max-height: 90%;
   z-index: 0;
   font-family: Lazer84;
   color: $yale-blue;
 }
 
-.search-bar-box {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 .search-input {
-  height: 40px;
+  height: 3.5vw;
   width: 60%;
   border-radius: 10px;
-  font-size: large;
+  font-size: 1.5vw;
   font-weight: 700;
   font-family: $inconsolata;
   padding-left: 1vw;
@@ -36,15 +41,14 @@
 }
 
 .search-btn {
-  height: 45px;
+  height: 4vw;
   width: 10vw;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 3vw;
   background-color: $blue-jeans;
-  border-radius: 10px;
-  font-size: large;
+  border-radius: 7px;
+  font-size: 1.75vw;
   font-weight: 600;
   font-family: $inconsolata;
-
 }
 
 /*~~~~~~ SEARCH BUTTON EFFECTS ~~~~~~ */
@@ -95,30 +99,24 @@
   100% { background-position: 0 0; }
 }
 
+/*~~~~~~ Responsive ~~~~~~ */
+
 @media screen and (max-width: 651px) {
-  .search-btn {
-    margin-top: 4vw;
-    height: 10vw;
-    width: 40vw;
+  .search-bar-box {
+    margin-right: 3vw;
+    width: 100%;
+    height: 100%;
   }
 
   .search-input {
-    margin-top: 4vw;
-    height: 9vw;
-    width: 50vw;
+    margin: 0 0 0.5vw 0;
+    height: 45%;
+    width: 70%;
+    font-size: 2.5vw;
   }
-}
 
-@media screen and (max-width: 320px) {
   .search-btn {
-    margin-top: 7vw;
-    height: 10vw;
-    width: 30vw;
-  }
-
-  .search-input {
-    margin-top: 7vw;
-    height: 8vw;
-    width: 40vw;
+    height: 50%;
+    width: 30%;
   }
 }

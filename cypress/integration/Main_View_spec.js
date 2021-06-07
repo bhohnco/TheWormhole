@@ -78,7 +78,7 @@ describe('Show main view of Worm Hole App', () => {
     cy.get('h3').should('contain', 'Top ')
   });
 
-  it('Should load top artitsts onto the main view of the page on load', () => {
+  it('Should load top artists onto the main view of the page on load', () => {
     cy.get('ol').should('have.length', 1)
   });
 
