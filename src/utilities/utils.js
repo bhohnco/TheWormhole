@@ -27,6 +27,7 @@ const utils = {
   },
 
   checkForErr(response) {
+    console.log(response)
       if(response.status >= 500) {
         return '500: Uhoh, the angry computer gnome just drop kicked one of our servers. This page is temporarily unavailable.'
       } else if(response.status === 404) {
