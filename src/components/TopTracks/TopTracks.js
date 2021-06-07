@@ -47,7 +47,9 @@ const TopTracks = () => {
 
     return (
       <li className='top-track' key={topTracks.indexOf(track)}>
-        <a href={track.url}>{track.artist} - "{track.title}"</a>
+        <span>{track.artist}</span>
+        <br></br>
+        <a href={track.url}>{track.title}</a>
       </li>
     )
   });

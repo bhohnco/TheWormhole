@@ -11,7 +11,7 @@
 
   h3 {
     align-self: center;
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-bottom: 1em;
     font-family: AlienEncounters;
     font-style: italic;
@@ -30,16 +30,15 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  margin-top: 2vw;
   color: $mid-emphasis-text;
   font-family: $inconsolata;
   font-size: 1.5vw;
 }
 
 .top-artist-card {
-  width: 29%;
+  width: 28%;
   border: 1px solid $beau-blue;
-  margin: 1% 1% 1% 1.5%;
+  margin: 1% 1.75% 2.2% 2%;
   font-size: 2vw;
   text-align: center;
 }
