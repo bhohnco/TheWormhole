@@ -54,18 +54,6 @@ export const dropdownValues = (e, data) => {
   }
 }
 
-// export const dropdownValues = (selectedArtist) => {
-//         return (dispatch) => {
-//         fetch(`//http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${Artist+selectedArtist}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`,
-//             { headers: { "Accept": "application/json" }
-//         })
-//             .then(checkForError)
-//             .then(data => dispatch({ type: 'DROPDOWN_SELECT', payload: data }))
-//             .catch(error => alert(error))
-//     }
-// }
-
-
 export const searchData = (searchTerm) => {
     return (dispatch) => {
         fetch(`//http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Artist+${searchTerm}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json"`,
@@ -84,12 +72,3 @@ const checkForError = (response) => {
         return response.json();
     }
 }
-
-
-// export const searchForArtist = dispatch => ({
-//     onSearchTermChange: (value) =>
-//         dispatch({
-//             type: 'SEARCH_TERM_CHANGE',
-//             value
-//         })
-// })
