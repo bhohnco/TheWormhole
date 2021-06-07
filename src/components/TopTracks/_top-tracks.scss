@@ -52,12 +52,12 @@
 
 @media screen and (max-width: 651px) {
 
-  a {
-    font-size: 3.5vw;
+  .top-track span, li {
+    font-size: 4vw;
   }
 
-  li {
-    font-size: 3.2vw;
+  .top-track a {
+    font-size: 4.5vw;
   }
 
   .top-tracks-box {
@@ -78,10 +78,6 @@
 
 @media screen and (max-width: 376px) {
   
-  a {
-    font-size: 3.6vw;
-  }
-
   li {
     font-size: 3.2vw;
   }
@@ -93,7 +89,8 @@
   }
 
   .top-tracks-box h3 {
-    font-size: 5.5vw;
+    font-size: 5.2vw;
+    margin: 4vw auto 2vw auto;
   }
 
 }
