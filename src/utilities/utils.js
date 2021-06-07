@@ -35,9 +35,9 @@ const utils = {
     return randomCountry;
   },
 
-  lockScroll() {
-    document.body.classList.toggle('lock-scroll');
-  },
+  // lockScroll() {
+  //   document.body.classList.toggle('lock-scroll');
+  // },
 
   checkForErr(response) {
       if(response.status >= 500) {
