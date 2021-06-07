@@ -21,15 +21,23 @@ const utils = {
     }
   },
 
+  removeLinkInBio(text) {
+    const [ body, link] = text.split('<a');
+    const [ , rights] = link.split('</a>. ');
+    const joinedText = body + '\n\n' + rights;
+
+    return joinedText;
+  },
+
   getRandomLocation() {
-    const randomCountry= utils.getRandomElement(countries)
+    const randomCountry = utils.getRandomElement(countries)
   
     return randomCountry;
   },
 
-  lockScroll() {
-    document.body.classList.toggle('lock-scroll');
-  },
+  // lockScroll() {
+  //   document.body.classList.toggle('lock-scroll');
+  // },
 
   checkForErr(response) {
       if(response.status >= 500) {
