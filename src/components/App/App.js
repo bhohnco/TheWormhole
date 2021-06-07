@@ -14,7 +14,6 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  // dispatch(location('Turkey'));
   dispatch(location());
 
 // const isLoading = useSelector(state => state.isLoading);
