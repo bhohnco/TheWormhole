@@ -14,9 +14,8 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  const newLocation = utils.getRandomLocation();
-
-  dispatch(location(newLocation));
+  // dispatch(location('Turkey'));
+  dispatch(location());
 
 // const isLoading = useSelector(state => state.isLoading);
   const locationObj = useSelector(state => state.location);
@@ -29,7 +28,7 @@ const App = () => {
     )
   } else {
     return (
-        <div className='app-wrapper' style={{ backgroundImage: `url(${background})`}}>
+        <div className="App" style={{ backgroundImage: `url(${background})`}}>
           <Router>
             <Header />
               <Switch>
@@ -44,8 +43,8 @@ const App = () => {
                   <Form />
                   <main className='main-section'>
                     <section className='location-display'>
-                    <TopArtists className='main-artist-box'/>
-                    <TopTracks className='main-track-box'/>
+                      <TopArtists />
+                      <TopTracks />
                     </section>
                   </main>
                 </Route>

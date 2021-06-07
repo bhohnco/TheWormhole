@@ -16,7 +16,8 @@ const Form = () => {
             <Dropdown prompt='Select country...'
                       options={countries}
                       value={value}
-                      onChange={val => setValue(val) }/>
+                      onChange={val => setValue(val) }
+            />
           </div>
           <SearchBar />
         </form>
