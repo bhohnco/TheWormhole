@@ -33,6 +33,7 @@ form {
   font-size: 2.5vw;
   font-weight: 300;
   color: $max-blue-green;
+  text-shadow: 0.2vw 0.3vw rgba(150, 145, 167, 0.425);
 }
 
 .location-name {
@@ -42,15 +43,12 @@ form {
   font-style: italic;
   font-size: 4vw;
   font-weight: 500;
+  line-height: 1;
   color: $max-blue-green;
+  text-shadow: 0.4vw 0.3vw rgba(150, 145, 167, 0.425);
 }
 
-@media screen and (max-width: 688px) {
-
-  .welcome-text {
-    margin-top: 4vw;
-  }
-}
+/*~~~~~~ Responsive ~~~~~~ */
 
 @media screen and (max-width: 651px) {
 

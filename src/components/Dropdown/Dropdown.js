@@ -23,8 +23,10 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
     setOpen(e && e.target === ref.current)
   }
 
+  // onClick={() => utils.lockScroll()}
+
   return (
-    <section className='dropdown' onClick={() => utils.lockScroll()}>
+    <section className='dropdown'>
       <div className='control'
             onClick={() => setOpen((prev) => !prev)}
       >
