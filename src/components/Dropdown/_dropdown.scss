@@ -2,6 +2,11 @@
   position: relative;
   color: #333;
   cursor: default;
+  width: 25vw;
+}
+
+.dropdown a {
+  text-decoration: none;
 }
 
 .dropdown .arrow {
@@ -73,15 +78,30 @@
   padding: 8px 10px;
 }
 
-.dropdown .option.selected,
 .dropdown .option:hover {
-  background-color: #f2f9fc;
+  background-color: whitesmoke;
   color: #333;
+}
+
+.dropdown .option.selected {
+  background-color: $max-blue-green;
+  color: #333;
+}
+
+@media screen and (max-width: 1025px) {
+  .dropdown .selected-value {
+    height: 3vw;
+    width: 30vw;
+    text-justify: center;
+    font-size: 1.3vw;
+  }
+
 }
 
 @media screen and (max-width: 651px) {
   .dropdown .selected-value {
     margin-top: 8vw;
+
   }
 
 }

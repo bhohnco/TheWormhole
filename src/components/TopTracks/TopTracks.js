@@ -16,6 +16,10 @@ const TopTracks = () => {
   }, []);
 
   useEffect(() => {
+    fetchTracksData()
+  }, [location]);
+
+  useEffect(() => {
     if (topTracks.length > 1) {
       setTrackList(buildTrackList(topTracks))
     }
@@ -43,7 +47,9 @@ const TopTracks = () => {
 
     return (
       <li className='top-track' key={topTracks.indexOf(track)}>
-        <a href={track.url}>{track.artist} - "{track.title}"</a>
+        <span>{track.artist}</span>
+        <br></br>
+        <a href={track.url}>{track.title}</a>
       </li>
     )
   });
@@ -51,7 +57,7 @@ const TopTracks = () => {
   return (
     topTracks.length < 1 ?
       <section className='message-box'>
-        <p className='message'>Page Loading</p>
+        {/* <p className='message'>Page Loading</p> */}
       </section>
       :
       <section className='top-tracks-box'>

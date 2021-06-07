@@ -7,23 +7,28 @@ const utils = {
 
  formatLocationStr(country) {
     const lowercaseName = country.toLowerCase();
-    const formattedName = lowercaseName.replaceAll(' ', '+');
+    const formattedString = lowercaseName.replaceAll(' ', '+');
 
-    return formattedName;
+    return formattedString;
   },
 
   formatCountryName(country) {
-    const lowercaseName = country.toLowerCase();
-    const formattedName = lowercaseName.replaceAll(' ', '+');
-
-    return formattedName;
+    const [ name, prefix ] = country.split(',');
+    if (prefix === undefined) {
+      return name;
+    } else {
+      return prefix + ' ' + name;
+    }
   },
 
   getRandomLocation() {
     const randomCountry= utils.getRandomElement(countries)
-    const formattedStr = utils.formatLocationStr(randomCountry);
   
-    return { name: randomCountry, string: formattedStr };
+    return randomCountry;
+  },
+
+  lockScroll() {
+    document.body.classList.toggle('lock-scroll');
   },
 
   checkForErr(response) {

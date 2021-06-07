@@ -4,9 +4,9 @@ const dropdownReducer = (state = false, action) => {
       state = action.payload;
     case 'GET_TOP_TRACKS_DATA':
       state = action.payload;
-      return state
+      return state;
     default:
-      return state
+      return state;
   }
 }
 export default dropdownReducer;

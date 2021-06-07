@@ -5,8 +5,8 @@ import imageReducer from './imageReducer';
 import artistInfoReducer from './artistInfoReducer';
 import loadingReducer from './isLoading';
 import errorReducer from './hasErrored';
-import searchReducer from './searchReducer';
-import dropdownReducer from './dropdownReducer';
+// import searchReducer from './searchReducer';
+// import dropdownReducer from './dropdownReducer';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({

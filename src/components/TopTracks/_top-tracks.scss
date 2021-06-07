@@ -8,26 +8,22 @@
   color: whitesmoke;
   background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
+  margin-bottom: 5vw;
 
   h3 {
-    margin-top: 1em;
+    margin-top: 1vw;
     align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
-
-
     line-height: 2;
-
     font-size: 3.1vw;
-    font-weight: 300;
-
+    font-weight: 500;
     color: $fashion-fuscia;
   }
 }
 
 .tracks-list {
-  margin: 4vw 2vw 4vw 2vw;
-  font-size: 1.5vw;
+  margin: 2vw 2vw 4vw 2vw;
   font-weight: 600;
   font-family: $inconsolata;
   line-height: 2;
@@ -37,11 +33,17 @@
   margin-bottom: 2vw;
 }
 
+.top-track span {
+  font-size: 1.7vw;
+}
+
 .top-track a {
     list-style-type: none;
     display: inline;
-    text-decoration: none;
     color: $mid-emphasis-text;
+    font-style: italic;
+    font-size: 1.9vw;
+    text-decoration: none;
 
     &:hover {
       color: $blue-jeans;
@@ -50,29 +52,32 @@
 
 @media screen and (max-width: 651px) {
 
-  h3 {
-    font-size: 3.5vw;
-    align-self: center;
-    justify-content: center;
-  }
-
   a {
-    font-size: 2.8vw;
+    font-size: 3.5vw;
   }
 
   li {
-    font-size: 2.5vw;
+    font-size: 3.2vw;
+  }
+
+  .top-tracks-box {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 85%;
+    margin-top: 4vw;
+  }
+  
+  .top-tracks-box h3 {
+    align-self: center;
+    justify-content: center;
+    margin-top: 1vw;
+    font-size: 5.2vw;
   }
 }
 
-@media screen and (max-width: 320px) {
-
-  h3 {
-    font-size: 3.8vw;
-    align-self: center;
-    justify-content: center;
-  }
-
+@media screen and (max-width: 376px) {
+  
   a {
     font-size: 3.6vw;
   }
@@ -81,17 +86,14 @@
     font-size: 3.2vw;
   }
 
-  .top-tracks-box,
-  {
+  .top-tracks-box {
     display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: fit-content;
+    width: 85%;
+    margin-top: 5vw;
   }
 
-  .tracks-list {
-    display: flex;
-
+  .top-tracks-box h3 {
+    font-size: 5.5vw;
   }
 
 }
