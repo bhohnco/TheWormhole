@@ -77,6 +77,19 @@ export const searchData = (searchTerm) => {
     }
 }
 
+// export function fetchPostsWithQuery(query, callback) {
+//     return function(dispatch) {
+//         axios.get(`https://api.dailysmarty.com/search?q=${query}`)
+//             .then(response => {
+//                 dispatch({
+//                     type: SET_RESULTS_POSTS,
+//                     payload: response.data.posts
+//                 })
+//                 if(callback) { callback() }
+//             })
+//     }
+// }
+
 const checkForError = (response) => {
     if (!response.ok) {
         throw new Error(response.message);
