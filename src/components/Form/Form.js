@@ -13,7 +13,7 @@ const Form = () => {
 
   return (
       <section className='form-box'>
-        <form className='search-form'>
+        <section className='search-form'>
           <div className='drop-render'>
             <Dropdown prompt='Select country...'
                       options={countries}
@@ -22,7 +22,7 @@ const Form = () => {
             />
           </div>
           <SearchBar />
-        </form>
+        </section>
         <div className='location-message'>
           <h3 className='welcome-text'>welcome to ...</h3>
           <h2 className='location-name'>{formattedName}</h2>
