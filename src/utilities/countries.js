@@ -1,6 +1,4 @@
 const countries = [
-  "United States", 
-  "Canada", 
   "Afghanistan", 
   "Albania", 
   "Algeria", 
@@ -38,6 +36,7 @@ const countries = [
   "Burundi", 
   "Cambodia", 
   "Cameroon", 
+  "Canada", 
   "Cape Verde", 
   "Cayman Islands", 
   // "Central African Republic", 
@@ -220,6 +219,7 @@ const countries = [
   "Ukraine", 
   "United Arab Emirates", 
   "United Kingdom", 
+  "United States", 
   // "United States minor outlying islands", 
   "Uruguay", 
   "Uzbekistan", 
