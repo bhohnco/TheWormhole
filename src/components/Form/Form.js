@@ -14,7 +14,7 @@ const Form = () => {
   return (
       <section className='form-box'>
         <form className='search-form'>
-          <div className='drop-render' style ={{ width: 220}}>
+          <div className='drop-render'>
             <Dropdown prompt='Select country...'
                       options={countries}
                       value={value}
