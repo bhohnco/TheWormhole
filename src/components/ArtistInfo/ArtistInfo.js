@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
+import utils from '../../utilities/utils';
 
 const ArtistInfo = ({ id }) => {
 
@@ -33,7 +34,7 @@ const ArtistInfo = ({ id }) => {
         </div>
         <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         <div className='artist-text-box'>
-          <p style={{whiteSpace: "pre-line"}} className='artist-bio'>{artistInfo.bio.content}</p>
+          <p style={{whiteSpace: "pre-line"}} className='artist-bio'>{utils.removeLinkInBio(artistInfo.bio.content)}</p>
         </div>
       </section>
   )

@@ -19,7 +19,9 @@ const Header = () => {
       <h1 className='glow'>wormhole</h1>
       <nav>
         <Link to='/' className='button-parent'>
-          <button onClick={() => assignRandomLocation()} className='random-location'>Randomize Location</button>
+          <button onClick={() => assignRandomLocation()} className='random-location'>
+            Randomize Location
+          </button>
         </Link>
         <Link to='/'>
           <button className='go-home'>Return<br></br>Home</button>

@@ -21,8 +21,16 @@ const utils = {
     }
   },
 
+  removeLinkInBio(text) {
+    const [ body, link] = text.split('<a');
+    const [ , rights] = link.split('</a>. ');
+    const joinedText = body + '\n\n' + rights;
+
+    return joinedText;
+  },
+
   getRandomLocation() {
-    const randomCountry= utils.getRandomElement(countries)
+    const randomCountry = utils.getRandomElement(countries)
   
     return randomCountry;
   },

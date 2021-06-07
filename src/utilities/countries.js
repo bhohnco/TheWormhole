@@ -197,7 +197,7 @@ const countries = [
   "St. Pierre and Miquelon", 
   "Sudan", 
   "Suriname", 
-  "Svalbarn and Jan Mayen Islands", 
+  // "Svalbarn and Jan Mayen Islands", 
   "Swaziland", 
   "Sweden", 
   "Switzerland", 
