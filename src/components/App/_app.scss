@@ -52,7 +52,7 @@ html {
   .location-display,
   .top-artists-box,
   .top-tracks-box,
-  .search-form,
+  .search-form
    {
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@ html {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 376px) {
 
   .app-wrapper,
   .search-bar-box,
@@ -76,15 +76,13 @@ html {
   .location-display,
   .top-artists-box,
   .top-tracks-box,
-  .search-form,
+  .search-form
    {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 5vw 3vw 2vw 3vw;
   }
-
 
   .glow {
     font-size: 8vw;

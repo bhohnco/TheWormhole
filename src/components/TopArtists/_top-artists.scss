@@ -17,7 +17,7 @@
     font-style: italic;
     line-height: 2;
     font-size: 3.1vw;
-    font-weight: 200;
+    font-weight: 500;
     color: $fashion-fuscia;
   }
 
@@ -46,11 +46,7 @@
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
-@media screen and (max-width: 320px) {
-
-  h3 {
-    font-size: 5vw;
-  }
+@media screen and (max-width: 651px) {
 
   .top-artist-card {
     font-size: 4vw;
@@ -59,11 +55,46 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .top-artists-box,
-  {
+
+  .top-artists-box {
     display: flex;
-    margin-top: 18%;
-    width: fit-content;
+    width: 85%;
+    margin: 4vw 0 0 0;
+    padding-bottom: 4vw;
+  }
+
+  .top-artists-box h3 {
+    font-size: 7vw;
+    margin: 0;
+  }
+
+  .artists-list {
+    display: flex;
+    height: 100vw;
+  }
+
+}
+
+@media screen and (max-width: 376px) {
+
+  .top-artist-card {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .top-artists-box {
+    display: flex;
+    width: 90%;
+    margin: 3vw 0 0 0;
+    padding-bottom: 4vw;
+  }
+
+  .top-artists-box h3 {
+    font-size: 5vw;
+    margin: 0;
   }
 
   .artists-list {

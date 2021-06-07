@@ -3,7 +3,7 @@ form {
   justify-content: space-evenly;
   align-items: center;
   height: 7vw;
-  //margin-bottom: 3vw;
+  margin-bottom: 3vw;
   color: whitesmoke;
   background-color: $opaque-blue-light;
   box-shadow: $shadow-heavy;
@@ -57,6 +57,17 @@ form {
   .welcome-text {
     margin-top: 12vw;
   }
+
+  form {
+    height: 15vw;
+    margin-bottom: 1vw;
+
+    select,
+    input {
+      max-height: 5vw;
+      margin-left: 1vw;
+    }
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -71,3 +82,4 @@ form {
     margin-top: 5vw;
   }
 }
+

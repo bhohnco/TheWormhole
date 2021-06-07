@@ -18,11 +18,11 @@ const Header = () => {
     <header className='header-wrapper' style={{ backgroundImage: `url(${Banner})`}}>
       <h1 className='glow'>wormhole</h1>
       <nav>
-        <Link to='/'>
-          <button onClick={() => assignRandomLocation()} className='random-location'>Randomize Me</button>
+        <Link to='/' className='button-parent'>
+          <button onClick={() => assignRandomLocation()} className='random-location'>Randomize Location</button>
         </Link>
         <Link to='/'>
-          <button className='go-home'>Return Home</button>
+          <button className='go-home'>Return<br></br>Home</button>
         </Link>
       </nav>
     </header>
