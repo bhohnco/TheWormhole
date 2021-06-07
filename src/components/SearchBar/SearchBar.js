@@ -4,28 +4,41 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function SearchBar()  {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const handleChange = event => {
-    setSearchTerm(event.target.value);
-  };
-  
-    return (
-        <Link to={`/artist:${searchTerm}`} id={searchTerm}>
-        <form className='search-bar-box'>
-          <input 
-              className='search-input'
-              type='text'
-              placeholder='Search Artists'
-              name='input'
-              value={searchTerm}
-              onChange={handleChange}
-          />
-        </form>
-          </Link>
-        
-    )
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: ''
+    }
+      this.handleChange = this.handleChange.bind(this);
+    }
+
+  handleChange(event) {
+      this.setState({
+        searchQuery: event.target.value
+      });
+    }
+
+
+    render()
+    {
+      return (
+          // <Link to={`/artist:${searchQuery}`} id={searchQuery}>
+          <form className='search-bar-box'>
+            <input
+                className='search-input'
+                type='text'
+                placeholder='Search Artists'
+                name='input'
+                value={this.state.searchQuery} onChange={this.handleChange}/>
+            <Link to={`/artist:${this.state.searchQuery}`}>
+              <button className='search-btn'>Search</button>
+            </Link>
+          </form>
+
+      )
+    }
   }
-  
+
 
 export default SearchBar;

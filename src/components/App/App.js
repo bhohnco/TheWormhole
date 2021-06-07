@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
 import background from '../../assets/images/night-sky.jpeg';
