@@ -78,9 +78,13 @@
   padding: 8px 10px;
 }
 
-.dropdown .option.selected,
 .dropdown .option:hover {
   background-color: whitesmoke;
+  color: #333;
+}
+
+.dropdown .option.selected {
+  background-color: $max-blue-green;
   color: #333;
 }
 

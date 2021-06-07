@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { location } from '../../actions';
+import utils from '../../utilities/utils';
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
@@ -18,13 +19,12 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
     dispatch(location(choice));
   }
 
-  function close(e) {
-    console.log(e.target.innerText);
+  const close = (e) => {
     setOpen(e && e.target === ref.current)
   }
 
   return (
-    <section className='dropdown'>
+    <section className='dropdown' onClick={() => utils.lockScroll()}>
       <div className='control'
             onClick={() => setOpen((prev) => !prev)}
       >

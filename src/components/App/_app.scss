@@ -45,6 +45,10 @@ html {
   color: $opaque-red;
 }
 
+.lock-scroll {
+  overflow: hidden;
+}
+
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
 @media screen and (max-width: 651px) {

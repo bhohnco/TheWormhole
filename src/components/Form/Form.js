@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import SearchBar from '../SearchBar/SearchBar'
 import Dropdown from '../Dropdown/Dropdown'
-import countries from '../../utilities/countries'
+import utils from '../../utilities/utils';
+import countries from '../../utilities/countries';
 
 const Form = () => {
 
   const [value, setValue] = useState(null)
   const location = useSelector(state => state.location);
+  const formattedName = utils.formatCountryName(location.name);
 
   return (
       <section className='form-box'>
@@ -23,7 +25,7 @@ const Form = () => {
         </form>
         <div className='location-message'>
           <h3 className='welcome-text'>welcome to ...</h3>
-          <h2 className='location-name'>{location.name}</h2>
+          <h2 className='location-name'>{formattedName}</h2>
         </div>
       </section>
   )

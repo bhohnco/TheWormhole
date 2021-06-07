@@ -71,7 +71,7 @@ const countries = [
   "Fiji", 
   "Finland", 
   "France", 
-  "France, Metropolitan", 
+  // "France, Metropolitan", 
   "French Guiana", 
   "French Polynesia", 
   // "French Southern Territories", 
