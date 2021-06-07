@@ -9,9 +9,9 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const randomizeLocation = async () => {
-    const newLocation = await utils.getRandomLocation();
-    dispatch(location(newLocation));
+  const assignRandomLocation = async () => {
+    const locationName = await utils.getRandomLocation();
+    dispatch(location(locationName));
   }
 
   return (
@@ -19,7 +19,7 @@ const Header = () => {
       <h1 className='glow'>wormhole</h1>
       <nav>
         <Link to='/'>
-          <button onClick={() => randomizeLocation()} className='random-location'>Randomize Me</button>
+          <button onClick={() => assignRandomLocation()} className='random-location'>Randomize Me</button>
         </Link>
         <Link to='/'>
           <button className='go-home'>Return Home</button>

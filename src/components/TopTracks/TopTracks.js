@@ -16,6 +16,10 @@ const TopTracks = () => {
   }, []);
 
   useEffect(() => {
+    fetchTracksData()
+  }, [location]);
+
+  useEffect(() => {
     if (topTracks.length > 1) {
       setTrackList(buildTrackList(topTracks))
     }

@@ -21,9 +21,8 @@ const utils = {
 
   getRandomLocation() {
     const randomCountry= utils.getRandomElement(countries)
-    const formattedStr = utils.formatLocationStr(randomCountry);
   
-    return { name: randomCountry, string: formattedStr };
+    return randomCountry;
   },
 
   checkForErr(response) {

@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
 import background from '../../assets/images/night-sky.jpeg';
-import utils from '../../utilities/utils';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TopArtists from '../TopArtists/TopArtists';
@@ -13,11 +12,15 @@ import ArtistInfo from '../ArtistInfo/ArtistInfo';
 const App = () => {
 
   const dispatch = useDispatch();
+  const locationObj = useSelector(state => state.location);
 
-  dispatch(location());
+  const [locationState, setLocationState] = useState([]);
+  
+  useEffect(() => {
+    dispatch(location(locationObj));
+  }, []);
 
 // const isLoading = useSelector(state => state.isLoading);
-  const locationObj = useSelector(state => state.location);
 
   if (!locationObj) {
     return (

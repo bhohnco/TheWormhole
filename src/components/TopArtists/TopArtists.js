@@ -19,6 +19,10 @@ const TopArtists = () => {
   }, []);
 
   useEffect(() => {
+    fetchArtistsData()
+  }, [location]);
+
+  useEffect(() => {
     if (topArtists.length > 1) {
       setArtistCards(buildCards(topArtists))
     }
