@@ -24,10 +24,14 @@ html {
 }
 
 .message-box {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto 4.4vw auto 4.4vw;
+  padding: 2vw 2vw 2vw 4vw;
+  width: 85vw;
+  height: 100vh;
+  background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
-  background-color: $red-munsell;
 }
 
 .message {
@@ -35,10 +39,10 @@ html {
   justify-content: center;
   height: 100%;
   width: 100%;
-  margin-top: 15%;
+  margin-top: 10vw;
   font-family: AlienEncounters;
   font-size: 3vw;
-  color: $eerie-black;
+  color: $opaque-red;
 }
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
