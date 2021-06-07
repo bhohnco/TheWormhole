@@ -1,4 +1,3 @@
-// import { useSelector, useDispatch } from 'react-redux';
 import utils from './utils'
 
 const apiCalls = {
@@ -90,12 +89,7 @@ const apiCalls = {
           }
         })
   },
-
-  // async getArtistImageURL() {
-  //   const response = await fetch(`http://commons.wikimedia.org/wiki/File:ArianaGrandeDecember2013.jpg`)
-  //   const data = await response.json();
-  //   console.log(data);
-  // }
+  
 }
 
 export default apiCalls;
