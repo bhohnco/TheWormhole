@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
+import concert from '../../assets/images/artists/concert-stock-photo.jpeg';
 
 const ArtistInfo = ({ id }) => {
 
@@ -30,11 +31,14 @@ const ArtistInfo = ({ id }) => {
       :
       <section id={artistInfo.mbid} className='artist-info fade-in'>
         <div className='artist-img-box'>
-          *artist image here*
+          <img className='artist-image' src={concert} alt='selected artist'/>
         </div>
         <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         <div className='artist-text-box'>
-          <p style={{whiteSpace: "pre-line"}} className='artist-bio'>{utils.removeLinkInBio(artistInfo.bio.content)}</p>
+          <h3 className='artist-bio-title'>Artist Biography</h3>
+          <p style={{whiteSpace: "pre-line"}} className='artist-bio'>
+            {utils.removeLinkInBio(artistInfo.bio.content)}
+          </p>
         </div>
       </section>
   )
