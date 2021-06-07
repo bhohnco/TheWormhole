@@ -9,7 +9,7 @@ const SearchResults = (props) => {
         {props.filteredArtists && !props.filteredArtists.results.length && <h2></h2>}
         {props.filteredArtists && props.filteredArtists.search_term && props.filteredArtists.results.map(artist => {
           return (
-              <h2 className='slide-top' key={arist.id}><li>{artist.name}</li></h2>
+              <h2 className='slide-top' key={arist}><li>{artist.name}</li></h2>
           )
         })}
       </ul>
@@ -18,7 +18,7 @@ const SearchResults = (props) => {
 
 const mapStateToProps = state => {
   return {
-    filteredJokes: state.filteredJokes
+    searchReducer: state.searchReducer
   }
 }
 
