@@ -48,14 +48,19 @@ form {
 @media screen and (max-width: 688px) {
 
   .welcome-text {
-    margin-top: 5vw;
+    margin-top: 4vw;
   }
 }
 
 @media screen and (max-width: 651px) {
 
   .welcome-text {
-    margin-top: 12vw;
+    margin-top: 5vw;
+    font-size: 4vw;
+  }
+
+  .location-name {
+    font-size: 6vw;
   }
 
   form {
@@ -71,15 +76,20 @@ form {
 }
 
 @media screen and (max-width: 320px) {
+
 .welcome-text,
 .location-name {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-
   }
   .welcome-text {
     margin-top: 5vw;
+    font-size: 6vw;
+  }
+
+  .location-name {
+    font-size: 8vw;
   }
 }
 

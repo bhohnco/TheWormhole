@@ -30,11 +30,11 @@ nav {
 
 .go-home,
 .random-location {
-    width: 15vw;
-    height: 5.2vw;
-    margin: 2vw 3vw 0 3vw;
+    width: 13vw;
+    height: 4vw;
+    margin: 2vw 3vw 1vw 3vw;
     font-family: $staatliches;
-    // font-size: 1.1vw;
+    font-size: 1.3vw;
     letter-spacing: 0.5vw;
     border: 1px solid #ed33b86c;
     color: $max-blue-green;
@@ -48,18 +48,6 @@ nav {
   }
 
   /*~~~~~~ Responsive ~~~~~~ */
-
-  @media screen and (max-width: 2000px) {
-    header {
-      grid-gap: 20px;
-    }
-
-    .random-location,
-    .go-home {
-      font-size: 1.8vw;
-    }
-
-  }
 
   @media screen and (max-width: 1025px) {
     header {

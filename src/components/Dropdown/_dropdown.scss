@@ -2,6 +2,7 @@
   position: relative;
   color: #333;
   cursor: default;
+  width: 25vw;
 }
 
 .dropdown .arrow {
@@ -75,13 +76,24 @@
 
 .dropdown .option.selected,
 .dropdown .option:hover {
-  background-color: #f2f9fc;
+  background-color: whitesmoke;
   color: #333;
+}
+
+@media screen and (max-width: 1025px) {
+  .dropdown .selected-value {
+    height: 3vw;
+    width: 30vw;
+    text-justify: center;
+    font-size: 1.3vw;
+  }
+
 }
 
 @media screen and (max-width: 651px) {
   .dropdown .selected-value {
     margin-top: 8vw;
+
   }
 
 }

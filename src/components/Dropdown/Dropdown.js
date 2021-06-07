@@ -1,15 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { location } from '../../actions';
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect (() => {
     document.addEventListener("click", close)
     return () => document.removeEventListener("click", close);
   }, []);
+
+  const selectLocation = (choice) => {
+    dispatch(location(choice));
+  }
 
   function close(e) {
     console.log(e.target.innerText);
@@ -25,22 +32,23 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
         {value ? value : prompt}
       </div>
       <div className={`arrow ${open ? "open" : null}`} /></div>
-      <Link to='/'>
         <div className={`options ${open ? "open" : null}`}>
           {options.map((option) => (
-            <div
-              className={`option ${value === option ? "selected" : null}`}
-              key = {option}
-              onClick={() => {
-                onChange(option);
-                setOpen(false);
-              }}
-            >
-              {option}
-            </div>
+            <Link to='/'>
+              <div
+                className={`option ${value === option ? "selected" : null}`}
+                key={option}
+                onClick={() => {
+                  onChange(option);
+                  setOpen(false);
+                  selectLocation(option);
+                }}
+              >
+                {option}
+              </div>
+            </Link>
           ))}
         </div>
-      </Link>
     </section>
   )
 }
