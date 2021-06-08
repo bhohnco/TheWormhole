@@ -29,7 +29,7 @@ const ArtistInfo = ({ id }) => {
         <p className='message'>Page Loading</p>
       </section>
       :
-      <section id={artistInfo.mbid} className='artist-info fade-in'>
+      <section className='artist-info fade-in' id={artistInfo.mbid}>
         <div className='artist-img-box' style={{ backgroundImage: `url(${concert})`}}>
           <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         </div>

@@ -1,11 +1,8 @@
 .artist-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2vw 2vw 2vw 4vw;
+  display: grid;
+  grid-template-rows: 20% 70%;
   width: 85%;
-  height: 100%;
-  max-height: 200vh;
+  height: auto;
   color: whitesmoke;
   background-color: rgba(3, 5, 16, 0.784);
   border: 1px solid $french-lime;
@@ -13,11 +10,13 @@
 
 .artist-img-box {
   display: flex;
-  width: 40vw;
-  height: 80vw;
+  width: 53%;
+  height: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  justify-self: center;
   justify-content: center;
   align-items: center;
-  margin-top: 2vw;
   color: $green-blue-crayola;
   font-size: 1vw;
   background-repeat: no-repeat;
@@ -31,8 +30,6 @@
 }
 
 .artist-name {
-  justify-self: center;
-  align-self: center;
   font-size: 4.5vw;
   font-family: AlienEncounters;
   font-style: italic;
@@ -42,10 +39,12 @@
 }
 
 .artist-text-box {
+  justify-self: center;
   justify-content: center;
   text-align: center;
-  width: 85%;
-  margin-top: 5vw;
+  width: 80%;
+  height: 100%;
+  margin-top: 7%;
   padding: 1vw 3vw 1vw 3vw;
   overflow: scroll;
   overscroll-behavior: contain;
@@ -74,32 +73,34 @@
   color: $blue-jeans;
 }
 
-/*~~~~~~ Responsive ~~~~~~ */
-
-@media screen and (max-width: 1025px) {
-  .artist-img-box {
-    width: 50vw;
-    height: 60vw;
-    background-size: 100% 130%;
-  }
-}
-
-@media screen and (max-width: 769px) {
-  .artist-img-box {
-    width: 50vw;
-    height: 50vw;
-  }
-}
-
 @media screen and (max-width: 426px) {
+
+  .artist-info {
+    display: grid;
+    grid-template-rows: 15% 75%;
+    width: 85%;
+    height: 93%;
+  }
+
   .artist-img-box {
-    width: 50vw;
-    height: 23vw;
+    display: flex;
+    width: 53%;
+    height: 80%;
+  }
+
+  .artist-text-box {
+    height: 100%;
   }
 }
 
-@media screen and (max-width: 321px) {
-  .artist-img-box {
-    height: 20vw;
+@media screen and (max-width: 376px) {
+
+  .artist-info {
+    display: grid;
+    grid-template-rows: 15% 75%;
+    margin-top: 5%;
+    width: 85%;
+    height: 100%;
   }
+
 }
