@@ -22,9 +22,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   const close = (e) => {
     setOpen(e && e.target === ref.current)
   }
-
-  // onClick={() => utils.lockScroll()}
-
+  
   return (
     <section className='dropdown'>
       <div className='control'
@@ -36,21 +34,21 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
       <div className={`arrow ${open ? "open" : null}`} /></div>
         <div className={`options ${open ? "open" : null}`}>
           {options.map((option) => (
-            <Link to='/' key={option}>
-              <div
-                className={`option ${value === option ? "selected" : null}`}
-                key={option}
-                onClick={() => {
-                  onChange(option);
-                  setOpen(false);
-                  selectLocation(option);
-                }}
-              >
-                {option}
-              </div>
-            </Link>
+              <Link to='/' key={option}>
+                <div
+                    className={`option ${value === option ? "selected" : null}`}
+                    key={option}
+                    onClick={() => {
+                      onChange(option);
+                      setOpen(false);
+                      selectLocation(option);
+                    }}
+                >
+                  {option}
+                </div>
+              </Link>
           ))}
         </div>
-    </section>
+      </section>
   )
 }

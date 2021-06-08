@@ -1,45 +1,49 @@
-import React, { Component } from 'react';
-import { searchData } from '../../actions/index';
-import { connect } from 'react-redux';
+import React, { Component, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      searchWord: ''
+      searchQuery: '',
+      error: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      searchQuery: event.target.value
+    });
+  }
+
+searchError = (searchQuery) => {
+    if (!searchQuery) {
+      return (
+          <article className="display-error">
+            <h4 className="error-message">We couldn't find that artist, try something else!</h4>
+          </article>
+      )
     }
   }
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.searchData(this.state.searchWord)
-    this.clearInputs();
-  }
-
-  clearInputs = () => {
-    this.setState({ searchWord: '' })
-  }
-//   to trigger pete's styles of the second search bar styles folder <div className='search-container'>
-  render() {
+  render()
+  {
     return (
-        <section className='search-bar-box' >
+        <section className='search-bar-box'>
           <input
               className='search-input'
               type='text'
-              placeholder='Search artists...'
-              id='searchWord'
-              name='searchWord'
-              value={this.state.searchWord}
-              onChange={this.handleChange}
-          />
-          <button className='search-btn' onClick={this.handleSubmit}>Search</button>
+              placeholder='Search Artists'
+              name='input'
+              value={this.state.searchQuery}
+              onChange={this.handleChange}/>
+          <Link to={`/artist:${this.state.searchQuery}`}>
+            <button className='search-btn'>Search</button>
+          </Link>
         </section>
     )
   }
 }
 
-export default connect(null, {searchData})(SearchBar)
+export default SearchBar;

@@ -17,9 +17,7 @@ const App = () => {
   useEffect(() => {
     dispatch(location(locationObj));
   }, []);
-
-// const isLoading = useSelector(state => state.isLoading);
-
+  
   if (!locationObj) {
     return (
         <main className='App'>
@@ -56,16 +54,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// const mapStateToProps = ( state ) => ({
-//   topArtists: state.artists,
-//   isLoading: state.isLoading,
-//   // error: state.error,
-// })
-
-// const mapDispatchToProps = (dispatch) => ({
-//   topArtists: () => dispatch(fetchTopArtists())
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,3 +1,4 @@
+
 .form-box {
   display: flex;
   flex-direction: column;
@@ -21,6 +22,10 @@
 
   select, input {
     font-family: $inconsolata;
+  }
+
+  .drop-render {
+    width: 240px;
   }
 }
 

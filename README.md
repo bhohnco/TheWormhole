@@ -115,6 +115,6 @@ We were given this project as an opportunity to stretch ourselves to learn a new
         <td><img src="./src/assets/images/css-logo.png" alt="css" width="100" height="auto" /></td>
         <td><img src="./src/assets/images/scss.png" alt="sass" width="100" height="auto" /></td>
         <td><img src="./src/assets/images/cypress-logo.jpeg" alt="cypress" width="100" height="auto" /></td>
-        <td><img src="../src/assets/images/npm.png" alt="npm" width="100" height="auto" /></td>
+        <td><img src="./src/assets/images/npm.png" alt="npm" width="100" height="auto" /></td>
     </tr>
 </table>
