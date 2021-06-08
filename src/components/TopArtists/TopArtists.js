@@ -52,9 +52,9 @@ const TopArtists = () => {
 
     return (
       <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-        <p>{artist.name}</p>
+        <p className='top-artist-name'>{artist.name}</p>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
-          <img src='' alt='artist-portrait'></img>
+          <img src='' alt='top artist'></img>
         </Link>
       </article>
     )

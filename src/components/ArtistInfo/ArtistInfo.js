@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { info } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
-import concert from '../../assets/images/artists/concert-stock-photo.jpeg';
+import concert from '../../assets/images/concert-stock-photo.jpeg';
 
 const ArtistInfo = ({ id }) => {
 
