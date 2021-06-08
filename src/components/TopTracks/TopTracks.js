@@ -57,7 +57,7 @@ const TopTracks = () => {
   return (
     topTracks.length < 1 ?
       <section className='message-box'>
-        {/* <p className='message'>Page Loading</p> */}
+        <p className='message'>Page Loading</p>
       </section>
       :
       <section className='top-tracks-box'>
