@@ -1,44 +1,49 @@
 import React, { Component, useState } from 'react';
-import { searchData } from '../../actions/index';
-import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ''
+      searchQuery: '',
+      error: ''
     }
-      this.handleChange = this.handleChange.bind(this);
-    }
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   handleChange(event) {
-      this.setState({
-        searchQuery: event.target.value
-      });
-    }
+    this.setState({
+      searchQuery: event.target.value
+    });
+  }
 
-
-    render()
-    {
+searchError = (searchQuery) => {
+    if (!searchQuery) {
       return (
-          // <Link to={`/artist:${searchQuery}`} id={searchQuery}>
-          <form className='search-bar-box'>
-            <input
-                className='search-input'
-                type='text'
-                placeholder='Search Artists'
-                name='input'
-                value={this.state.searchQuery} onChange={this.handleChange}/>
-            <Link to={`/artist:${this.state.searchQuery}`}>
-              <button className='search-btn'>Search</button>
-            </Link>
-          </form>
-
+          <article className="display-error">
+            <h4 className="error-message">We couldn't find that artist, try something else!</h4>
+          </article>
       )
     }
   }
 
+  render()
+  {
+    return (
+        <section className='search-bar-box'>
+          <input
+              className='search-input'
+              type='text'
+              placeholder='Search Artists'
+              name='input'
+              value={this.state.searchQuery}
+              onChange={this.handleChange}/>
+          <Link to={`/artist:${this.state.searchQuery}`}>
+            <button className='search-btn'>Search</button>
+          </Link>
+        </section>
+    )
+  }
+}
 
 export default SearchBar;
