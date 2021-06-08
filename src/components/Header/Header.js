@@ -21,7 +21,7 @@ const Header = () => {
         <Link to='/' className='button-parent'>
           <button onClick={() => assignRandomLocation()} className='random-location'>
             Randomize Location
-          0</button>
+          </button>
         </Link>
         <Link to='/'>
           <button className='go-home'>Return<br></br>Home</button>
