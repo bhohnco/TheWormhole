@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { artists } from '../../actions';
-import apiCalls from '../../utilities/apiCalls';
+import moreCowBell from '../../assets/images/artistImages/moreCowBell.png'
+import { getTopArtists } from '../../utilities/apiCalls';
 
 const TopArtists = () => {
 
@@ -29,7 +30,7 @@ const TopArtists = () => {
   }, [topArtists]);
 
   const fetchArtistsData = async () => {
-    const apiData = await apiCalls.getTopArtists(location.string);
+    const apiData = await getTopArtists(location.string);
     if (apiData) {
       const allArtists = apiData.topartists.artist;
       const filtered = filterArtists(allArtists);
@@ -76,7 +77,7 @@ const TopArtists = () => {
       <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
         <p>{artist.name}</p>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
-          <img alt='artist-portrait'></img>
+          <img src={moreCowBell} alt='artist-portrait'/>
         </Link>
       </article>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tracks } from '../../actions';
-import apiCalls from '../../utilities/apiCalls';
+import { getTopTracks } from '../../utilities/apiCalls';
 
 const TopTracks = () => {
 
@@ -26,7 +26,7 @@ const TopTracks = () => {
   }, [topTracks]);
 
   const fetchTracksData = async () => {
-    const apiData = await apiCalls.getTopTracks(location.string);
+    const apiData = await getTopTracks(location.string);
     const allTracks = apiData.tracks.track;
     const filtered = filterTracks(allTracks);
 
