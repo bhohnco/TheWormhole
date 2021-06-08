@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { info } from '../../actions';
 import { getArtistInfo} from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
-// import concert from '../../assets/images/artists/concert-stock-photo.jpeg';
+import concert from '../../assets/images/concert-stock-photo.jpeg';
 
 const ArtistInfo = ({ id }) => {
 
@@ -29,8 +29,8 @@ const ArtistInfo = ({ id }) => {
         <p className='message'>Page Loading</p>
       </section>
       :
-      <section id={artistInfo.mbid} className='artist-info fade-in'>
-        <div className='artist-img-box' >
+      <section className='artist-info fade-in' id={artistInfo.mbid}>
+        <div className='artist-img-box' style={{ backgroundImage: `url(${concert})`}}>
           <a className='artist-name' href={artistInfo.url}>{artistInfo.name}</a>
         </div>
         <div className='artist-text-box'>

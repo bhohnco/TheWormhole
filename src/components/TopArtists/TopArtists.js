@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { artists } from '../../actions';
-import moreCowBell from '../../assets/images/artistImages/moreCowBell.png'
 import { getTopArtists } from '../../utilities/apiCalls';
-
+import utils from '../../utilities/utils';
+import images from '../../utilities/artistImages';
 
 const TopArtists = () => {
 
   const dispatch = useDispatch();
 
   const [artistCards, setArtistCards] = useState([]);
-  
+
   const location = useSelector(state => state.location);
   const topArtists = useSelector(state => state.topArtists);
 
@@ -37,10 +37,10 @@ const TopArtists = () => {
       dispatch(artists(filtered));
     }
   }
-  
+
   const filterArtists = (data) => {
     const topArtists = data.reduce((topTen, artistObj) => {
-      if (data.indexOf(artistObj) < 12) {
+      if (data.indexOf(artistObj) < 8) {
         topTen.push(artistObj);
       }
       return topTen;
@@ -53,10 +53,10 @@ const TopArtists = () => {
     let nameString = artist.name.replaceAll(' ', '+');
 
     return (
-      <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
-        <p>{artist.name}</p>
+      <article className='top-artist-card'>
+        <p className='top-artist-name'>{artist.name}</p>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
-          <img src={moreCowBell} alt='artist-portrait'/>
+          <div className='top-artist-image' id={artist.mbid} key={artist.mbid} style={{ backgroundImage: `url(${utils.getRandomElement(images)})`}}></div>
         </Link>
       </article>
     )
@@ -65,7 +65,7 @@ const TopArtists = () => {
   return (
     topArtists.length < 1 ?
       <section className='message-box'>
-         <p className='message'>Page Loading</p> 
+        <p className='message'>Page Loading</p>
       </section>
       :
       <section className='top-artists-box'>

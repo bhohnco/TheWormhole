@@ -57,7 +57,7 @@ const TopTracks = () => {
   return (
     topTracks.length < 1 ?
       <section className='message-box'>
-         <p className='message'>Page Loading</p> 
+        <p className='message'>Page Loading</p>
       </section>
       :
       <section className='top-tracks-box'>
@@ -70,33 +70,5 @@ const TopTracks = () => {
       </section>
   )
 }
-
-
-// retrieveTopTracks = (location) => {
-//   apiCalls.getTopTracks(location)
-//     .then(data => {
-//       this.setState({ topTracks: data })
-//     })
-//     .catch(error => {
-//       console.log(error);
-//       console.log(`Sorry, could not retrieve data for ${this.state.location.name}`);
-//       this.setState({ error: error.message })
-//     })
-// }
-//
-
-
-// const mapStateToProps = ({ tracks }) => ({
-//   topTracks: tracks,
-// })
-//
-// export const mapDispatchToProps = dispatch => (
-//   bindActionCreators({
-//     // hasErrored,
-//     // isLoading,
-//         tracks
-//   },
-//   dispatch)
-// )
 
 export default TopTracks;
