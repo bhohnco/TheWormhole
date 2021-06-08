@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { artists } from '../../actions';
 import apiCalls from '../../utilities/apiCalls';
+import utils from '../../utilities/utils';
+import images from '../../utilities/artistImages';
 
 const TopArtists = () => {
 
@@ -38,7 +40,7 @@ const TopArtists = () => {
 
   const filterArtists = (data) => {
     const topArtists = data.reduce((topTen, artistObj) => {
-      if (data.indexOf(artistObj) < 12) {
+      if (data.indexOf(artistObj) < 10) {
         topTen.push(artistObj);
       }
       return topTen;
@@ -51,10 +53,10 @@ const TopArtists = () => {
     let nameString = artist.name.replaceAll(' ', '+');
 
     return (
-      <article id={artist.mbid} key={artist.mbid} className='top-artist-card'>
+      <article className='top-artist-card'>
         <p className='top-artist-name'>{artist.name}</p>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
-          <img src='' alt='top artist'></img>
+          <div className='top-artist-image' id={artist.mbid} key={artist.mbid} style={{ backgroundImage: `url(${utils.getRandomElement(images)})`}}></div>
         </Link>
       </article>
     )

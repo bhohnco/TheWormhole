@@ -31,17 +31,31 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  color: $mid-emphasis-text;
-  font-family: $inconsolata;
-  font-size: 1.5vw;
 }
 
 .top-artist-card {
-  width: 28%;
-  border: 1px solid $beau-blue;
-  margin: 1% 1.75% 2.2% 2%;
-  font-size: 2vw;
+  width: 40%;
+  height: 12vw;
+  margin: 1% 4% 5% 4%;
   text-align: center;
+}
+
+.top-artist-name {
+  margin: 3%;
+  font-family: $staatliches;
+  font-size: 2.25vw;
+  font-weight: 500;
+  color: rgba(151, 243, 190, 0.904);
+  letter-spacing: 0.4vw;
+}
+
+.top-artist-image {
+  width: 100%;
+  height: 80%;
+  box-shadow: 0 0 0.2vw 0.2vw rgba(176, 165, 244, 0.832);
+  font-size: 2vw;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
