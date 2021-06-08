@@ -1,3 +1,5 @@
+import utils from '../utilities/utils'
+
 export const artists = (artistsData) => {
     return {
         type: 'GET_TOP_ARTIST_DATA',
@@ -59,16 +61,33 @@ export const searchData = (searchTerm) => {
         fetch(`//http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Artist+${searchTerm}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json"`,
             { headers: { "Accept": "application/json" }
         })
-            .then(checkForError)
+            .then(response => utils.checkForErr(response))
             .then(data => dispatch({ type: 'DATA_SEARCHED', payload: data }))
-            .catch(error => alert(error))
+            .catch(error => console.log('Please try this again later. Looks like our whole site exploded.'))
     }
 }
 
-const checkForError = (response) => {
-    if (!response.ok) {
-        throw new Error(response.message);
-    } else {
-        return response.json();
-    }
-}
+// const checkForError = (response) => {
+//     if (!response.ok) {
+//         throw new Error(response.message);
+//     } else {
+//         return response.json();
+//     }
+// }
+
+
+// export const searchForArtist = dispatch => ({
+//     onSearchTermChange: (value) =>
+//         dispatch({
+//             type: 'SEARCH_TERM_CHANGE',
+//             value
+//         })
+// })
+
+// const checkForError = (response) => {
+//     if (!response.ok) {
+//         throw new Error(response.message);
+//     } else {
+//         return response.json();
+//     }
+// }

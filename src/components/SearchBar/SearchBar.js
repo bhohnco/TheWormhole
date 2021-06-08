@@ -1,6 +1,5 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -10,13 +9,11 @@ class SearchBar extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
   }
-
   handleChange(event) {
     this.setState({
       searchQuery: event.target.value
     });
   }
-
 searchError = (searchQuery) => {
     if (!searchQuery) {
       return (
@@ -26,7 +23,6 @@ searchError = (searchQuery) => {
       )
     }
   }
-
   render()
   {
     return (
@@ -45,5 +41,4 @@ searchError = (searchQuery) => {
     )
   }
 }
-
 export default SearchBar;

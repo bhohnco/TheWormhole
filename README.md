@@ -106,11 +106,10 @@ We were given this project as an opportunity to stretch ourselves to learn a new
         <td>Styling</td>
         <td>Testing</td>
         <td>Package Installation</td>
-
     </tr>
     </tr>
         <td><img src="./src/assets/images/js-icon.png" alt="javascript" width="100" height="auto" /></td>
-        <td><img src="./src/assets/images/reactjs-icon.jpeg" alt="react" width="100" height="auto" /></td>
+        <td><img src="./src/assets/images/reactjs-logo.jpeg" alt="react" width="100" height="auto" /></td>
         <td><img src="./src/assets/images/redux.png" alt="redux" width="100" height="auto" /></td>
         <td><img src="./src/assets/images/html-logo.png" alt="html" width="100" height="auto" /></td>
         <td><img src="./src/assets/images/css-logo.png" alt="css" width="100" height="auto" /></td>
@@ -119,4 +118,3 @@ We were given this project as an opportunity to stretch ourselves to learn a new
         <td><img src="./src/assets/images/npm.png" alt="npm" width="100" height="auto" /></td>
     </tr>
 </table>
-
