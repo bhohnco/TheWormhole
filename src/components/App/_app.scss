@@ -1,17 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 
 html {
   height: 100%;
-  width: 100%;
   background-color: $rich-black;
 }
 
 .main-section {
   width: fit-content;
-  height: 125vw;
   display: flex;
   justify-content: space-evenly;
 }
@@ -58,8 +57,7 @@ html {
   .header-wrapper,
   .location-display,
   .top-artists-box,
-  .top-tracks-box
-   {
+  .top-tracks-box {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -69,27 +67,16 @@ html {
   .glow {
     font-size: 9vw;
   }
-}
 
-@media screen and (max-width: 426px) {
-  .main-section {
-    height: 150vw;
-  }
 }
-
 
 @media screen and (max-width: 376px) {
-
-  .main-section {
-    height: 165vw;
-  }
 
   .app-wrapper,
   .header-wrapper,
   .location-display,
   .top-artists-box,
-  .top-tracks-box
-   {
+  .top-tracks-box {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
