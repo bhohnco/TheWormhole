@@ -17,7 +17,7 @@ class SearchBar extends Component {
     });
   }
 
-  renderSearchError (searchQuery) {
+searchError = (searchQuery) => {
     if (!searchQuery) {
       return (
           <article className="display-error">
@@ -30,19 +30,18 @@ class SearchBar extends Component {
   render()
   {
     return (
-        <form className='search-bar-box'>
+        <section className='search-bar-box'>
           <input
               className='search-input'
               type='text'
               placeholder='Search Artists'
               name='input'
               value={this.state.searchQuery}
-              renderSearchError={this.renderSearchError}
               onChange={this.handleChange}/>
           <Link to={`/artist:${this.state.searchQuery}`}>
             <button className='search-btn'>Search</button>
           </Link>
-        </form>
+        </section>
     )
   }
 }
