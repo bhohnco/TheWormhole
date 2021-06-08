@@ -1,6 +1,6 @@
 .top-artists-box {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 10% 85%;
   padding: 1vw 2vw 1vw 4vw;
   width: 45%;
   height: auto;
@@ -30,12 +30,13 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  align-content: space-evenly;
 }
 
 .top-artist-card {
   width: 40%;
-  height: 12vw;
-  margin: 1% 4% 0 4%;
+  height: 15vw;
+  margin: 0 4% 0 4%;
   text-align: center;
 }
 
@@ -50,7 +51,7 @@
 
 .top-artist-image {
   width: 100%;
-  height: 80%;
+  height: 70%;
   box-shadow: 0 0 0.2vw 0.2vw rgba(176, 165, 244, 0.832);
   font-size: 2vw;
   background-repeat: no-repeat;
