@@ -7,7 +7,6 @@ import loadingReducer from './isLoading';
 import errorReducer from './hasErrored';
 import searchReducer from './searchReducer';
 import dropdownReducer from './dropdownReducer';
-import { reducer as Form } from 'redux-form';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -17,8 +16,7 @@ const allReducers = combineReducers({
   artistImages: imageReducer,
   artistInfo: artistInfoReducer,
   isLoading: loadingReducer,
-  hasErrored: errorReducer,
-  Form
+  hasErrored: errorReducer
 });
 
 export default allReducers;
