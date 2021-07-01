@@ -50,3 +50,11 @@
 //     </article>
 //   )
 // });
+
+
+  // async getArtistImageURL() {
+  //   const response = await fetch(`http://commons.wikimedia.org/wiki/File:ArianaGrandeDecember2013.jpg`)
+  //   const data = await response.json();
+  //   console.log(data);
+  // }
+//}
