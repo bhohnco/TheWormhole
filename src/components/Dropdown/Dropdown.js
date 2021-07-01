@@ -25,8 +25,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   return (
     <section className='dropdown'>
       <div className='control'
-            onClick={() => setOpen((prev) => !prev)}
-      >
+            onClick={() => setOpen((prev) => !prev)}>
       <div className='selected-value' ref={ref}>
         {value ? value : prompt}
       </div>
