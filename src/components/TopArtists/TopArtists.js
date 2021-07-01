@@ -17,16 +17,19 @@ const TopArtists = () => {
 
   useEffect(() => {
     fetchArtistsData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     fetchArtistsData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   useEffect(() => {
     if (topArtists.length > 1) {
       setArtistCards(buildCards(topArtists))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topArtists]);
 
   const fetchArtistsData = async () => {
@@ -53,7 +56,7 @@ const TopArtists = () => {
     let nameString = artist.name.replaceAll(' ', '+');
 
     return (
-      <article className='top-artist-card'>
+      <article key={artist.mbid} className='top-artist-card'>
         <p className='top-artist-name'>{artist.name}</p>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
           <div className='top-artist-image' id={artist.mbid} key={artist.mbid} style={{ backgroundImage: `url(${utils.getRandomElement(images)})`}}></div>
