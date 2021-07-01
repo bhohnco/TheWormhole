@@ -16,7 +16,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(location(locationObj));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   if (!locationObj) {

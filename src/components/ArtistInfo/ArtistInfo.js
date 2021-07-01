@@ -14,7 +14,6 @@ const ArtistInfo = ({ id }) => {
 
   useEffect(() => {
     fetchArtistData(path);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchArtistData = async (artistName) => {
