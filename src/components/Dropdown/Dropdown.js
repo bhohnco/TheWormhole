@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { location } from '../../actions';
-import utils from '../../utilities/utils';
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
@@ -13,6 +12,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   useEffect (() => {
     document.addEventListener("click", close)
     return () => document.removeEventListener("click", close);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const selectLocation = (choice) => {

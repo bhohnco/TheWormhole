@@ -1,6 +1,3 @@
-import utils from './utils'
-
-// const apiCalls = {
 export const getTopArtists = (country) => {
     return fetch(`http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${country}&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json`)
     .then(response => response.json());
@@ -24,12 +21,3 @@ export const getArtistInfo = (artistName) => {
 
     return data;
   }
-
-  // async getArtistImageURL() {
-  //   const response = await fetch(`http://commons.wikimedia.org/wiki/File:ArianaGrandeDecember2013.jpg`)
-  //   const data = await response.json();
-  //   console.log(data);
-  // }
-//}
-
-//export default apiCalls;
