@@ -3,12 +3,7 @@ node_js:
   - "node"
 notifications:
   email: false
-cache:
-  npm: true
-  directories:
-    - ~/.npm
-    - ./node_modules
-    - -/.cache
-  override:
-    - npm ci
-    - npm run cy:verify
+install:
+  - npm ci
+script:
+  - npm run ci
