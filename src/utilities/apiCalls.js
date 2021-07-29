@@ -13,14 +13,9 @@ export const getArtistInfo = (artistName) => {
     .then(response => response.json());
 }
 
-export const getArtistImagePage = async (id) => {
-  const response = await fetch(`http://musicbrainz.org/ws/2/artist/${id}?inc=url-rels&fmt=json`)
-  const data = await response.json();
-
-  return data;
-}
-
-// export const getArtistImageURL = async () => {
-//   const response = await fetch(`http://commons.wikimedia.org/wiki/File:ArianaGrandeDecember2013.jpg`)
+// export const getArtistImage = async (url) => {
+//   const response = await fetch(url)
 //   const data = await response.json();
+
+//     return data;
 // }
