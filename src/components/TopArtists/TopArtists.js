@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { artists } from '../../actions';
+import { artists, images } from '../../actions';
 import { getTopArtists } from '../../utilities/apiCalls';
 import artistImageData from '../../assets/artistsDataset';
 import utils from '../../utilities/utils';
-import images from '../../utilities/artistImages';
+import backupImages from '../../utilities/backupImages';
 
 const TopArtists = () => {
 
   const dispatch = useDispatch();
 
   const [artistCards, setArtistCards] = useState([]);
-  const [imageLinks, setImageLinks] = useState([]);
 
   const location = useSelector(state => state.location);
   const topArtists = useSelector(state => state.topArtists);
+  const artistImages = useSelector(state => state.artistImages);
 
   useEffect(() => {
     fetchArtistsData()
@@ -36,11 +36,11 @@ const TopArtists = () => {
 
 
   useEffect(() => {
-    if (imageLinks.length > 1) {
+    if (artistImages.length > 1) {
       setArtistCards(buildCards());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imageLinks]);
+  }, [artistImages]);
 
   const fetchArtistsData = async () => {
     const apiData = await getTopArtists(location.string);
@@ -64,13 +64,15 @@ const TopArtists = () => {
   const findImageLinks = () => {
     const links = [];
     topArtists.forEach(topArtist => {
+      const index = topArtists.indexOf(topArtist);
       artistImageData.forEach(artist => {
-        if (artist.id === topArtist.mbid) {
-          links.push(artist.link);
+        if (artist.name === topArtist.name) {
+          links[index] = artist.link;
+          console.log(artist.name);
         }
       })
     });
-    setImageLinks(links);
+    dispatch(images(links));
   }
 
   const buildCards = () => topArtists.map(artist => {
@@ -86,7 +88,7 @@ const TopArtists = () => {
             className='top-artist-image' 
             id={artist.mbid} 
             key={artist.mbid} 
-            style={{ backgroundImage: `url(${imageLinks[index] || utils.getRandomElement(images)})`}}>
+            style={{ backgroundImage: `url(${artistImages[index] || utils.getRandomElement(backupImages)})`}}>
           </div>
         </Link>
       </article>

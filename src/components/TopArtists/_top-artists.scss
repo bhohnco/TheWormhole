@@ -57,16 +57,19 @@
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
-@media screen and (max-width: 651px) {
-
-  .top-artist-card {
-    font-size: 4vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+@media screen and (max-width: 1060px) {
+  .top-artist-name {
+    font-size: 1em;
   }
+}
 
+@media screen and (max-width: 816px) {
+  .top-artist-name {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 651px) {
   .top-artists-box {
     display: flex;
     width: 85%;
@@ -75,7 +78,7 @@
   }
 
   .top-artists-box h3 {
-    font-size: 5vw;
+    font-size: 1.8em;
     margin: 0;
   }
 
@@ -87,15 +90,6 @@
 }
 
 @media screen and (max-width: 376px) {
-
-  .top-artist-card {
-    font-size: 4vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
   .top-artists-box {
     display: flex;
     width: 85%;
@@ -111,6 +105,10 @@
   .artists-list {
     display: flex;
     height: 100vw;
+  }
+
+  .top-artist-name {
+    font-size: 0.7em;
   }
 
 }

@@ -11,7 +11,7 @@ import cowbell10 from '../assets/images/more-cowbells/cowbell10.jpeg';
 import cowbell11 from '../assets/images/more-cowbells/cowbell11.jpeg';
 import walken1 from '../assets/images/more-cowbells/walken1.jpeg';
 
-const images = [
+const backupImages = [
   cowbell1,
   cowbell2,
   cowbell3,
@@ -26,4 +26,4 @@ const images = [
   walken1,
 ];
 
-export default images;
+export default backupImages;
