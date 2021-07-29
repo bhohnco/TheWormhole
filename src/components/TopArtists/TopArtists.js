@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { artists, images } from '../../actions';
 import { getTopArtists } from '../../utilities/apiCalls';
-import artistImageData from '../../assets/artistsDataset';
 import utils from '../../utilities/utils';
+import artistImageData from '../../utilities/artistsDataset';
 import backupImages from '../../utilities/backupImages';
 
 const TopArtists = () => {
@@ -68,7 +68,6 @@ const TopArtists = () => {
       artistImageData.forEach(artist => {
         if (artist.name === topArtist.name) {
           links[index] = artist.link;
-          console.log(artist.name);
         }
       })
     });

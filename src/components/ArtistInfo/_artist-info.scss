@@ -30,6 +30,15 @@
   }
 }
 
+.artist-image-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 49, 88, 0.349);
+}
+
 .artist-name {
   font-size: 4.5vw;
   font-family: AlienEncounters;
