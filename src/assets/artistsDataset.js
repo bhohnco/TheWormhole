@@ -32,7 +32,7 @@ const artistImageData = [
   {name: 'Pink Floyd', link: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/The_Pink_Floyd_Show_UK.jpg'},
   {name: 'The xx', link: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/The_xx_Dec._2_09.jpg'},
   {name: 'Nirvana', link: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/EMP_Museum_-_Nirvana_%2815632798960%29.jpg'},
-  {name: 'Katy Perry', link: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Katy_Perry.jpg'},
+  {name: 'Katy Perry', link: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Katy_Perry_13%2C_2012.jpg'},
   {name: 'Arctic Monkeys', link: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Arctic_Monkeys.jpg'},
   {name: 'Muse', link: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Muse_2006_001.jpg'},
   {name: 'Rihanna', link: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Rihanna_-_Live_in_Paris_%284%29.jpg'},
@@ -159,6 +159,18 @@ const artistImageData = [
   {name: 'R. Kelly', link: 'https://upload.wikimedia.org/wikipedia/commons/4/46/R._Kelly_mug_shot.jpg'},
   {name: 'Miley Cyrus', link: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Miley_Cyrus_Primavera19_-241_%2848985545863%29.jpg'},
   {name: 'Anathema', link: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Anathema-03.jpg'},
+  {name: 'Miles Davis', link: 'https://upload.wikimedia.org/wikipedia/commons/8/88/MilesDavisNorthSeaJazz1984.jpg'},
+  {name: 'Mika', link: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Mika_%28Chanteur%29.jpg'},
+  {name: 'Nina Simone', link: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/De_Amerikaanse_zangeres_Nina_Simone_die_met_kerst_op_televisie_zal_verschijnen%2C_Bestanddeelnr_918-5602.jpg'},
+  {name: 'Tom Petty and The Heartbreakers', link: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tom_Petty_and_the_Heartbreakers_1977.jpg'},
+  {name: 'OneRepublic', link: 'https://upload.wikimedia.org/wikipedia/commons/4/45/OneRepublic_20130413_064.JPG'},
+  {name: 'Noize MC', link: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Noize_MC_2020_%281%29.jpg'},
+  {name: 'Tool', link: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Tool_live_barcelona_2006.jpg'},
+  {name: 'CHVRCHES', link: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Chvrches_09_23_2018_-26_%2831780733877%29.jpg'},
+  {name: 'Carly Rae Jepsen', link: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Carly_Rae_Jepsen_Primavera19_-159_%2848985538298%29.jpg'},
+  {name: 'Iron & Wine', link: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Iron%26Wine2015.png'},
+  {name: '', link: ''},
+  {name: '', link: ''},
 ]
 
 export default artistImageData;
