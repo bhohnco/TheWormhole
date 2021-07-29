@@ -43,7 +43,7 @@
   font-size: 1.3em;
   font-weight: 500;
   color: rgba(151, 243, 190, 0.904);
-  letter-spacing: 0.4vw;
+  letter-spacing: 0.5vw;
 }
 
 .top-artist-image {
@@ -57,7 +57,7 @@
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1370px) {
   .top-artist-name {
     font-size: 1em;
   }
