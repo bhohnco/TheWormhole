@@ -53,7 +53,7 @@ const TopArtists = () => {
 
   const filterArtists = (data) => {
     const topArtists = data.reduce((topTen, artistObj) => {
-      if (data.indexOf(artistObj) < 8) {
+      if (data.indexOf(artistObj) < 10) {
         topTen.push(artistObj);
       }
       return topTen;

@@ -1,7 +1,8 @@
 .top-tracks-box {
   display: flex;
   flex-direction: column;
-  padding: 2vw 2vw 1vw 4vw;
+  align-items: center;
+  padding: 2vw 2vw 1vw 2vw;
   width: 35%;
   height: auto;
   font-size: 1.5vw;
@@ -11,14 +12,13 @@
   margin-bottom: 5vw;
 
   h3 {
-    margin-top: 1vw;
-    align-self: flex-start;
     font-family: AlienEncounters;
     font-style: italic;
     line-height: 2;
-    font-size: 3.1vw;
+    font-size: 2.3em;
     font-weight: 500;
     color: $fashion-fuscia;
+    margin: 3%;
   }
 }
 

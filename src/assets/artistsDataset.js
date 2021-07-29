@@ -1,7 +1,26 @@
 const artistImageData = [
   {name: 'Radiohead', id: 'a74b1b7f-71a5-4011-9441-d0b5e4122711',link: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/RadioheadMontreal170718-118_%2843553165042%29.jpg'},
-  {name: 'David Bowie', id: '5441c29d-3602-4898-b1a1-b77fa23b8e50', link: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/David-Bowie_Chicago_2002-08-08_photoby_Adam-Bielawski-cropped.jpg'},
+  {name: 'David Bowie', id: '5441c29d-3602-4898-b1a1-b77fa23b8e50', link: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/David_Bowie_-_TopPop_1974_10.png'},
   {name: 'Kanye West', id: '164f0d73-1234-4e2c-8743-d77bf2191051',link: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Kanye_West_Lollapalooza_Chile_2011_2.jpg'},
+  {name: 'Drake', id: 'b49b81cc-d5b7-4bdd-aadb-385df8de69a6',link: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Drake_Summer_Sixteen_Tour.jpg'},
+  {name: 'The Beatles', id: 'b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d', link: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Beatles_ad_1965_just_the_beatles_crop.jpg'},
+  {name: 'The Weeknd', id: 'c8b03190-306c-4120-bb0b-6f2ebfc06ea9', link: 'https://upload.wikimedia.org/wikipedia/commons/4/46/The_Weeknd_2015.jpg'},
+  {name: 'Kendrick Lamar', id: '381086ea-f511-4aba-bdf9-71c753dc5077', link: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Kendrick_Lamar_Damn.jpg'},
+  {name: 'Fleetwood Mac', id: 'bd13909f-1c29-4c27-a874-d4aaf27c5b1a', link: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Fleetwood_Mac_%281977%29.jpg'},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
+  {name: '', id: '', link: ''},
 ]
 
 export default artistImageData;
