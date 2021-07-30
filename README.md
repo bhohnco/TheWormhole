@@ -9,7 +9,7 @@
 * [Authors](#authors)
 * [Technologies](#technologies)
 
-(![Screen Shot 2021-07-29 at 10 40 56 PM](https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png)
+<img width="400" height="400" alt="Home Page View" src="https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png">
 
 ## Description
 
