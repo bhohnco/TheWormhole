@@ -4,7 +4,7 @@
   align-items: center;
   width: 47%;
   height: auto;
-  padding: 1.2vw 2% 1vw 2%;
+  padding: 1vw 2% 1vw 2%;
   margin-bottom: 5vw;
   color: $mid-emphasis-text;
   background-color: $opaque-blue-dark;
@@ -15,10 +15,10 @@
     font-style: italic;
     line-height: 2;
     height: 5%;
-    font-size: 3.5vw;
+    font-size: 3.5em;
     font-weight: 500;
     color: $fashion-fuscia;
-    margin: 4% auto 2% auto;
+    margin: 7% auto 2% auto;
   }
 }
 
@@ -28,7 +28,7 @@
   align-content: space-evenly;
   height: 90%;
   padding: 0;
-  margin-top: 2%;
+  margin-top: 5%;
   width: 90%;
 }
 
@@ -67,11 +67,27 @@
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
+@media screen and (max-width: 1370px) {
+  .top-artist-name {
+    font-size: 1em;
+  }
+
+  .top-artists-box h3 {
+    margin-top: 1em;
+    font-size: 2.5em;
+  }
+}
+
 @media screen and (max-width: 1050px) {
+  .top-artists-box h3 {
+    margin: 0.5em auto 0.5em auto;
+    font-size: 2.2em;
+  }
+
   .artists-list {
     width: 95%;
     margin-top: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   .top-artist-card {
@@ -90,6 +106,11 @@
   .top-artist-name {
     font-size: 0.8em;
   }
+
+  .top-artists-box h3 {
+    margin-top: 0.5em;
+    font-size: 1.75em;
+  }
 }
 
 @media screen and (max-width: 651px) {
@@ -100,7 +121,8 @@
   }
 
   .top-artists-box h3 {
-    font-size: 5vw;
+    font-size: 1.4em;
+    margin-top: 4vw;
   }
 
   .artists-list {
@@ -108,10 +130,6 @@
     height: 140vw;
     width: 95%;
     margin-top: 2em;
-  }
-
-  .top-artist-name {
-    font-size: 1.1em;
   }
 }
 
