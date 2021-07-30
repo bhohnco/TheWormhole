@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import SearchBar from '../SearchBar/SearchBar'
 import Dropdown from '../Dropdown/Dropdown'
 import utils from '../../utilities/utils';
-import countries from '../../utilities/countries';
+import countries from '../../assets/datasets/countries';
 
 const NavBar = () => {
 

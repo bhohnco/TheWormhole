@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { artists, images, info } from '../../actions';
 import { getTopArtists } from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
-import artistImageData from '../../utilities/artistsDataset';
-import backupImages from '../../utilities/backupImages';
+import artistImageData from '../../assets/datasets/artistImages';
+import backupImages from '../../assets/datasets/backupImages';
 
 const TopArtists = () => {
 

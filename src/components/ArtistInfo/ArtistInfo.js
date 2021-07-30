@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { info } from '../../actions';
 import { getArtistInfo} from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
-import artistImageData from '../../utilities/artistsDataset';
+import artistImageData from '../../assets/datasets/artistImages';
 import concert from '../../assets/images/concert-stock-photo.jpeg';
 
 const ArtistInfo = ({ id }) => {
@@ -39,7 +39,7 @@ const ArtistInfo = ({ id }) => {
   }
 
   return (
-    !artistInfo.name ?
+    !artistInfo ?
       <section className='message-box'>
         <p className='message'>Page Loading</p>
       </section>

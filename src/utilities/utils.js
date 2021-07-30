@@ -1,4 +1,4 @@
-import countries from './countries';
+import countries from '../assets/datasets/countries';
 
 const utils = {
   getRandomElement(array) {
