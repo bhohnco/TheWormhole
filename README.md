@@ -9,8 +9,6 @@
 * [Authors](#authors)
 * [Technologies](#technologies)
 
-<img width="500" height="400" alt="Home Page View" src="https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png">
-
 ## Description
 
 Would you like to find new music no matter how far away it was created? Are you about to travel and want to listen to the local top 10 hits on the plane ride over?  Then welcome to our Wormhole music listing app.
@@ -50,6 +48,8 @@ For more about combining `React` with `Redux` here: [React Redux Documentation](
 ## Walkthrough
 
 1. Once the app is accessed, a user is immediately shown a welcoming page with a newly randomized locations music list
+
+<img width="500" height="400" alt="Home Page View" src="https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png">
 
 2. There is an artist list and a top tracks list
 
