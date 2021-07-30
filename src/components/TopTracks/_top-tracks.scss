@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2vw 2% 1vw 2%;
   width: 35%;
   height: auto;
+  padding: 2vw 2% 1vw 2%;
+  margin-bottom: 5vw;
   font-size: 1.5vw;
   color: whitesmoke;
   background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
-  margin-bottom: 5vw;
 
   h3 {
     font-family: AlienEncounters;
@@ -58,7 +58,6 @@
 }
 
 @media screen and (max-width: 651px) {
-
   .top-track span, li {
     font-size: 4vw;
   }
@@ -78,13 +77,12 @@
   .top-tracks-box h3 {
     align-self: center;
     justify-content: center;
-    margin-top: 1vw;
-    font-size: 4.2em;
+    margin-top: 4vw;
+    font-size: 3.5em;
   }
 }
 
 @media screen and (max-width: 376px) {
-  
   li {
     font-size: 3.2vw;
   }
@@ -99,5 +97,4 @@
     font-size: 5.2vw;
     margin: 4vw auto 2vw auto;
   }
-
 }

@@ -52,7 +52,7 @@ nav {
 
   /*~~~~~~ Responsive ~~~~~~ */
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1200px) {
     header {
       padding: 2vw;
       height: 11vw;
@@ -94,7 +94,8 @@ nav {
       height: 27vw;
     }
     header h1 {
-      margin-top: 3vw;
+      margin-top: 7vw;
+      font-size: 7vw;
     }
   }
 
@@ -104,7 +105,7 @@ nav {
     }
 
     header h1 {
-      margin-top: 6vw;
+      margin-top: 8vw;
       font-size: 8vw;
     }
 
