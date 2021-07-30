@@ -1,9 +1,15 @@
 .artist-info {
   display: grid;
-  grid-template-rows: 20% 70%;
-  width: 85%;
-  height: auto;
+  grid-template-rows: 20% 75%;
+  width: 90%;
+  height: 90%;
+  min-width: 80vw;
+  max-height: 200vh;
+  min-height: 65vh;
   color: whitesmoke;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
   background-color: rgba(3, 5, 16, 0.784);
   border: 1px solid $french-lime;
 }
@@ -29,6 +35,15 @@
   }
 }
 
+.artist-image-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 49, 88, 0.349);
+}
+
 .artist-name {
   font-size: 4.5vw;
   font-family: AlienEncounters;
@@ -42,11 +57,12 @@
   justify-self: center;
   justify-content: center;
   text-align: center;
-  width: 80%;
-  height: 100%;
-  max-height: 100vw;
+  width: 85%;
+  height: 70%;
+  max-height: 120vw;
   margin-top: 7%;
-  padding: 1vw 3vw 1vw 3vw;
+  margin-bottom: 1em;
+  padding: 2% 3% 2% 3%;
   overflow: scroll;
   overscroll-behavior: contain;
   display: block;
@@ -74,28 +90,25 @@
   color: $blue-jeans;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1025px) {
+
+  .artist-info {
+    max-height: 75vh;
+    grid-template-rows: 20% 70%;
+  }
 
   .artist-img-box {
     display: flex;
     width: 53%;
-    height: 70%;
+    height: 90%;
   }
 
   .artist-text-box {
-    margin-top: 0;
-    height: 100%;
+    height: 90%;
   }
 }
 
-@media screen and (max-width: 426px) {
-
-  .artist-info {
-    display: grid;
-    grid-template-rows: 15% 75%;
-    width: 85%;
-    height: 93%;
-  }
+@media screen and (max-width: 770px) {
 
   .artist-img-box {
     display: flex;
@@ -104,18 +117,74 @@
   }
 
   .artist-text-box {
+    margin-top: 2em;
+    height: 95%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+
+  .artist-info {
+    margin-top: 5%;
+    width: 85%;
+    height: 93%;
+  }
+
+  .artist-img-box {
+    margin-top: 5.5em;
+    width: 60%;
+    height: 80%;
+  }
+
+  .artist-text-box {
     height: 100%;
-    margin: 3vw;
+    margin: 7% auto 3% auto;
   }
 }
 
 @media screen and (max-width: 376px) {
+  .artist-info {
+    margin-top: 5%;
+    grid-template-rows: 15% 75%;
+    width: 85%;
+  }
+
+  .artist-img-box {
+    width: 60%;
+  }
+
+  .artist-text-box {
+    margin: 1.5em auto 8em auto;
+  }
+}
+
+@media screen and (max-width: 321px) {
 
   .artist-info {
-    display: grid;
-    grid-template-rows: 15% 75%;
     margin-top: 5%;
+    grid-template-rows: 15% 80%;
     width: 85%;
     height: 100%;
+    max-height: 80vh;
+  }
+
+  .artist-img-box {
+    margin-top: 10%;
+    width: 70%;
+    height: 90%;
+  }
+
+  .artist-text-box {
+    margin: 3em auto 10em auto;
+    padding-bottom: 5em;
+    width: 80%;
+    height: 60%;
+
+    p {
+      font-size: 2.5vw;
+      margin: 3vw 2vw 2vw 2vw;
+      font-family: $inconsolata;
+      line-height: 2;
+    }
   }
 }

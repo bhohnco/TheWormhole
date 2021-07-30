@@ -1,4 +1,4 @@
-# W O R M H O L E
+# [W O R M H O L E](https://the-wormhole.herokuapp.com/)
 
 #### connecting to music all over the world
 
@@ -23,10 +23,6 @@ As a group we agreed to use Redux, React, Router, Asynchronous JavaScript, Cypre
 * List of top hits by country
 * Cypress testing to test user flows
 * Responsive and Responsible - can be used on all screen sizes with considerations for tabbing, color choices, and button sizing for easer of UX
-
-## Link
-
-* We are [Published](the-wormhole.surge.sh)
 
 ## Installation
 

@@ -21,10 +21,10 @@ export const location = (locationChoice) => {
     }
 }
 
-export const image = (artistImage) => {
+export const images = (artistImages) => {
     return {
-        type: 'GET_ARTIST_IMAGE_URL',
-        payload: artistImage,
+        type: 'GET_ARTIST_IMAGE_LINKS',
+        payload: artistImages,
     }
 }
 

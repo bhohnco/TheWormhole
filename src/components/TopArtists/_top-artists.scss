@@ -1,52 +1,49 @@
 .top-artists-box {
-  display: grid;
-  grid-template-rows: 10% 85%;
-  padding: 1vw 2vw 1vw 4vw;
-  width: 45%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
   color: $mid-emphasis-text;
   background-color: $opaque-blue-dark;
   border: 1px solid $blue-jeans;
-  margin-bottom: 1vw;
+  margin-bottom: 5vw;
 
   h3 {
-    align-self: center;
-    margin-top: 1vw;
-    margin-bottom: 1em;
     font-family: AlienEncounters;
     font-style: italic;
     line-height: 2;
-    font-size: 3.1vw;
+    height: 5%;
+    font-size: 3.5em;
     font-weight: 500;
     color: $fashion-fuscia;
-  }
-
-  li {
-    margin: 1vw;
+    margin: 7% auto 2% auto;
   }
 }
 
 .artists-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
   align-content: space-evenly;
+  height: 85%;
+  padding: 0;
+  margin-top: 5%;
+  width: 90%;
 }
 
 .top-artist-card {
   width: 40%;
-  height: 15vw;
-  margin: 0 4% 0 4%;
+  height: 18%;
+  margin: 0 5% 2% 5%;
   text-align: center;
 }
 
 .top-artist-name {
-  margin: 3%;
+  margin: 3% auto 5% auto;
   font-family: $staatliches;
-  font-size: 2.25vw;
+  font-size: 1.3em;
   font-weight: 500;
   color: rgba(151, 243, 190, 0.904);
-  letter-spacing: 0.4vw;
+  letter-spacing: 0.5vw;
 }
 
 .top-artist-image {
@@ -60,25 +57,45 @@
 
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
-@media screen and (max-width: 651px) {
-
-  .top-artist-card {
-    font-size: 4vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+@media screen and (max-width: 1370px) {
+  .top-artist-name {
+    font-size: 1em;
   }
 
+  .top-artists-box h3 {
+    margin-top: 1em;
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .top-artists-box h3 {
+    margin-top: 1em;
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 816px) {
+  .top-artist-name {
+    font-size: 0.8em;
+  }
+
+  .top-artists-box h3 {
+    margin-top: 0.8em;
+    font-size: 1.75em;
+  }
+}
+
+@media screen and (max-width: 651px) {
   .top-artists-box {
     display: flex;
     width: 85%;
-    margin: 4vw 0 0 0;
+    margin: 12% auto auto auto;
     padding-bottom: 4vw;
   }
 
   .top-artists-box h3 {
-    font-size: 5vw;
+    font-size: 1.8em;
     margin: 0;
   }
 
@@ -90,15 +107,6 @@
 }
 
 @media screen and (max-width: 376px) {
-
-  .top-artist-card {
-    font-size: 4vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
   .top-artists-box {
     display: flex;
     width: 85%;
@@ -114,6 +122,10 @@
   .artists-list {
     display: flex;
     height: 100vw;
+  }
+
+  .top-artist-name {
+    font-size: 0.7em;
   }
 
 }

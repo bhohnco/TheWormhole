@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { location } from '../../actions';
-import utils from '../../utilities/utils';
 
 export default function Dropdown({ options, prompt, value, key, onChange, }) {
 
@@ -26,8 +25,7 @@ export default function Dropdown({ options, prompt, value, key, onChange, }) {
   return (
     <section className='dropdown'>
       <div className='control'
-            onClick={() => setOpen((prev) => !prev)}
-      >
+            onClick={() => setOpen((prev) => !prev)}>
       <div className='selected-value' ref={ref}>
         {value ? value : prompt}
       </div>

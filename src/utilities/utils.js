@@ -1,15 +1,19 @@
-import countries from './countries';
+import countries from '../assets/datasets/countries';
 
 const utils = {
   getRandomElement(array) {
     return array[Math.floor(Math.random()*array.length)];
   },
 
- formatLocationStr(country) {
-    const lowercaseName = country.toLowerCase();
-    const formattedString = lowercaseName.replaceAll(' ', '+');
-
-    return formattedString;
+  formatLocationStr(country) {
+    if (country) {
+      const lowercaseName = country.toLowerCase();
+      const formattedString = lowercaseName.replaceAll(' ', '+');
+ 
+      return formattedString;
+    } else {
+      return;
+    }
   },
 
   formatCountryName(country) {
@@ -21,12 +25,16 @@ const utils = {
     }
   },
 
-  removeLinkInBio(text) {
-    const [ body, link] = text.split('<a');
-    const [ , rights] = link.split('</a>. ');
-    const joinedText = body + '\n\n' + rights;
-
-    return joinedText;
+  removeLinkInBio(artistInfo) {
+    if (artistInfo.bio) {
+      const text = artistInfo.bio.content;
+      const [ body, link] = text.split('<a');
+      const [ , rights] = link.split('</a>. ');
+      const joinedText = body + '\n\n' + rights;
+      return joinedText;
+    } else {
+      return 'No artist information available.';
+    }
   },
 
   getRandomLocation() {

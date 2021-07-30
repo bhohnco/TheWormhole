@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { location } from '../../actions';
 import background from '../../assets/images/night-sky.jpeg';
 import Header from '../Header/Header';
-import Form from '../Form/Form';
+import NavBar from '../NavBar/NavBar';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
 import ArtistInfo from '../ArtistInfo/ArtistInfo';
@@ -16,6 +16,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(location(locationObj));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   if (!locationObj) {
@@ -33,12 +34,12 @@ const App = () => {
                 <Route exact path='/:id'
                   render={({ match }) =>
                     <main className='main-section'>
-                          <ArtistInfo id={ match.params.id }/>
+                      <ArtistInfo id={ match.params.id }/>
                     </main>
                   }
                 />
                 <Route exact path="/" >
-                  <Form />
+                  <NavBar />
                   <main className='main-section'>
                     <section className='location-display'>
                       <TopArtists />

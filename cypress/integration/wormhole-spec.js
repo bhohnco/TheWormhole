@@ -1,12 +1,12 @@
-describe('Show main view of Worm Hole App', () => {
+describe('Show main view of Wormhole app', () => {
 
   beforeEach(() => {
-    cy.fixture('mock-topArtist-stubbing-data.json')
-      .then(mockTopArtists => {
+    cy.fixture('mock-top-artist-data.json')
+      .then(topArtists => {
         cy.intercept('GET', 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=ireland&api_key=18f07debe7c3cfc543178cd9046e1ec4&format=json', {
           statusCode: 200,
           delay: 100,
-          body: mockTopArtists
+          body: topArtists
         })
       })
 
@@ -30,13 +30,13 @@ describe('Show main view of Worm Hole App', () => {
   });
 
   it('Should show go home and randomization of countries selected buttons on load', () => {
-    cy.get('.random-location').should('contain', 'Randomize Me')
+    cy.get('.random-location').should('contain', 'Randomize Location')
 
-      .get('.go-home').should('contain', 'Return Home')
+      .get('.go-home').should('contain', 'Return')
   });
 
   it('Should display background image inside the header of the main page', () => {
-    cy.get('header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
+    cy.get('.App').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/night-sky.3ce7405c.jpeg")')
   });
 
   it('Should render the drop down component in the form component', () => {
