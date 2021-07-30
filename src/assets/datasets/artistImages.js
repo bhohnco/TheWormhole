@@ -169,8 +169,25 @@ const artistImageData = [
   {name: 'CHVRCHES', link: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Chvrches_09_23_2018_-26_%2831780733877%29.jpg'},
   {name: 'Carly Rae Jepsen', link: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Carly_Rae_Jepsen_Primavera19_-159_%2848985538298%29.jpg'},
   {name: 'Iron & Wine', link: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Iron%26Wine2015.png'},
+  {name: 'Röyksopp', link: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Royksopp_2014-09-29_001_%28cropped%29.jpg'},
+  {name: 'Highasakite', link: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/HIGHASAKITE_2018_by_J%C3%B8rgen_Nordby.jpg'},
+  {name: 'Susanne Sundfør', link: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Susanne_Sundf%C3%B8r.JPG'},
+  {name: 'Avicii', link: 'https://upload.wikimedia.org/wikipedia/commons/8/81/Avicii_%40_London_tentparty_%28cropped%29.jpg'},
+  {name: 'Veronica Maggio', link: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Veronica_Maggio_Klubb_Molto_2.jpg'},
+  {name: 'Håkan Hellström', link: 'https://upload.wikimedia.org/wikipedia/commons/7/74/HakanHellstromMalmo08.jpg'},
+  {name: 'Apulanta', link: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Apulanta_2005_Nr.JPG'},
+  {name: 'Antti Tuisku', link: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Antti_Tuisku_-_Ilosaarirock_2016_-_10.jpg'},
+  {name: 'Haloo Helsinki!', link: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Haloo_Helsinki_-_Rakuuna_Rock_2014_2.jpg'},
+  {name: 'JVG', link: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Jvg2014.jpg'},
+  {name: '宇多田ヒカル', link: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Utada_Hikaru.jpg'},
+  {name: '椎名林檎', link: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Shiina_Ringo_2016_%282%29.jpg'},
+  {name: 'サカナクション', link: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Sakanaction11-Yamaguchicrop.jpg'},
   {name: '', link: ''},
   {name: '', link: ''},
+  {name: '', link: ''},
+
+
+
 ]
 
 export default artistImageData;
