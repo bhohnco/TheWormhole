@@ -49,7 +49,7 @@ For more about combining `React` with `Redux` here: [React Redux Documentation](
 
 1. Once the app is accessed, a user is immediately shown a welcoming page with a newly randomized locations music list
 
-<img width="500" height="400" alt="Home Page View" src="https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png">
+<img width="500" height="350" alt="Home Page View" src="https://user-images.githubusercontent.com/51062974/127602586-9c165e34-b33b-4870-99fd-009520612945.png">
 
 2. There is an artist list and a top tracks list
 
