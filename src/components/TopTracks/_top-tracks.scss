@@ -55,9 +55,18 @@
 }
 
 @media screen and (max-width: 816px) {
+  .top-tracks-box {
+    margin: 1.5vw 0 2vw 0;
+    padding-bottom: 4vw;
+  }
+
   .top-tracks-box h3 {
-    margin-top: 0.3em;
-    font-size: 2.4em;
+    margin-top: 0.35em;
+    font-size: 2.5em;
+  }
+
+  .tracks-list {
+    margin-top: 4vw;
   }
 }
 

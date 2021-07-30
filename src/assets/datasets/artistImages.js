@@ -182,7 +182,7 @@ const artistImageData = [
   {name: '宇多田ヒカル', link: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Utada_Hikaru.jpg'},
   {name: '椎名林檎', link: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Shiina_Ringo_2016_%282%29.jpg'},
   {name: 'サカナクション', link: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Sakanaction11-Yamaguchicrop.jpg'},
-  {name: '', link: ''},
+  {name: 'Fedez', link: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Deejay_On_Stage_-_Fedez_%2829356156104%29.jpg'},
 ]
 
 export default artistImageData;

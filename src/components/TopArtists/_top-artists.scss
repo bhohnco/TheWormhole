@@ -98,6 +98,11 @@
 }
 
 @media screen and (max-width: 816px) {
+  .top-artists-box {
+    margin: 1.5vw 0 2vw 0;
+    padding-bottom: 4vw;
+  }
+
   .top-artist-name {
     font-size: 0.8em;
   }
