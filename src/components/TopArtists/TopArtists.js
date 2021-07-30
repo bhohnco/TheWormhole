@@ -74,6 +74,10 @@ const TopArtists = () => {
     dispatch(images(links));
   }
 
+  const handleClick = () => {
+    dispatch(info(null));
+  }
+
   const buildCards = () => topArtists.map(artist => {
 
     let index = topArtists.indexOf(artist);
@@ -87,7 +91,7 @@ const TopArtists = () => {
             className='top-artist-image' 
             id={artist.mbid} 
             key={artist.mbid} 
-            onClick={dispatch(info(null))}
+            onClick={handleClick}
             style={{ backgroundImage: `url(${artistImages[index] || utils.getRandomElement(backupImages)})`}}>
           </div>
         </Link>
