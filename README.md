@@ -1,6 +1,6 @@
 # [W O R M H O L E](https://the-wormhole.herokuapp.com/)
 
-#### connecting to music all over the world
+#### connecting music fans all over the world
 
 ## Table of Contents
 * [Description](#description)
@@ -11,9 +11,10 @@
 
 ## Description
 
-Would you like to find new music no matter how far away it was created? Are you about to travel and want to listen to the local top 10 hits on the plane ride over?  Then welcome to our Wormhole music listing app.
+Would you like to find new music no matter how far away it was created? Are you about to travel and want to listen to the local top 10 hits on the plane ride over?  Then welcome to our _Wormhole_ music listening app.
 
-This was a group project.  We were given two weeks to stretch ourselves to learn a new technology and reinforce technologies recently learned in an app we design start to finish on our own.  
+This was a group project in which were given two weeks to push ourselves to learn a new technology, as well as to reinforce our knowledge of React and associated libraries and technologies.
+
 As a group we agreed to use Redux, React, Router, Asynchronous JavaScript, Cypress end to end acceptance testing, and conditional rendering. The Rubric & Spec for this project can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Notable Features
