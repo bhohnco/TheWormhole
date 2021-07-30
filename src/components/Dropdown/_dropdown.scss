@@ -1,7 +1,8 @@
 .drop-render {
   display: flex;
-  width: 100%;
-  height: 35%;
+  width: 30%;
+  height: 60%;
+  min-height: 2vw;
   align-items: center;
   justify-content: center;
   margin-left: 3vw;
@@ -9,7 +10,7 @@
 
 .dropdown {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -49,7 +50,6 @@
 .dropdown .selected-value {
   display: flex;
   align-items: center;
-  // justify-content: center;
   background-color: $mid-emphasis-text;
   border: 1px solid #ccc;
   border-radius: 2px;
@@ -110,26 +110,19 @@
 
 /*~~~~~~ Responsive ~~~~~~ */
 
-@media screen and (min-width: 1500px) {
-
-  .drop-render {
-    min-width: 25em;
-    width: 100%;
-  }
-
+@media screen and (max-width: 1500px) {
   .dropdown .selected-value {
     font-size: 1.5rem;
   }
 
   .dropdown .arrow {
-    top: 25px;
+    top: 15px;
   }
 }
 
-@media screen and (min-width: 1300px) {
-
+@media screen and (max-width: 1300px) {
   .drop-render {
-    min-width: 20em;
+    width: 40%;
   }
 
   .dropdown .selected-value {
@@ -154,6 +147,9 @@
 }
 
 @media screen and (max-width: 769px) {
+  .drop-render {
+    width: 40%;
+  }
 
   .dropdown .selected-value {
     font-size: 0.9rem;
@@ -164,13 +160,12 @@
   }
 
   .dropdown .arrow {
-    top: 10px;
-    right: 15px;
+    top: 6px;
+    right: 10px;
   }
 }
 
 @media screen and (max-width: 651px) {
-
   .dropdown .selected-value {
     max-width: 20em;
   }
@@ -181,9 +176,8 @@
 }
 
 @media screen and (max-width: 426px) {
-
   .drop-render {
-    height: 45%;
+    width: 45%;
   }
 
   .dropdown a {
@@ -202,6 +196,21 @@
 
 @media screen and (max-width: 376px) {
 
+  .dropdown .selected-value {
+    font-size: 0.5rem;
+  }
+
+  .dropdown a {
+    font-size: 0.7rem;
+  }
+
+  .dropdown .arrow {
+    top: 5px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 321px) {
   .dropdown .selected-value {
     font-size: 0.5rem;
   }

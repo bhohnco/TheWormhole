@@ -14,7 +14,9 @@ html {
 }
 
 .main-section {
-  width: fit-content;
+  width: 100%;
+  height: 100%;
+  min-height: 75vh;
   display: flex;
   justify-content: space-evenly;
 }
@@ -53,6 +55,12 @@ html {
   overflow: hidden;
 }
 
+.display-error {
+  display: flex;
+  text-align: center;
+  white-space: pre-line;
+}
+
 /*~~~~~~ RESPONSIVE ~~~~~~ */
 
 @media screen and (max-width: 651px) {
@@ -68,10 +76,9 @@ html {
     align-items: center;
   }
 
-  .glow {
-    font-size: 9vw;
+  .main-section {
+    min-height: 80vh;
   }
-
 }
 
 @media screen and (max-width: 376px) {
@@ -85,16 +92,6 @@ html {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-  }
-
-  .glow {
-    font-size: 8vw;
-  }
-
-  .random-location,
-  .go-home {
-    margin: 3vw 4vw 6vw 4vw;
-    height: 9vw;
   }
 
   .main-artist-box,

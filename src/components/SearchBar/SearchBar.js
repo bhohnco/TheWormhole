@@ -1,44 +1,65 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchQuery: '',
-      error: ''
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
+import { getArtistInfo} from '../../utilities/apiCalls';
+
+const SearchBar = () => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [response, setResponse] = useState(false);
+  const [verified, setVerified] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (response) {
+      evaluateResponse();
     }
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event) {
-    this.setState({
-      searchQuery: event.target.value
-    });
-  }
-searchError = (searchQuery) => {
-    if (!searchQuery) {
-      return (
-          <article className="display-error">
-            <h4 className="error-message">We couldn't find that artist, try something else!</h4>
-          </article>
-      )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [response]);
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let requestData = undefined;
+    if (searchQuery.length > 0) {
+     requestData = await getArtistInfo(searchQuery);
+    }
+    if (requestData) {
+      setResponse(requestData);
     }
   }
-  render()
-  {
+
+  const evaluateResponse = () => {
+    if (!response.artist || response === "Error!") {
+      setError("Sorry, we couldn't find that artist!");
+    } else {
+      setVerified(true);
+    }
+  }
+
+  if (verified) {
+    return <Redirect to={`/artist:${searchQuery}`}/>;
+  }
+
+  if (error) {
     return (
-        <section className='search-bar-box'>
-          <input
-              className='search-input'
-              type='text'
-              placeholder='Search Artists'
-              name='input'
-              value={this.state.searchQuery}
-              onChange={this.handleChange}/>
-          <Link to={`/artist:${this.state.searchQuery}`}>
-            <button className='search-btn'>Search</button>
-          </Link>
-        </section>
+      <article className="display-error">
+        <h4 className="error-message">{error}</h4>
+      </article>
     )
   }
+
+  return (
+    <form onSubmit={e => e.preventDefault} className='search-bar-box'>
+      <input
+        required
+        className='search-input'
+        type='text'
+        placeholder='Search For Artist'
+        name='input'
+        value={searchQuery}
+        onChange={event => {event.preventDefault(); setSearchQuery(event.target.value);}}
+      />
+      <button onClick={event => handleSubmit(event)} className='search-btn'>Search</button>
+    </form>
+  )
 }
 export default SearchBar;

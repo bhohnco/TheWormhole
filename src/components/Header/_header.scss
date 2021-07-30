@@ -1,17 +1,17 @@
 header {
   display: grid;
-  grid-template-rows: 60% 30%;
+  grid-template-rows: 57% 37%;
   align-items: center;
   background-color: $opaque-blue-dark;
-  height: 16vw;
+  height: 10%;
   border-bottom: 10px solid #2daff585;
   margin-bottom: 3vw;
   padding: 1vw;
 
   h1 {
     justify-self: center;
-    margin-top: 4vw;
-    font-size: 6vw;
+    margin: 1% auto auto auto;
+    font-size: 5vw;
     font-family: AlienEncounters;
     font-weight: 500;
     font-style: italic;
@@ -34,9 +34,10 @@ nav {
 .random-location {
   width: 13vw;
   height: 4vw;
-  margin: 2vw 3vw 1vw 3vw;
+  padding: 4px;
+  margin: 1vw 3vw 1vw 3vw;
   font-family: $staatliches;
-  font-size: 1.3vw;
+  font-size: 1em;
   letter-spacing: 0.5vw;
   border: 1px solid #ed33b86c;
   color: $max-blue-green;
@@ -53,7 +54,8 @@ nav {
 
   @media screen and (max-width: 1025px) {
     header {
-      height: 18vw;
+      padding: 2vw;
+      height: 11vw;
       grid-gap: 15px;
     }
 
@@ -65,36 +67,45 @@ nav {
       margin-top: 0;
       margin-bottom: 1vw;
     }
-
   }
 
-  @media screen and (max-width: 765px) {
-    
+  @media screen and (max-width: 769px) {
     header {
-      height: 27vw;
+      height: 23vw;
+      padding: 1vw;
     }
 
+    header h1 {
+      margin-top: 5vw;
+      font-size: 6vw;
+    }
+    
     .random-location,
     .go-home {
       font-size: 2vw;
-      margin: 1vw 4vw 0 4vw;
       width: 23vw;
-      height: 5.5vw;
+      height: 7vw;
+      margin-bottom: 1em;
     }
+  }
 
-    .glow {
-      margin-bottom: 1vw;
+  @media screen and (max-width: 426px) {
+    header {
+      height: 27vw;
     }
-
+    header h1 {
+      margin-top: 3vw;
+    }
   }
 
   @media screen and (max-width: 376px) {
     header {
-      height: 34vw;
+      height: 30vw;
     }
 
     header h1 {
-      margin-top: 12vw;
+      margin-top: 6vw;
+      font-size: 8vw;
     }
 
     .random-location,
