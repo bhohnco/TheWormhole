@@ -53,7 +53,7 @@ const SearchBar = () => {
         required
         className='search-input'
         type='text'
-        placeholder='Search For Artist'
+        placeholder='Search for artist...'
         name='input'
         value={searchQuery}
         onChange={event => {event.preventDefault(); setSearchQuery(event.target.value);}}
