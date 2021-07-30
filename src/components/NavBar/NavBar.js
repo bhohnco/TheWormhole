@@ -24,7 +24,7 @@ const NavBar = () => {
           <SearchBar />
         </article>
         <div className='location-message'>
-          <h3 className='welcome-text'>welcome to ...</h3>
+          <span className='welcome-text'>welcome to ...</span>
           <h2 className='location-name'>{formattedName}</h2>
         </div>
       </section>

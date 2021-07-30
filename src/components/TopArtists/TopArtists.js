@@ -90,7 +90,9 @@ const TopArtists = () => {
         </div>
         <Link to={`/artist:${nameString}`} id={nameString} className='link-container'>
           <div 
-            className='top-artist-image' 
+            className='top-artist-image'
+            aria-label={`link to ${artist.name} info page`}
+            aria-required='true'
             id={artist.mbid} 
             key={artist.mbid} 
             onClick={handleClick}
