@@ -10,7 +10,7 @@ header {
 
   h1 {
     justify-self: center;
-    margin: 1% auto auto auto;
+    margin: 3% auto auto auto;
     font-size: 5vw;
     font-family: AlienEncounters;
     font-weight: 500;
@@ -39,6 +39,7 @@ nav {
   font-family: $staatliches;
   font-size: 1em;
   letter-spacing: 0.5vw;
+  line-height: 1.25;
   border: 1px solid #ed33b86c;
   color: $max-blue-green;
   background-color: rgba(12, 22, 48, 0.51);
@@ -52,7 +53,7 @@ nav {
 
   /*~~~~~~ Responsive ~~~~~~ */
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1200px) {
     header {
       padding: 2vw;
       height: 11vw;
@@ -94,7 +95,8 @@ nav {
       height: 27vw;
     }
     header h1 {
-      margin-top: 3vw;
+      margin-top: 7vw;
+      font-size: 7vw;
     }
   }
 
@@ -104,7 +106,7 @@ nav {
     }
 
     header h1 {
-      margin-top: 6vw;
+      margin-top: 8vw;
       font-size: 8vw;
     }
 

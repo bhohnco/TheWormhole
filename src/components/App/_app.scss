@@ -19,6 +19,7 @@ html {
   min-height: 75vh;
   display: flex;
   justify-content: space-evenly;
+  padding-top: 1em;
 }
 
 .location-display {
@@ -26,7 +27,7 @@ html {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 1vw;
+  margin-top: 0.5em;
 }
 
 .message-box {
@@ -97,5 +98,12 @@ html {
   .main-artist-box,
   .main-track-box {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 321px) {
+
+  .main-section {
+    padding-top: 0;
   }
 }
