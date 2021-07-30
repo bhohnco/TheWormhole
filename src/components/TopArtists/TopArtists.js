@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { artists, images } from '../../actions';
+import { artists, images, info } from '../../actions';
 import { getTopArtists } from '../../utilities/apiCalls';
 import utils from '../../utilities/utils';
 import artistImageData from '../../utilities/artistsDataset';
@@ -87,6 +87,7 @@ const TopArtists = () => {
             className='top-artist-image' 
             id={artist.mbid} 
             key={artist.mbid} 
+            onClick={dispatch(info(null))}
             style={{ backgroundImage: `url(${artistImages[index] || utils.getRandomElement(backupImages)})`}}>
           </div>
         </Link>

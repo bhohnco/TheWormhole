@@ -33,10 +33,11 @@ nav {
 .go-home,
 .random-location {
   width: 13vw;
-  height: 3.5vw;
+  height: 4vw;
+  padding: 4px;
   margin: 1vw 3vw 1vw 3vw;
   font-family: $staatliches;
-  font-size: 1.3vw;
+  font-size: 1em;
   letter-spacing: 0.5vw;
   border: 1px solid #ed33b86c;
   color: $max-blue-green;
@@ -53,7 +54,8 @@ nav {
 
   @media screen and (max-width: 1025px) {
     header {
-      height: 13vw;
+      padding: 2vw;
+      height: 11vw;
       grid-gap: 15px;
     }
 
@@ -68,22 +70,23 @@ nav {
   }
 
   @media screen and (max-width: 769px) {
-    
     header {
-      height: 20vw;
+      height: 23vw;
+      padding: 1vw;
+    }
+
+    header h1 {
+      margin-top: 5vw;
+      font-size: 6vw;
     }
     
     .random-location,
     .go-home {
       font-size: 2vw;
       width: 23vw;
-      height: 5.5vw;
+      height: 7vw;
+      margin-bottom: 1em;
     }
-
-    .glow {
-      margin-bottom: 1vw;
-    }
-
   }
 
   @media screen and (max-width: 426px) {
@@ -102,8 +105,8 @@ nav {
 
     header h1 {
       margin-top: 6vw;
+      font-size: 8vw;
     }
-
 
     .random-location,
     .go-home {

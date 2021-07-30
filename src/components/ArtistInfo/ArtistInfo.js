@@ -53,7 +53,7 @@ const ArtistInfo = ({ id }) => {
         <div className='artist-text-box'>
           <h3 className='artist-bio-title'>Artist Biography</h3>
           <p style={{whiteSpace: "pre-line"}} className='artist-bio'>
-            {utils.removeLinkInBio(artistInfo.bio.content)}
+            {utils.removeLinkInBio(artistInfo)}
           </p>
         </div>
       </section>

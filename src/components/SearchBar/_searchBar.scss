@@ -3,13 +3,14 @@
   align-self: center;
   align-items: center;
   justify-content: center;
-  width: 85%;
+  width: 50%;
   height: 60%;
 }
 
 .search-input {
-  height: 2vw;
-  width: 4vw;
+  max-height: 3.5em;
+  min-height: 2vw;
+  width: 100%;
   font-size: 1vw;
   font-weight: 700;
 }
@@ -17,9 +18,11 @@
 .search-btn {
   position: relative;
   z-index: 0;
-  height: 3.75vw;
-  width: 14vw;
-  margin: 0 0 0 3vw;
+  height: 100%;
+  min-height: 2vw;
+  width: 40%;
+  margin-top: 0.2em;
+  margin-left: 2vw;
   background-color: $blue-jeans;
   border-radius: 7px;
   font-size: 1.75vw;
@@ -30,7 +33,7 @@
 }
 
 .search-input {
-  height: 3.5vw;
+  height: 100%;
   width: 60%;
   border-radius: 0.6vw;
   font-size: 1.5vw;
@@ -95,42 +98,37 @@
 
 /*~~~~~~ Responsive ~~~~~~ */
 
-@media screen and (max-width: 1025px) {
-  .search-bar-box {
-    margin-right: 1vw;
-  }
 
-  .search-input {
-    margin: 0 0 0.5vw 0;
-    height: 60%;
-    width: 60%;
-    font-size: 1.5vw;
-  }
+/*~~~~~~ Responsive ~~~~~~ */
 
-  .search-btn {
-    height: 4.5vw;
-    width: 12vw;
-    margin: 0 0 0 2vw;
-  }
+@media screen and (max-width: 1500px) {
+
 }
 
+@media screen and (max-width: 1300px) {
+
+}
+
+@media screen and (max-width: 1025px) {
+
+}
+
+@media screen and (max-width: 769px) {
+
+}
 
 @media screen and (max-width: 651px) {
-  .search-bar-box {
-    margin-right: 3vw;
-    width: 100%;
-    height: 100%;
-  }
 
-  .search-input {
-    margin: 0 0 0.5vw 0;
-    height: 45%;
-    width: 50%;
-    font-size: 2.5vw;
-  }
+}
 
-  .search-btn {
-    height: 6.5vw;
-    width: 12vw;
-  }
+@media screen and (max-width: 426px) {
+
+}
+
+@media screen and (max-width: 376px) {
+
+}
+
+@media screen and (max-width: 321px) {
+
 }
