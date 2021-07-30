@@ -28,7 +28,7 @@ const SearchBar = () => {
   }
 
   const evaluateResponse = () => {
-    if (!response.artist || response === "Error!") {
+    if (!response.artist || response === 'Error!') {
       setError("Sorry, we couldn't find that artist!");
     } else {
       setVerified(true);
@@ -41,8 +41,8 @@ const SearchBar = () => {
 
   if (error) {
     return (
-      <article className="display-error">
-        <h4 className="error-message">{error}</h4>
+      <article className='display-error'>
+        <h4 className='error-message'>{error}</h4>
       </article>
     )
   }
@@ -53,7 +53,7 @@ const SearchBar = () => {
         required
         className='search-input'
         type='text'
-        placeholder='Search For Artist'
+        placeholder='Search for artist...'
         name='input'
         value={searchQuery}
         onChange={event => {event.preventDefault(); setSearchQuery(event.target.value);}}
