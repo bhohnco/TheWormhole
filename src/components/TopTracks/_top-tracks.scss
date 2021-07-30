@@ -27,6 +27,10 @@
   font-weight: 600;
   font-family: $inconsolata;
   line-height: 2;
+
+  ol {
+    padding-left: 10%;
+  }
 }
 
 .top-track {
@@ -88,7 +92,6 @@
   }
 
   .top-tracks-box {
-    display: flex;
     width: 85%;
     margin-top: 5vw;
   }
@@ -96,5 +99,11 @@
   .top-tracks-box h3 {
     font-size: 5.2vw;
     margin: 4vw auto 2vw auto;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .top-tracks-box h3 {
+    font-size: 6.2vw;
   }
 }
