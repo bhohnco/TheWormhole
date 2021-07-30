@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { location } from '../../actions';
 
-export default function Dropdown({ options, prompt, value, key, onChange, }) {
+export default function Dropdown({ options, prompt, value, onChange, }) {
 
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
